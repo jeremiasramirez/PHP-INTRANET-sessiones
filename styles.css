@@ -1,0 +1,176 @@
+ body{
+ 	margin:0;
+ }
+ .main__header{
+ 	display: flex;
+ 	padding: .5em;
+ 	justify-content: space-between;
+ 	align-items: center;
+ 	background-color: orangered;
+ 	position: sticky;
+ 	top:0;
+ 	height: 65px;
+ }
+ .main__header a{
+ 	margin:.5em;
+ 	color:white;
+ 	text-decoration-line: none;
+ 	font-size: 18px;
+ }
+ .user_perfil{
+ 	background: orange;
+ 	display: inline-block;
+ 	padding: .3em .7em;
+ 	transition: .4s;
+ }
+ .user_perfil:hover{
+	opacity: .6;
+	transition: .4s;
+ }
+ .perfil_out{
+ 	background: #2222;
+	display: inline-block;
+ 	padding: .3em .7em;
+ 	transition: .3s;
+
+ }
+  .perfil_out:hover{
+  	opacity: .3;
+  	transition: .3s;
+  }
+ .title{
+ 	font-family: sans-serif;
+ 	transition: .4s;
+ 	padding: .2em 2em .2em 2em;
+ 	border-radius: 5px;
+ }
+ .title:hover{
+ 	transform: scale(.9);
+ 	opacity: .4;
+ /*	transition: .4s;*/
+
+ 	background-color: #2222;
+
+ }
+ .publish{
+ 	text-align: center;
+ }
+ .button_publish{
+ 	display: flex;
+ 	justify-content: center;
+ 	flex-direction: column-reverse;
+ 	align-items: center;
+ 	margin-bottom: 2em;
+ 	margin-top: -.5em;
+
+ }
+.buttonsend_publish{
+	margin-top:2em;
+}
+
+.publish{
+	background-color: #eee;
+	padding: .3em;
+}
+.publish_file{
+}
+.text_publish{
+	text-align:center;
+	border-radius: 10px;
+	resize: none;
+	font-size: 25px;
+	border: 1px solid #ddd;
+	font-family: serif;
+	width: 400px;
+	 
+}
+.buttonsend_publish{
+ 	padding: .5em 5em;
+ 	background-color: blue;
+ 	color: white;
+ 	font-family: sans-serif;
+ 	border: 0;
+ 	font-size: 17px;
+ 	border-radius:5px;
+}
+
+.states > *{
+	 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title_states{
+	font-family: Arial;
+	font-size: 24px;
+	color: #333;
+ 
+}
+.data_state{
+	padding: 0 .3em;
+	margin: 1em;
+	word-break: break-all;
+	color: white;
+	min-height: 100px;
+	border:0;
+	background-color: orange;
+	border-radius: 5px;
+	font-family: arial;
+}
+.login {
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: .3px;
+	flex-direction: column;
+	padding: 3em;
+}
+
+.responsivelogin{
+	padding:0 3em;
+}
+
+.login input{
+	margin: .3em;
+	border-radius: 3px;
+	padding: .5em 2.5em;
+	text-align: center;
+	border: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+#sendData{
+	margin-top: 1em;
+	padding: .3em 4em;
+	background-color: blue;
+	color: white;
+	font-family: arial;
+	border: 0;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: .3s;
+}
+#sendData:hover{
+	opacity: .7;
+	transition: .3s;
+	background-color: purple;
+}
+.title_login{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #ccc;
+	margin:0;
+	padding:.5em 0 .8em 0;
+	color: #333;
+
+}
+
+
+
+
+
+
+
+
