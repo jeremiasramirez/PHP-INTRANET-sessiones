@@ -104,8 +104,12 @@
  	border: 0;
  	font-size: 17px;
  	border-radius:5px;
+ 	transition: .4s;
 }
-
+.buttonsend_publish:hover{
+	transition: .4s;
+	opacity: .7;
+}
 .states > *{
 	 
 	display: flex;
