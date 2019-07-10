@@ -59,6 +59,7 @@
 
 				 $query_insert = mysqli_query($conection, $statement_insert);
 				 unset($data);
+				 header("main.php");
 			}
 			 
 			$statement_show = "SELECT state FROM states";
