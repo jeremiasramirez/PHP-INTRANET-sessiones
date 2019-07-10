@@ -19,9 +19,9 @@ session_start();
 
 		<p id="error_login" class="error_login"></p>
 		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
-		<input type="text" name="password" placeholder="Password" id="password" autocomplete="off">
+		<input type="password" name="password" placeholder="Password" id="password" autocomplete="off">
 
-		<button id="sendData" >Ingresar</button>
+		<button id="sendData">Ingresar</button>
 	</form>
 
 </div>
