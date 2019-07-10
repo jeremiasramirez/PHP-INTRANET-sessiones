@@ -30,9 +30,8 @@
 
  <main class="main">
  	<div class="publish">
- 		<h1></h1>
-	 	<form action="" method="post">
-	 		<textarea name="state" id="" class="text_publish" cols="50" rows="4" placeholder="¿Como se siente?"></textarea>
+ 			<form action="" method="post">
+	 		<textarea name="state" id="textpublish" class="text_publish" cols="50" rows="4" placeholder="¿Como se siente?"></textarea>
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
 	 			<!-- <input type="file" name="file" class="publish_file"> -->
@@ -54,7 +53,7 @@
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
 			 
-			if(isset($_POST["state"]) && $_POST["state"] != ""){
+			if(isset($_POST["state"]) && $_POST["state"] != "" &&  ctype_space($_POST["state"])!==1){
 
 				$data = $_POST["state"];
 				$data = addslashes($data);
@@ -79,6 +78,7 @@
 	</section>
 	
 
-
+<script src="main.js"></script>
+ 
 </body>
 </html>

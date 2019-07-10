@@ -27,8 +27,9 @@
  </main>
 
 	<section class="states">
-		<article class="title_states">
-			<h1 class="state_publish fas fa-stream"></h1>
+		<article class="title_states" style="position: sticky;top:60px;color:red; z-index: 300;">
+			 <!--  -->
+			<h1 class="state_publish fas fa-stream" ></h1>
 		</article>
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
@@ -44,8 +45,20 @@
 
 		 ?>
 	</section>
-	
-
+ 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

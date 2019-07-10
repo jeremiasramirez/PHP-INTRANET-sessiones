@@ -59,9 +59,7 @@
  	background-color: #2222;
 
  }
- .publish{
- 	text-align: center;
- }
+ 
  .button_publish{
  	display: flex;
  	justify-content: center;
@@ -71,11 +69,15 @@
  	margin-top: -.5em;
 
  }
+
 .buttonsend_publish{
 	margin-top:2em;
 }
-
+ .buttonsend_publish:hover{
+ 	cursor: pointer;
+ }
 .publish{
+	 text-align: center;
 	background-color: #eee;
 	padding: .3em;
 }
@@ -109,6 +111,7 @@
 }
 .buttonsend_publish:hover{
 	transition: .4s;
+	cursor: pointer;
 	opacity: .7;
 }
 .states > *{

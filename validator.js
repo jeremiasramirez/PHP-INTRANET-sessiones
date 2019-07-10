@@ -2,6 +2,7 @@ let sendata = document.getElementById("sendData");
 let user = document.getElementById("user");
 let password = document.getElementById("password");
 let errorlogin = document.getElementById("error_login");
+let counters = document.getElementById("counter");
 
 
 
@@ -15,7 +16,6 @@ if (sendata) {
 		
 			errorlogin.textContent = "Error login";
 			errorlogin.classList.add("errormsj", "scalade")
-			console.log("a")
 			e.preventDefault();
 			navigator.vibrate([80],[50]);
 			setTimeout(()=>{
@@ -25,3 +25,20 @@ if (sendata) {
 		}
 	}, false);
 }
+
+// let counterscroll = document.getElementById("counter");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
