@@ -141,7 +141,7 @@
 }
 .data_state:hover{
 	transition: .4s;
-	transform: translateX(-10px);
+	transform: translateX(-30px);
 }
 .login {
 	background-color: #eee;
