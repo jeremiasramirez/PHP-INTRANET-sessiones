@@ -23,6 +23,9 @@
  	display: inline-block;
  	padding: .3em .7em;
  	transition: .4s;
+ 	border-radius: 50%;
+ 	padding: 1em;
+ 	font-family: arial;
  }
  .user_perfil:hover{
 	opacity: .6;
@@ -33,16 +36,19 @@
 	display: inline-block;
  	padding: .3em .7em;
  	transition: .3s;
+ 	border-radius: 50%;
+ 	padding: 1em;
+
 
  }
   .perfil_out:hover{
-  	opacity: .3;
+  	opacity: .6;
   	transition: .3s;
   }
  .title{
  	font-family: sans-serif;
  	transition: .4s;
- 	padding: .2em 2em .2em 2em;
+ 	padding: 0;
  	border-radius: 5px;
  }
  .title:hover{
@@ -82,8 +88,13 @@
 	font-size: 25px;
 	border: 1px solid #ddd;
 	font-family: serif;
-	width: 400px;
+	width: 500px;
 	 
+}
+@media screen and (max-width: 340px){
+	.text_publish{
+		width: 300px;
+	}
 }
 .buttonsend_publish{
  	padding: .5em 5em;
@@ -117,14 +128,14 @@
 	background-color: #333;
 	border-radius: 5px;
 	font-family: arial;
-	transform: translateX(0);
+	transform: translateY(0);
 	animation: moves .7s linear;
 	transition: .8s;
  
 }
 @keyframes moves{
 	to{
-		transform: translateX(-1000px);
+		transform: translateY(-100px);
 		transition: .8s;
 	}
 }
@@ -139,11 +150,12 @@
 	align-items: center;
 	margin: .3px;
 	flex-direction: column;
-	padding: 3em;
+	padding: 2em;
+	padding-bottom: 10em
 }
 
 .responsivelogin{
-	padding:0 3em;
+
 }
 
 .login input{
@@ -172,13 +184,14 @@
 	background-color: purple;
 }
 .title_login{
-	text-align: center;
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 30px;
 	background-color: #ccc;
+	width: 100%;
+	text-align: center;
 	margin:0;
 	padding:.5em 0 .8em 0;
-	color: #333;
+
 
 }
 
