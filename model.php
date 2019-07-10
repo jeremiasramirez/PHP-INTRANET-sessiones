@@ -6,7 +6,7 @@ function conections(){
 	return $conection;
 }
  
-
+header("Location: login.php");
 conections();
 
 
