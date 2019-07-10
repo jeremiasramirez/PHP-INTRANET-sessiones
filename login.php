@@ -13,9 +13,13 @@ session_start();
 
 <div class="responsivelogin">
 	<h1 class="title_login">Login</h1>
+
 	<form action="validator.php" method="POST" class="login">
+
+		<p id="error_login" class="error_login">inco</p>
 		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
 		<input type="text" name="password" placeholder="Password" id="password" autocomplete="off">
+
 		<button id="sendData">Ingresar</button>
 	</form>
 

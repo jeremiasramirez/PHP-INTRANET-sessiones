@@ -10,6 +10,7 @@
  	position: sticky;
  	top:0;
  	height: 65px;
+ 	z-index: 100;
  }
  .main__header a{
  	margin:.5em;
@@ -113,9 +114,23 @@
 	color: white;
 	min-height: 100px;
 	border:0;
-	background-color: orange;
+	background-color: #333;
 	border-radius: 5px;
 	font-family: arial;
+	transform: translateX(0);
+	animation: moves .7s linear;
+	transition: .8s;
+ 
+}
+@keyframes moves{
+	to{
+		transform: translateX(-1000px);
+		transition: .8s;
+	}
+}
+.data_state:hover{
+	transition: .4s;
+	transform: translateX(-10px);
 }
 .login {
 	background-color: #eee;
