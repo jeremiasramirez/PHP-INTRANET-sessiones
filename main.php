@@ -45,7 +45,9 @@
 	<section class="states">
 		<article class="title_states">
 			<h1 class="state_publish fas fa-stream"></h1>
+
 		</article>
+		<p class="all"><a href="publication.php">Mostrar todos</a></p>
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
 			 

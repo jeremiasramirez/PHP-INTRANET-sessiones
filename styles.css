@@ -89,7 +89,8 @@
 	border: 1px solid #ddd;
 	font-family: serif;
 	width: 500px;
-	 
+	padding-top: 1em;
+	padding-bottom: -1em;
 }
 @media screen and (max-width: 340px){
 	.text_publish{
@@ -199,7 +200,25 @@
 
 }
 
-
+.all{
+	font-family: arial;
+	font-weight: 600;
+	margin-top: -.3em;
+	font-size: 13px;
+}
+.all:hover{
+	opacity: .8;
+	transition: .4s;
+}
+.all a{
+	background-color: #333;
+	color: #ddd;
+	padding: .3em 2em;
+	border: 0;
+	margin-bottom: -.3em;
+	border-radius: 4px;
+	text-decoration-line: none;
+}
 
 
 
