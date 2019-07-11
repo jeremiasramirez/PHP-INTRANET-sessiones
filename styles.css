@@ -261,6 +261,23 @@
 	font-family: sans-serif;
 	font-weight: 600;
 	letter-spacing: .2px;
+	font-size: 16px;
 	background-color: #333;
 }
 
+.select__user {
+	display: flex;
+	justify-content: center;
+	background-color: #222;
+	margin:0;
+	width: 100%;
+	padding: .5em 0;
+	text-align: center;
+	color: white;
+}
+.select__user a{
+	text-decoration-line: none;
+	color: #ddd;
+	font-family: sans-serif;
+	 
+}

@@ -28,6 +28,7 @@ session_start();
 
 		<button id="sendData">Ingresar</button>
 	</form>
+	<p class="select__user fas fa-user"><a href="selectuser.html" class="" style=""> Ingresar como admin</a></p>
 </div>
 
 
