@@ -29,34 +29,8 @@ session_start();
 		<button id="sendData">Ingresar</button>
 	</form>
 	<p class="select__user fas fa-user" ><a href="selectuser.html" class="" style="" > Ingresar como admin</a></p>
-	<script>
-	 
-		let msjText = document.getElementById("messageText");
 
-		let intervalText = setInterval(()=>{
-			msjText.style.transition="1s"
-			let text = "Muchas gracias por visitarnos!";
-			let textQuit = "Quit message";
-			if(msjText.textContent == text){
-				msjText.textContent = textQuit;
-				msjText.style.opacity=".6"
-			}
-			else{
-				msjText.textContent = text;
-				msjText.style.opacity="1";
-			}
-		}, 2000)
-
-		msjText.addEventListener("click", (e)=>{
-			e.target.classList.add("removing");
-
-			setTimeout(()=>{
-				e.target.remove();
-			}, 1000)
-
-		}, false)
-
-	</script>
+	<script src="login.js"></script>
 </div>
 
 
