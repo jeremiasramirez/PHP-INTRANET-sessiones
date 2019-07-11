@@ -35,22 +35,25 @@ session_start();
 
 		let intervalText = setInterval(()=>{
 			msjText.style.transition="1s"
-			
-			if(msjText.textContent == "Muchas gracias por visitarnos!"){
-				msjText.textContent = "Quit message";
+			let text = "Muchas gracias por visitarnos!";
+			let textQuit = "Quit message";
+			if(msjText.textContent == text){
+				msjText.textContent = textQuit;
 				msjText.style.opacity=".6"
 			}
 			else{
-				msjText.textContent = "Muchas gracias por visitarnos!"
-				msjText.style.opacity="1"
+				msjText.textContent = text;
+				msjText.style.opacity="1";
 			}
 		}, 2000)
 
 		msjText.addEventListener("click", (e)=>{
 			e.target.classList.add("removing");
+
 			setTimeout(()=>{
 				e.target.remove();
 			}, 1000)
+
 		}, false)
 
 	</script>
