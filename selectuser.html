@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Selecciona un usuario</title>
+	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
+</head>
+<body>
+
+	<section class="select_options">
+		
+		<article class="option">
+
+			<a href="login.php">User <i class="fas fa-user"></i></a>
+		</article>
+		<article class="option">
+			<a href="">Admin <i class="fas fa-users-cog"></i></a>
+		</article>
+
+	</section>
+
+<style>
+	body{
+		background-color: #666;
+		margin:3em 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	.select_options{
+		background-color: #eee;
+		padding: 3em 0em;
+	}
+	.option{
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #333;
+		margin: 0 .5em;
+		margin-bottom: 1em;
+		border-radius: 5px;
+}
+.option:hover{
+	transition: .4s;
+	opacity: .7;
+	cursor: pointer;
+}
+	.option a{
+		color:white;
+		padding: 1em 5.3em;
+		font-family: arial;
+		text-decoration-line: none;
+		font-weight: 600;
+		font-size: 20px;
+		letter-spacing: .2px;
+
+	}
+
+	@media screen and (min-width: 600px){
+		.option{
+			width: 600px;
+		}
+	}
+
+</style>
+</body>
+</html>
