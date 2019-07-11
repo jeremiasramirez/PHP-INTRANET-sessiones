@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+	if(!$_SESSION["name"]){
+		 
+		header("Location: out.php");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -2,7 +2,7 @@
 session_start();
 
 
-unset($_SESSION);
+unset($_SESSION["name"]);
 
 header("Location: login.php");
 

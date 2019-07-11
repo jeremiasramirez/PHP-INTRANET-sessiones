@@ -1,9 +1,11 @@
 <?php
 session_start();
-	if(isset($_SESSION["name"]) && $_SESSION["name"]=="")
+	if(!$_SESSION["name"])
 	{
-		header("Location: login.php");
+		 
+		header("Location: out.php");
 	}
+
 
 ?>
 <!DOCTYPE html>

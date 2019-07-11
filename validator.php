@@ -1,7 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION["name"]) or $_SESSION==""){
-	header("Location: login.php");
+if(!isset($_SESSION["name"]) or ctype_space($_SESSION["name"])==1){
+ 
+	header("Location: out.php");
 }
 $user = $_POST["user"];
 $user = addslashes($user);
@@ -15,7 +16,7 @@ $password = strip_tags($password);
 $_SESSION["name"]=$user;
 if(empty($user) or empty($password) or ctype_space($user)==true or ctype_space($password)==true)
 {
-	header("Location: login.php");
+	header("Location: out.php");
 }
 else
 {
