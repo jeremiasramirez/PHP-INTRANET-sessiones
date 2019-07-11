@@ -255,23 +255,32 @@
 }
 
 .visitweb{
-	color: #ddd;
+	color: #666;
 	border-radius: 4px;
-	padding: .3em 2em;
+	padding: 1em 0em;
+	margin: .3em 0em;
+	text-align:center;
 	font-family: sans-serif;
 	font-weight: 600;
+	width: 100%;
 	letter-spacing: .2px;
 	font-size: 16px;
-	background-color: #333;
+	background-color: #ddd;
+	transition: 1s;
 }
-
+.removing{
+	transition: 2s;
+	transform: translateX(-100px) translateY(-200px) ;
+}
 .select__user {
 	display: flex;
 	justify-content: center;
 	background-color: #222;
 	margin:0;
 	width: 100%;
-	padding: .5em 0;
+	padding: 1em 0;
+	position: sticky;
+	bottom: 0;
 	text-align: center;
 	color: white;
 }

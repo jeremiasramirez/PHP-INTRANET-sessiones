@@ -18,7 +18,7 @@ session_start();
 	<form action="validator.php" method="POST" class="login ">
 	<?php
 		if(isset($_GET["thank"]) and $_GET["thank"] =="thankyou"){
-			print("<p class=visitweb>Muchas gracias por visitarnos!</p>");
+			print("<p class=visitweb id=messageText>Muchas gracias por visitarnos!</p>");
 		}
 	?>
 
@@ -28,7 +28,32 @@ session_start();
 
 		<button id="sendData">Ingresar</button>
 	</form>
-	<p class="select__user fas fa-user"><a href="selectuser.html" class="" style=""> Ingresar como admin</a></p>
+	<p class="select__user fas fa-user" ><a href="selectuser.html" class="" style="" > Ingresar como admin</a></p>
+	<script>
+	 
+		let msjText = document.getElementById("messageText");
+
+		let intervalText = setInterval(()=>{
+			msjText.style.transition="1s"
+			
+			if(msjText.textContent == "Muchas gracias por visitarnos!"){
+				msjText.textContent = "Quit message";
+				msjText.style.opacity=".6"
+			}
+			else{
+				msjText.textContent = "Muchas gracias por visitarnos!"
+				msjText.style.opacity="1"
+			}
+		}, 2000)
+
+		msjText.addEventListener("click", (e)=>{
+			e.target.classList.add("removing");
+			setTimeout(()=>{
+				e.target.remove();
+			}, 1000)
+		}, false)
+
+	</script>
 </div>
 
 
