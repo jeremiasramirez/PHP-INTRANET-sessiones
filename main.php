@@ -52,7 +52,9 @@
 			<h1 class="state_publish fas fa-stream"></h1>
 
 		</article>
-		<p class="all"><a href="publication.php">Mostrar todos</a></p>
+		<article class="container__all">
+			<p class="all"><a href="publication.php">Mostrar todos</a></p>
+		</article>
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
 			 

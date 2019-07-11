@@ -16,6 +16,11 @@ session_start();
 	<p class="title_login fas fa-user"></p>
 
 	<form action="validator.php" method="POST" class="login ">
+	<?php
+		if(isset($_GET["thank"]) and $_GET["thank"] =="thankyou"){
+			print("<p class=visitweb>Muchas gracias por visitarnos!</p>");
+		}
+	?>
 
 		<p id="error_login" class="error_login"></p>
 		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
@@ -23,7 +28,6 @@ session_start();
 
 		<button id="sendData">Ingresar</button>
 	</form>
-
 </div>
 
 

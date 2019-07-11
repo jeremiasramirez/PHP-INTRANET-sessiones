@@ -4,7 +4,7 @@ session_start();
 
 unset($_SESSION["name"]);
 
-header("Location: selectuser.html");
+header("Location: login.php?thank=thankyou");
 
 
 ?>
