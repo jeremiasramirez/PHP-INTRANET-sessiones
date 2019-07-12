@@ -1,9 +1,7 @@
 <?php
 session_start();
-if(!isset($_SESSION["name"]) or ctype_space($_SESSION["name"])==1){
- 
-	header("Location: out.php");
-}
+
+$conection = new mysqli("localhost", "root","","intranetuser");
 $user = $_POST["user"];
 $user = addslashes($user);
 $user = strip_tags($user);
@@ -12,14 +10,42 @@ $password = $_POST["password"];
 $password = addslashes($password);
 $password = strip_tags($password);
 
+$boollogin = null;
+$namespage = '';
+$sex = '';
+$nameuserofficial = null;
+if(isset($_POST["user"]) && isset($_POST["password"])){
+ 
+	$user = $_POST["user"];
+	$pass = $_POST["password"];
 
-$_SESSION["name"]=$user;
-if(empty($user) or empty($password) or ctype_space($user)==true or ctype_space($password)==true)
-{
-	header("Location: out.php");
+	$statementSelect = "SELECT * FROM userspage AS u RIGHT JOIN email AS e ON e.email_id = u.user_id  WHERE e.emails='$user' and u.userpass='$pass'";
+
+	$querySelect = mysqli_query($conection, $statementSelect);
+	while($row = mysqli_fetch_array($querySelect)){
+
+			$boollogin = true;
+			$namespage = $row["nameuser"];
+			$sex = $row["sexo"];
+			 
+		 
+	} 
 }
-else
-{
+if($boollogin == true){
+
+	$_SESSION["name"]=$namespage;
+	$_SESSION["sexo"]=$sex;
+
 	header("Location: main.php");
 }
+else{
+	header("Location: out.php");
+}
+
+ 
 ?>
+
+
+
+
+
