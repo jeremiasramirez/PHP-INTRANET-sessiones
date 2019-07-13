@@ -188,9 +188,9 @@
  	border:0;
  	color: #444;
  	font-size: 19px;
-	background-color: #eee;
+	/*background-color: #;*/
 	transition: .4s;
-	color: blue;
+	color: purple;
  }
  	.btn__search:hover{
 	cursor: pointer;
