@@ -6,13 +6,13 @@
 	border-radius: 5px;
 	height: 80px;
 	transition:1s;
- 	animation: shows 1s linear  forwards;
+ 	animation: shows 1s linear forwards;
 }
 .user__name{
 	padding: .3em -1em;
 	margin:0;
 	font-size: 20px;
-	color: #333;
+	color: #ddd;
 	font-weight: 500;
 	font-family: verdana;
 }
@@ -29,6 +29,7 @@
 		transform: scale(1);
 	}
 	.container__user__name{
+
 		background-color: rgba(100%,0%,0%,20%)
 	}
 }
@@ -37,6 +38,7 @@
 
 	to{
 		transition:1s;
-		background-color: rgba(100%,0%,0%,20%)
+		/*background-color: rgba(100%,0%,0%,20%);*/
+		background-color: #777;
 	}
 }

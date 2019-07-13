@@ -1,5 +1,6 @@
  body{
  	margin:0;
+ 	background-color: #222;
  }
  .main__header{
  	display: flex;
@@ -205,7 +206,7 @@
 }
 
 .states > *{
-	 
+	 background-color: #7777;
 	display: flex;
 	justify-content: center;
 	align-items: center;

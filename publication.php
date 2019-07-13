@@ -28,7 +28,7 @@
 	</header>
  
   		<article class="title_states" style="text-align: center;">
-			<h1 class="state_publish fas fa-stream" ></h1>
+			<h1 class="state_publish fas fa-stream" style="color:red"></h1>
 		</article>
   
 
