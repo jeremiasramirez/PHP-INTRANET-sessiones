@@ -31,8 +31,9 @@
  .user_perfil:hover{
 	transform: scale(1.1) rotate(10deg);
 	opacity: .6;
-	background-color: #333;
+	background-color: rgba(0%, 0%, 0%, 50%);
 	transition: .4s;
+	color: white;
 
  }
  
@@ -89,8 +90,9 @@
 
 .publish{
  text-align: center;
-	background-color: #eee;
+	/*background-color: ;*/
 	padding: .3em;
+	padding-top: 3em
 }
  
 .text_publish{
@@ -98,7 +100,8 @@
 	border-radius: 10px;
 	resize: none;
 	font-size: 25px;
-	border: 1px solid #ddd;
+	border: 0;
+	background-color: #eee;
 	font-family: serif;
 	width: 300px;
 	padding-top: 1em;
@@ -151,9 +154,54 @@
 	opacity: .7;
 }
 @media screen and (min-width: 540px){
+
 	.text_publish{
 		width: 500px;
 	}
+}
+.search{
+ 	border:1px solid #eee;
+ 	width: 280px;
+	padding: .5em 1em;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 18px;
+	border-radius: 3px;
+	margin-top: -3px;
+ }
+ .search__user{
+ 	position: sticky;
+ 	top: 81px;
+ 	margin-bottom: 0;
+ 	padding-bottom: .5em;
+ 	padding-top:.5em;
+	background-color: #eeee;
+ 	text-align: center;
+ 		 
+ }
+ 		
+ .btn__search{
+ 	border-radius: 50%;
+ 	height:38px;
+ 	padding:.3em;
+ 	border:0;
+ 	color: #444;
+ 	font-size: 19px;
+	background-color: #eee;
+	transition: .4s;
+	color: blue;
+ }
+ 	.btn__search:hover{
+	cursor: pointer;
+	transform: rotate(30deg);
+	transition: .4s;
+	color: orangered;
+}
+@media screen and (min-width: 560px){
+
+	.search{
+ 		width: 500px;
+ 	} 
 }
 
 .states > *{
@@ -161,6 +209,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.states:hover > *{
+	cursor: pointer;
 }
 .title_states{
 	font-family: Arial;
@@ -180,6 +231,7 @@
 		grid-template-rows: 200px 100px;
 		grid-template-columns: 400px auto;
 	}
+
 }
 @media screen and (min-width: 1200px){
 	.data_state{

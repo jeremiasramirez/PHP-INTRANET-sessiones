@@ -34,12 +34,26 @@
 	</header>
 
  <main class="main">
+ 	<div class="search__user">
+ 		<form action="">
+ 			<input type="search" class="search" placeholder="Search">
+ 			<button class="btn__search fas fa-search"></button>
+ 		</form>
+ 	</div>
+
+ 	<style>
+
+ 	</style>
+
+
+
+
  	<div class="publish">
  			<form action="" method="post">
 	 		<textarea name="state" id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
-	 			<!-- <input type="file" name="file" class="publish_file"> -->
+	 		 
 	 		</div>
 	 	</form>
 
