@@ -26,15 +26,14 @@
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
 	</header>
-
- <main class="main">
-  
- </main>
-
-	<section class="states">
-		<article class="title_states" style="position: sticky;top:60px;color:red; z-index: 300;">
+ 
+  		<article class="title_states" style="text-align: center;">
 			<h1 class="state_publish fas fa-stream" ></h1>
 		</article>
+  
+
+	<section class="states">
+
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
 			 

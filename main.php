@@ -36,7 +36,7 @@
  <main class="main">
  	<div class="publish">
  			<form action="" method="post">
-	 		<textarea name="state" id="textpublish" class="text_publish" cols="50" rows="4" placeholder="¿Como se siente?"></textarea>
+	 		<textarea name="state" id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
 	 			<!-- <input type="file" name="file" class="publish_file"> -->
@@ -45,14 +45,15 @@
 
  	</div>
 
+</main>
 
 
- </main>
-
-	<section class="states">
-		<article class="title_states">
+	<article class="title_states" style="text-align: center;color:red;">
 			<h1 class="state_publish fas fa-stream"></h1>
 		</article>
+	
+	<section class="states">
+	
 
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
@@ -74,11 +75,12 @@
 
 			$query_show = mysqli_query($conection, $statement_show);
 
-			 while($row = mysqli_fetch_array($query_show)){
+ 			while($row = mysqli_fetch_array($query_show)){
 			 	print("<p class=data_state>".$row["state"]."</p>");
 			 }
 
 		 ?>
+		 
 	</section>
 	
 
