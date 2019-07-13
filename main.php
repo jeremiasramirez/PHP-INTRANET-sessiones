@@ -26,8 +26,10 @@
 		</article>
 		<article class="main_out">
 			
+		<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
 		<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
+ 
 		</article>
 	</header>
 
@@ -50,11 +52,8 @@
 	<section class="states">
 		<article class="title_states">
 			<h1 class="state_publish fas fa-stream"></h1>
+		</article>
 
-		</article>
-		<article class="container__all">
-			<p class="all"><a href="publication.php">Mostrar todos</a></p>
-		</article>
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
 			 
@@ -67,9 +66,9 @@
 				 $statement_insert = "INSERT INTO states (state) VALUES ('$data')";
 
 				 $query_insert = mysqli_query($conection, $statement_insert);
-				 unset($data);
-				 header("main.php");
+				unset($_POST["state"]);		 
 			}
+
 			 
 			$statement_show = "SELECT state FROM states";
 

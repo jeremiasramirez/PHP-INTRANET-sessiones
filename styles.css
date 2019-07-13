@@ -26,11 +26,15 @@
  	border-radius: 50%;
  	padding: 1em;
  	font-family: arial;
+
  }
  .user_perfil:hover{
+	transform: scale(.8);
 	opacity: .6;
 	transition: .4s;
+
  }
+ 
  .perfil_out{
  	background: #2222;
 	display: inline-block;
@@ -73,16 +77,13 @@
 .buttonsend_publish{
 	margin-top:2em;
 }
- .buttonsend_publish:hover{
- 	cursor: pointer;
- }
+
 .publish{
-	 text-align: center;
+ text-align: center;
 	background-color: #eee;
 	padding: .3em;
 }
-.publish_file{
-}
+ 
 .text_publish{
 	text-align:center;
 	border-radius: 10px;
@@ -162,10 +163,6 @@
 	padding-bottom: 10em
 }
 
-.responsivelogin{
-
-}
-
 .login input{
 	margin: .3em;
 	border-radius: 3px;
@@ -204,15 +201,7 @@
 
 
 }
-.container__all{
-	 
-}
-.all{
-	font-family: arial;
-	font-weight: 600;
-	margin-top: -.3em;
-	font-size: 13px;
-}
+
 .all:hover{
 	opacity: .8;
 	transition: .4s;
@@ -290,3 +279,4 @@
 	font-family: sans-serif;
 	 
 }
+

@@ -21,7 +21,7 @@
 			<a href="main.php" class="title fas fa-home"></a>
 		</article>
 		<article class="main_out">
-			
+		<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
 		<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
@@ -33,7 +33,6 @@
 
 	<section class="states">
 		<article class="title_states" style="position: sticky;top:60px;color:red; z-index: 300;">
-			 <!--  -->
 			<h1 class="state_publish fas fa-stream" ></h1>
 		</article>
 		<?php 
