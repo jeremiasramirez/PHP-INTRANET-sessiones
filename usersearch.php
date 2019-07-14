@@ -26,33 +26,34 @@ if(!$_SESSION["name"]){
 		</article>
 
 		<article class="main_out">	
-		<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
-		<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
-		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
+			<a href="main.php" class="title fas fa-home"></a>
+			<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
+			<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
+			<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
 
 	</header>
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
- 			<input type="search" class="search" placeholder="Search user">
- 			<button class="btn__search fas fa-search"></button>
+ 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<button class="btn__search fas fa-search" id="btn__search"></button>
  		</form>
  	</div>
 
 <div class="users__find" id="users__find">
 	<?php
-
 		if(isset($_POST["search__user"])){
 
 			 if(!ctype_space($_POST["search__user"])) {
-			 	//all code here
+			 	//all logic code here
+
+
 			 }	
 	}
-
 	?>
 </div>
-
+ 
 
 
 <script src="usersearch.js"></script>

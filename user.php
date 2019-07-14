@@ -29,7 +29,14 @@ session_start();
 		</article>
 
 	</header>
-	
+	 	<div class="search__user">
+ 		<form action="usersearch.php" method="post">
+ 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<button class="btn__search fas fa-search" id="btn__search"></button>
+ 		</form>
+ 	</div>
+	<p class="separation" style="margin-top: 1em"></p>
+
 	<main class="mainuser">
 		
 		<div class="container__user__name">
@@ -48,5 +55,6 @@ session_start();
 
 	</main>
 	<script type="text/javascript" src="main.js"></script>
+	 <script src="usersearch.js"></script>
 </body>
 </html>

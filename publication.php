@@ -28,7 +28,12 @@
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
 	</header>
- 
+ 	 	<div class="search__user">
+ 		<form action="usersearch.php" method="post">
+ 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<button class="btn__search fas fa-search" id="btn__search"></button>
+ 		</form>
+ 	</div>
   		<article class="title_states" style="text-align: center;">
 			<h1 class="state_publish fas fa-stream" style="color:red"></h1>
 		</article>
@@ -53,6 +58,7 @@
  
 
 <script src="main.js"></script>
+<script src="usersearch.js"></script>
 </body>
 </html>
 

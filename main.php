@@ -42,8 +42,8 @@
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
- 			<input type="search" name="search__user" class="search" placeholder="Search user">
- 			<button class="btn__search fas fa-search"></button>
+ 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<button class="btn__search fas fa-search" id="btn__search"></button>
  		</form>
  	</div>
 
@@ -99,6 +99,6 @@
 	
 
 <script src="main.js"></script>
- 
+ <script src="usersearch.js"></script>
 </body>
 </html>

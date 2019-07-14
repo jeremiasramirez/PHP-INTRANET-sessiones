@@ -111,14 +111,11 @@
 	padding-top: 1em;
 	padding-bottom: -1em;
 	transition: 1s;
-	border: 1px solid #333;
 }
 .text_publish:hover{
 	background-color: rgba(0%, 10%, 10%,100%);
 	transition: .4s;
 	color: white;
-	border-color: white;
-	box-shadow: 1px 1px 10px #888;
 }
 .data_state{
 	padding: 0 .3em;
@@ -204,10 +201,11 @@
 	transition: .4s;
 	color: purple;
  	background-color: transparent;
+
  }
  	.btn__search:hover{
 	cursor: pointer;
-	transform: rotate(30deg);
+	transform: scale(1.2);
 	transition: .4s;
 	color: orangered;
 }
@@ -254,7 +252,9 @@
 		position: sticky;
 		top:0;
 		margin-bottom: .1em;
-		background-color: #eee
+		background-color: #eee;
+		z-index: 400;
+
 	}
 
 }
