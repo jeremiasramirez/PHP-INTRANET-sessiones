@@ -35,17 +35,11 @@
 
  <main class="main">
  	<div class="search__user">
- 		<form action="">
- 			<input type="search" class="search" placeholder="Search">
+ 		<form action="usersearch.php" method="post">
+ 			<input type="search" class="search" placeholder="Search user">
  			<button class="btn__search fas fa-search"></button>
  		</form>
  	</div>
-
- 	<style>
-
- 	</style>
-
-
 
 
  	<div class="publish">

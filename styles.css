@@ -108,7 +108,9 @@
 	padding-top: 1em;
 	padding-bottom: -1em;
 }
-
+.text_publish:hover{
+	opacity: .7;
+}
 .data_state{
 	padding: 0 .3em;
 	margin: 1em;
@@ -159,7 +161,9 @@
 	.text_publish{
 		width: 500px;
 	}
+
 }
+
 .search{
  	border:1px solid #eee;
  	width: 280px;
@@ -182,8 +186,7 @@
  }
  		
  .btn__search{
- 	border-radius: 50%;
- 	height:38px;
+  	height:38px;
  	padding:.3em;
  	border:0;
  	color: #444;
@@ -191,6 +194,7 @@
 	/*background-color: #;*/
 	transition: .4s;
 	color: purple;
+ 	background-color: transparent;
  }
  	.btn__search:hover{
 	cursor: pointer;
@@ -204,7 +208,24 @@
  		width: 500px;
  	} 
 }
+@media screen and (max-width: 330px){
+	.search{
+ 		width: 230px;
+ 	} 
+		.main__header{
+		position: fixed;
+		top: 85%;
+		width: 100%;
+		margin-bottom:
+	}
+	.search__user{
+		position: sticky;
+		top:0;
+		margin-bottom: 1em;
+		background-color: #eee
+	}
 
+}
 .states > *{
 	 background-color: #7777;
 	display: flex;
