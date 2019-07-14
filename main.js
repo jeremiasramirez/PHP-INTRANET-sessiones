@@ -11,3 +11,19 @@ if(sendpublish){
 	}, false);
 }
 
+let mainHeader =document.getElementById("main__header");
+ if(main__header){
+
+ if(window.screen.width <= 330){
+	document.addEventListener("scroll", (e)=>{
+		if(window.scrollY > 50){
+			mainHeader.style.display="none"
+		}
+
+		else{
+			mainHeader.style.display="block"
+		}
+	})
+ }
+  	
+ }

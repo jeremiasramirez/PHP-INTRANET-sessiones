@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 </head>
 <body>
-	<header class="main__header">
+	<header class="main__header" id="main__header">
 		<article class="main_main">
 			<a href="main.php" class="title fas fa-home"></a>
 		</article>
@@ -33,7 +33,12 @@
  
 		</article>
 	</header>
+<script>
 
+	// if(mainHeader[0].style.top){
+	// 	console.log("es mayor")
+	// }
+</script>
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">

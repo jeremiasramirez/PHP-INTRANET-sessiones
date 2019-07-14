@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 </head>
 <body>
-	<header class="main__header">
+	<header class="main__header"  id="main__header">
 		<article class="main_main">
 			<a href="main.php" class="title fas fa-home"></a>
 		</article>
@@ -52,7 +52,7 @@
 	</section>
  
 
-
+<script src="main.js"></script>
 </body>
 </html>
 
