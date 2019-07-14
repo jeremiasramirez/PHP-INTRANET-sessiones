@@ -1,12 +1,9 @@
 <?php
 session_start();
-
-if(!$_SESSION["name"]){
-			 
+include("model.php");
+if(!$_SESSION["name"]){			 
 	header("Location: out.php");
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -43,13 +40,19 @@ if(!$_SESSION["name"]){
 
 <div class="users__find" id="users__find">
 	<?php
+
+
+		
 		if(isset($_POST["search__user"])){
-
 			 if(!ctype_space($_POST["search__user"])) {
-			 	//all logic code here
-
-
+			  	
 			 }	
+	}
+	 $conection = conections();
+	$stat = "SELECT emails FROM email";
+	$result = mysqli_query($conection, $stat);
+	while($row= mysqli_fetch_array($result)){
+		echo $row["emails"];
 	}
 	?>
 </div>

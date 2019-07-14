@@ -1,4 +1,5 @@
 <?php
+$conection = new mysqli("localhost", "root", "", "intranetuser");
 	session_start();
 
 	if(!$_SESSION["name"]){
@@ -18,7 +19,7 @@
 <body>
 	<header class="main__header"  id="main__header">
 		<article class="main_main">
-			<a href="main.php" class="title fas fa-home"></a>
+			<a href="main.php" class="title fas fa-home" title="Home"></a>
 		</article>
 		<article class="main_out">
 
@@ -31,7 +32,7 @@
  	 	<div class="search__user">
  		<form action="usersearch.php" method="post">
  			<input type="search" class="search" placeholder="Search user" id="searchname">
- 			<button class="btn__search fas fa-search" id="btn__search"></button>
+ 			<button class="btn__search fas fa-search" id="btn__search" title="Buscar"></button>
  		</form>
  	</div>
   		<article class="title_states" style="text-align: center;">
@@ -41,16 +42,13 @@
 
 	<section class="states">
 
-		<?php 
-		$conection = new mysqli("localhost", "root","","intranet");
-			 
-			 
-			$statement_show = "SELECT state FROM states";
+		<?php
+			$statement_show = "SELECT stat FROM allstates";
 
 			$query_show = mysqli_query($conection, $statement_show);
 
 			 while($row = mysqli_fetch_array($query_show)){
-			 	print("<p class=data_state>".$row["state"]."</p>");
+			 	print("<p class=data_state>".$row["stat"]."</p>");
 			 }
 
 		 ?>

@@ -16,7 +16,7 @@ let mainHeader =document.getElementById("main__header");
 
  if(window.screen.width <= 330){
 	document.addEventListener("scroll", (e)=>{
-		if(window.scrollY > 50){
+		if(window.scrollY > 2){
 			mainHeader.style.display="none"
 		}
 

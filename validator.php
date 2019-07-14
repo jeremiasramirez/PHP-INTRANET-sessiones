@@ -19,7 +19,7 @@ if(isset($_POST["user"]) && isset($_POST["password"])){
 	$user = $_POST["user"];
 	$pass = $_POST["password"];
 
-	$statementSelect = "SELECT * FROM userspage AS u RIGHT JOIN email AS e ON e.email_id = u.user_id  WHERE e.emails='$user' and u.userpass='$pass'";
+	$statementSelect = "SELECT * FROM usuario WHERE emails='$user' and userpass='$pass'";
 
 	$querySelect = mysqli_query($conection, $statementSelect);
 	while($row = mysqli_fetch_array($querySelect)){

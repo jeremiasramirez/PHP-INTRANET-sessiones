@@ -18,7 +18,7 @@ session_start();
 <body>
 	<header class="main__header"  id="main__header">
 		<article class="main_main">
-			<a href="main.php" class="title fas fa-home"></a>
+			<a href="main.php" class="title fas fa-home" title="Home"></a>
 		</article>
 
 		<article class="main_out">	
@@ -32,7 +32,7 @@ session_start();
 	 	<div class="search__user">
  		<form action="usersearch.php" method="post">
  			<input type="search" class="search" placeholder="Search user" id="searchname">
- 			<button class="btn__search fas fa-search" id="btn__search"></button>
+ 			<button class="btn__search fas fa-search" id="btn__search" title="Buscar"></button>
  		</form>
  	</div>
 	<p class="separation" style="margin-top: 1em"></p>
@@ -43,10 +43,10 @@ session_start();
 			 
 			<?php
 			if($_SESSION["sexo"]=="masculino"){
-				print("<h1 class=user__name> <p class=emoji>😃</p>¡Hola ".$_SESSION["name"]."!</h1>");
+				print("<h1 class=user__name> <p class=emoji>😃</p>¡Bienvenido ".$_SESSION["name"]."!</h1>");
 			}
 			else{
-				print("<h1 class=user__name> <p class=emoji>😃</p>¡Hola ".$_SESSION["name"]."!</h1>");
+				print("<h1 class=user__name> <p class=emoji>😃</p>¡Bienvenida ".$_SESSION["name"]."!</h1>");
 			}
 
 	 

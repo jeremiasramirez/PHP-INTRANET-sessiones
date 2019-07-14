@@ -9,4 +9,4 @@ function emptySeach(){
 		},false)
 	}
 } 
-	emptySeach();
+emptySeach();

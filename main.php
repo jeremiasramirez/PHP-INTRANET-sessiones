@@ -1,4 +1,5 @@
 <?php
+ 	$conection = new mysqli("localhost", "root", "", "intranetuser");
 	session_start();
 	// if(isset($_SESSION["name"]) && ctype_space($_SESSION["name"])==1)
 	// {
@@ -22,7 +23,7 @@
 <body>
 	<header class="main__header" id="main__header">
 		<article class="main_main">
-			<a href="main.php" class="title fas fa-home"></a>
+			<a href="main.php" class="title fas fa-home" title="Home"></a>
 		</article>
 		<article class="main_out">
 			
@@ -43,7 +44,7 @@
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
  			<input type="search" class="search" placeholder="Search user" id="searchname">
- 			<button class="btn__search fas fa-search" id="btn__search"></button>
+ 			<button class="btn__search fas fa-search" id="btn__search" title="Buscar"></button>
  		</form>
  	</div>
 
@@ -70,8 +71,7 @@
 	
 
 		<?php 
-		$conection = new mysqli("localhost", "root","","intranet");
-			
+	
 		
 			if(isset($_POST["state"]) && $_POST["state"] != ""){
 				if(!ctype_space($_POST["state"])) {
@@ -79,18 +79,18 @@
 				$data = addslashes($data);
 				$data = strip_tags($data);
 	 
-				 $statement_insert = "INSERT INTO states (state) VALUES ('$data')";
+				 $statement_insert = "INSERT INTO allstates (stat) VALUES ('$data')";
 
 				 $query_insert = mysqli_query($conection, $statement_insert);
 				unset($_POST["state"]);		 
 			}
 		}
-			$statement_show = "SELECT state FROM states";
+			$statement_show = "SELECT stat FROM allstates";
 
 			$query_show = mysqli_query($conection, $statement_show);
 
  			while($row = mysqli_fetch_array($query_show)){
-			 	print("<p class=data_state>".$row["state"]."</p>");
+			 	print("<p class=data_state>".$row["stat"]."</p>");
 			 }
 
 		 ?>
