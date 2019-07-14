@@ -40,6 +40,21 @@ if(!$_SESSION["name"]){
  		</form>
  	</div>
 
+<div class="users__find" id="users__find">
+	<?php
+
+		if(isset($_POST["search__user"])){
+
+			 if(!ctype_space($_POST["search__user"])) {
+			 	//all code here
+			 }	
+	}
+
+	?>
+</div>
+
+
+
 <script src="usersearch.js"></script>
 </body>
 </html>

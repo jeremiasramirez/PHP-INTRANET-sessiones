@@ -21,6 +21,8 @@
 			<a href="main.php" class="title fas fa-home"></a>
 		</article>
 		<article class="main_out">
+
+		<a href="main.php" class="title fas fa-home"></a>
 		<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
 		<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>

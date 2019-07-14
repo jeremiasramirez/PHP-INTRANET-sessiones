@@ -26,6 +26,7 @@
 		</article>
 		<article class="main_out">
 			
+		<a href="main.php" class="title fas fa-home"></a>
 		<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
 		<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
 		<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
@@ -36,7 +37,7 @@
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
- 			<input type="search" class="search" placeholder="Search user">
+ 			<input type="search" name="search__user" class="search" placeholder="Search user">
  			<button class="btn__search fas fa-search"></button>
  		</form>
  	</div>
@@ -65,9 +66,10 @@
 
 		<?php 
 		$conection = new mysqli("localhost", "root","","intranet");
-			 
-			if(isset($_POST["state"]) && $_POST["state"] != "" &&  ctype_space($_POST["state"])!==1){
-
+			
+		
+			if(isset($_POST["state"]) && $_POST["state"] != ""){
+				if(!ctype_space($_POST["state"])) {
 				$data = $_POST["state"];
 				$data = addslashes($data);
 				$data = strip_tags($data);
@@ -77,8 +79,7 @@
 				 $query_insert = mysqli_query($conection, $statement_insert);
 				unset($_POST["state"]);		 
 			}
-
-			 
+		}
 			$statement_show = "SELECT state FROM states";
 
 			$query_show = mysqli_query($conection, $statement_show);
