@@ -31,7 +31,7 @@ $conection = new mysqli("localhost", "root", "", "intranetuser");
 	</header>
  	 	<div class="search__user">
  		<form action="usersearch.php" method="post">
- 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<input type="search" class="search" placeholder="Search user" id="searchname" name="search">
  			<button class="btn__search fas fa-search" id="btn__search" title="Buscar"></button>
  		</form>
  	</div>

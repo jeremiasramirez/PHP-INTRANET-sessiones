@@ -16,7 +16,7 @@ if(!$_SESSION["name"]){
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
 </head>
-<body>
+<body style="background-color: white">
 	<header class="main__header">
 		<article class="main_main">
 			<a href="main.php" class="title fas fa-home"></a>
@@ -33,27 +33,47 @@ if(!$_SESSION["name"]){
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
- 			<input type="search" class="search" placeholder="Search user" id="searchname">
+ 			<input type="search" class="search" placeholder="Search user" id="searchname" name="search">
  			<button class="btn__search fas fa-search" id="btn__search"></button>
  		</form>
  	</div>
 
-<div class="users__find" id="users__find">
-	<?php
+	<div class="users__find" id="users__find">
 
-
+	<?php 
 		
-		if(isset($_POST["search__user"])){
-			 if(!ctype_space($_POST["search__user"])) {
-			  	
-			 }	
-	}
-	 $conection = conections();
-	$stat = "SELECT emails FROM email";
-	$result = mysqli_query($conection, $stat);
-	while($row= mysqli_fetch_array($result)){
-		echo $row["emails"];
-	}
+			  	if(isset($_POST["search"]) && !ctype_space($_POST["search"]) == 1){
+					$conection = new mysqli("localhost", "root","","intranetuser");
+
+			    	$counterfinded = 0;
+			  		$counterfinded = $conection->affected_rows;
+				  	
+				  	$searchs = $_POST["search"];
+				  	$searchs = addslashes($searchs);
+				  	
+				  	$searchs = strip_tags($searchs);
+					
+					$statementsearch = "SELECT user_id,nameuser from usuario where nameuser='$searchs'";
+					
+					$result = mysqli_query($conection, $statementsearch);
+
+					while($row= mysqli_fetch_array($result)){
+					
+						$ids = 1;
+						print("<a href='' class=itemsearch>".$row["nameuser"]."</a>");
+						$counterfinded = $conection->affected_rows;
+
+					}	
+					 print("
+					 	<div class=alltitle>
+							<h1 class=titleusers>Usuarios encontrado <strong>".$counterfinded."</strong></h1>
+						</div>
+						");
+			  	}
+
+ 	
+	 
+
 	?>
 </div>
  

@@ -1,1 +1,65 @@
 
+.alltitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1em;
+}
+.titleusers{
+	color: #bbb;
+	font-size: 20px;
+	font-family: arial;
+
+}
+.titleusers strong{
+	color: #888;
+	font-size: 22px;
+}
+.users__find a{
+	display: block;
+}
+.users__find{
+	display: grid;
+	justify-content: center;
+	
+}
+ .itemsearch{
+ 	margin: 0 0 .8em 0;
+ 	background-color: rgba(100%, 10%, 10%, 40%);
+ 	padding: 1em .8em  1em .8em;
+ 	width: 260px;
+ 	border-radius: 3px;
+ 	text-decoration: none;
+ 	text-align: center;
+ 	height: 80px;
+ 	color: white;
+ 	font-family: arial;
+ 	font-size: 28px;
+ }
+.itemsearch:hover{
+
+}
+@media screen and (min-width: 500px){
+	.itemsearch{
+ 		width: 600px;
+  
+ 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
