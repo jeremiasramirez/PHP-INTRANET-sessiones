@@ -48,13 +48,32 @@ session_start();
 			else{
 				print("<h1 class=user__name> <p class=emoji>😃</p>¡Bienvenida ".$_SESSION["name"]."!</h1>");
 			}
-
-	 
 			?>
 		</div>
-
 	</main>
+
+
+
+
+
+
+	<div class="containerpersonalstat">
+		<?php
+
+		$conection = new mysqli("localhost", "root", "", "intranetuser");
+
+		?>	
+	</div>
+
+
+
+
+
+
+
+
+
 	<script type="text/javascript" src="main.js"></script>
-	 <script src="usersearch.js"></script>
+	<script src="usersearch.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ $conection = new mysqli("localhost", "root", "", "intranetuser");
 	<title>Estados</title>
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="showstate.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 </head>
 <body>
@@ -40,7 +41,7 @@ $conection = new mysqli("localhost", "root", "", "intranetuser");
 		</article>
   
 
-	<section class="states">
+	<section class="states" id="statesitem">
 
 		<?php
 			$statement_show = "SELECT stat FROM allstates";
@@ -48,7 +49,7 @@ $conection = new mysqli("localhost", "root", "", "intranetuser");
 			$query_show = mysqli_query($conection, $statement_show);
 
 			 while($row = mysqli_fetch_array($query_show)){
-			 	print("<p class=data_state>".$row["stat"]."</p>");
+			 	print("<p class=data_state id=data_state--js>".$row["stat"]."</p>");
 			 }
 
 		 ?>
@@ -57,6 +58,7 @@ $conection = new mysqli("localhost", "root", "", "intranetuser");
 
 <script src="main.js"></script>
 <script src="usersearch.js"></script>
+ <script src="showstate.js"></script>
 </body>
 </html>
 
