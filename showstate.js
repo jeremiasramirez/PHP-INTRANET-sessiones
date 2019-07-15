@@ -22,7 +22,7 @@
 						contentSt.insertAdjacentElement("afterbegin",timingContainer)
 						 
 					let timing = document.createElement("p");
-						timing.textContent = 1
+						timing.textContent = 5
 						timing.setAttribute("class", "timing")
 
 						timingContainer.insertAdjacentElement("afterbegin",timing)
@@ -33,14 +33,14 @@
 
 						contentSt.appendChild(timingClose)
 
-					let counterTiming = 1;
+					let counterTiming = 5;
 
 					let intervalTiming = setInterval(()=>{
 
-							counterTiming += 1;
+							counterTiming -= 1;
 							timing.textContent = counterTiming;
 
-							if(counterTiming > 10){
+							if(counterTiming < 1){
 						
 								contentSt.classList.add("goState");
 
@@ -51,7 +51,7 @@
 							 
 							}
 
-					}, 800)
+					}, 1500)
 						timingClose.addEventListener("click", (e)=>{
 							contentSt.classList.add("goState");
 							setTimeout(()=>{
