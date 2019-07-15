@@ -60,7 +60,7 @@
 						})
 						contentSt.addEventListener("click", (e)=>{
 							// contentSt.remove()
-							counterTiming=0
+							counterTiming=6
 						})
 
 			}, false);

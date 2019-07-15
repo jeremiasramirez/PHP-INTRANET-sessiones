@@ -7,7 +7,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			transition: 1s;
+			transition: 2s;
 		}
 		.timingContainer{
 			position: absolute;
@@ -58,6 +58,8 @@
 			margin-top: -7em;
 		}
 		.goState{
-			transform: translateY(1000px);
-			transition: 1s;
+			transform: translateY(700px);
+			transition: 1.5s;
+			opacity: 0;
+			background-color: black;
 		}
