@@ -1,11 +1,6 @@
-<?php 
-
-
-
-?>
 <?php
 session_start();
-include("model.php");
+
 if(!$_SESSION["name"]){			 
 	header("Location: out.php");
 }
@@ -20,6 +15,7 @@ if(!$_SESSION["name"]){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
+	<link rel="stylesheet" href="users.css">
 </head>
 <body style="background-color: white">
 	<header class="main__header">
@@ -46,6 +42,12 @@ if(!$_SESSION["name"]){
 	<div class="users__find" id="users__find">
 </div>
  
+ <section class="perfil__container">
+ 	<article class="photo__perfil">
+ 		<img src="imgs/1.jpg" alt="" class="img__perfil__fake">
+ 	</article>
+ 	<article class="title__name__container">
+ 		
  <?php 
  	$conection = new mysqli("localhost", "root", "", "intranetuser");
  	$id = null;
@@ -58,12 +60,14 @@ if(!$_SESSION["name"]){
   	
   	$execusers = mysqli_query($conection, $statementusers);
   	while($row= mysqli_fetch_array($execusers)){
-  		echo "<h1>".$row["nameuser"]."</h1>";
+  		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
 
  ?>
-
+ </article>
+</section>
 <script src="usersearch.js"></script>
+<script src="users.js"></script>
 </body>
 </html>

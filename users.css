@@ -1,0 +1,35 @@
+.perfil__container{
+	background-color: #333;
+	min-height: 100vh;
+	padding: 0 .5em;
+	margin: 0 2em;
+	display: grid;
+	justify-content: center;
+
+}
+.title__name__container{
+	text-align: center;
+}
+
+.title__user__perfil{
+	color: white;
+	font-size: 20px;
+	margin-top: -7em;
+	font-family: sans-serif;
+}
+.photo__perfil{
+	width: 200px;
+	height: 200px;
+	border: 1px solid white;
+}
+@media screen  and (min-width: 350px){
+	.photo__perfil{
+		width: auto;
+		max-height: 400px; 
+	}
+ 
+}
+.img__perfil__fake{
+	width: 100%;
+	border-radius: 3px;
+}
