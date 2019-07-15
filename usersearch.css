@@ -1,5 +1,6 @@
 
 .alltitle{
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,6 +22,7 @@
 .users__find{
 	display: grid;
 	justify-content: center;
+	margin-top: 3em;
 	
 }
  .itemsearch{

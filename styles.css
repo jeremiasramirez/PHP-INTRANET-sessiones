@@ -113,8 +113,8 @@
 	transition: 1s;
 }
 .text_publish:hover{
-	background-color: rgba(0%, 10%, 10%,100%);
-	transition: .4s;
+	background-color: rgba(0%, 0%, 0%,100%);
+	transition: 1s;
 	color: white;
 }
 .data_state{

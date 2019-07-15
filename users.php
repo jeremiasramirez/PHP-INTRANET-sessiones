@@ -1,3 +1,8 @@
+<?php 
+
+
+
+?>
 <?php
 session_start();
 include("model.php");
@@ -39,44 +44,25 @@ if(!$_SESSION["name"]){
  	</div>
 
 	<div class="users__find" id="users__find">
-
-	<?php 
-			  	if(isset($_POST["search"]) && !ctype_space($_POST["search"]) == 1){
-					$conection = new mysqli("localhost", "root","","intranetuser");
-
-			    	$counterfinded = 0;
-			  		$counterfinded = $conection->affected_rows;
-				  	
-				  	$searchs = $_POST["search"];
-				  	$searchs = addslashes($searchs);
-				  	
-				  	$searchs = strip_tags($searchs);
-					
-					$statementsearch = "SELECT user_id,nameuser from usuario where nameuser='$searchs'";
-					
-					$result = mysqli_query($conection, $statementsearch);
-
-					while($row= mysqli_fetch_array($result)){
-					
-					
-						print("<a href='users.php?users=".$row["user_id"]."' class=itemsearch>".$row["nameuser"]."</a>");
-						$counterfinded = $conection->affected_rows;
-
-					}	
-					 print("
-					 	<div class=alltitle>
-							<h1 class=titleusers>Usuarios encontrado <strong>".$counterfinded."</strong></h1>
-						</div>
-						");
-			  	}
-
- 	
-	 
-
-	?>
 </div>
  
+ <?php 
+ 	$conection = new mysqli("localhost", "root", "", "intranetuser");
+ 	$id = null;
+ 	if(isset($_GET['users'])){
+ 		$id = $_GET['users'];
+ 	}
+ 	
+ 	$statementusers = "SELECT nameuser, sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id'";
 
+  	
+  	$execusers = mysqli_query($conection, $statementusers);
+  	while($row= mysqli_fetch_array($execusers)){
+  		echo "<h1>".$row["nameuser"]."</h1>";
+  	}
+
+
+ ?>
 
 <script src="usersearch.js"></script>
 </body>

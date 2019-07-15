@@ -75,16 +75,16 @@
 	
 		
 			if(isset($_POST["state"]) && $_POST["state"] != ""){
-				if(!ctype_space($_POST["state"])) {
-				$data = $_POST["state"];
-				$data = addslashes($data);
-				$data = strip_tags($data);
-	 
-				 $statement_insert = "INSERT INTO allstates (stat) VALUES ('$data')";
 
-				 $query_insert = mysqli_query($conection, $statement_insert);
-				unset($_POST["state"]);		 
+				if(!ctype_space($_POST["state"])) {
+					$data = $_POST["state"];
+					$data = addslashes($data);
+					$data = strip_tags($data);
+					$statement_insert = "INSERT INTO allstates (stat) VALUES ('$data')";
+					$query_insert = mysqli_query($conection, $statement_insert);
+					unset($_POST["state"]);		 
 			}
+			
 		}
 			$statement_show = "SELECT stat FROM allstates";
 
