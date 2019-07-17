@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="showstate.css">
-	<link rel="stylesheet" href="hiddenmenu.css">
+	<!-- <link rel="stylesheet" href="hiddenmenu.css"> -->
 </head>
 <body>
 	<header class="main__header" id="main__header">
@@ -47,26 +47,10 @@
 
 
  	<div class="publish">
- 			<form action="" method="post">
+ 			<form action="main.php" method="post">
 
-	 		<textarea name="state" id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
+	 		<textarea name="state"  id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
 
-<!-- 	 		<div class="containerstylestate">
-
-			 	<select name="" id="" class="select_font">
-	 				<option value="font">Font</option>
-	 				<option value="font" style="font-family: sans-serif;">Sans serif</option>
-	 				<option value="font" style="font-family: verdana;">Verdana</option>
-	 				<option value="font" style="font-family: arial;">Arial</option>
-	 			</select>	
-
-	 			<select name="fondo" id="" class="select_color" value="fondo">
-	 				<option value="font">Red</option>
-	 				<option value="font">Blue</option>
-	 				<option value="font">Orange</option>
-	 				<option value="font">Yellow</option>
-	 			</select>			
-	 		</div> -->
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
 	 		</div>
@@ -75,6 +59,45 @@
  	</div>
 
 </main>
+<style>
+	.viewContainer{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		background-color: black;
+	}
+	.containerForm{
+		background-color: blue;
+		height: 90%;
+	}
+	.area{
+		width: 100%;
+		text-align: center;
+		padding-top: 2em;
+		font-size:25px;
+		background-color: black;
+		border: none;
+		resize: none;
+		color: white;
+	}
+	.button{
+		width: 100%;
+		padding: 1em;
+		border: 0;
+		background-color: green;
+		color: #ddd;
+		font-weight: 600;
+		font-family: arial;
+		font-size: 18px;
+		border-radius: 10px;
+		transition: .5s;
+	}
+	.button:hover{
+		transform: scale(.9);
+		transition: .5s;
+	}
+</style>
 <script>
 	class createViewState{
 
@@ -82,6 +105,35 @@
 			let viewContainer = document.createElement("div");
 				viewContainer.setAttribute("class", "viewContainer")
 				viewContainer.setAttribute("id", "viewContainer")
+				document.body.insertAdjacentElement("beforebegin", viewContainer) 
+			 	
+			 	let containerForm = document.createElement("div")
+			 		containerForm.setAttribute("id", "containerForm")
+			 		containerForm.setAttribute("class", "containerForm")
+			 		viewContainer.appendChild(containerForm);
+
+			 	let form = document.createElement("form");
+			 		form.setAttribute("class", "formView");
+			 		form.setAttribute("id", "formView");
+			 		form.setAttribute("action", "main.php");
+			 		form.setAttribute("method", "post");
+			 		containerForm.appendChild(form);
+
+			 	let area = document.createElement("textarea");
+			 		area.setAttribute("class", "area");
+			 		area.setAttribute("id", "area");
+			 		area.setAttribute("name", "state");
+			 		area.setAttribute("cols", "20");
+			 		area.setAttribute("rows", "10");
+			 		area.setAttribute("placeholder", "Mi estado");
+			 		form.appendChild(area);
+
+			 	let button = document.createElement("button");
+			 		button.setAttribute("class", "button");
+			 		button.setAttribute("id", "button");
+			 		button.textContent= "Enviar estado"
+			 		form.appendChild(button);
+
 		}
 
 
@@ -89,7 +141,8 @@
 	
 	let areaText = document.getElementById("textpublish");
 		areaText.addEventListener("click", (e)=>{
-
+			let instance = new createViewState();
+				instance.createView();
 
 		}, false);
 
