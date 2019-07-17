@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="showstate.css">
+	<link rel="stylesheet" href="hiddenmenu.css">
 </head>
 <body>
 	<header class="main__header" id="main__header">
@@ -98,11 +99,7 @@
 		 
 	</section>
 	
-	<script>
-
-
-	</script>
-
+ 
 <script src="main.js"></script>
  <script src="usersearch.js"></script>
  <script src="showstate.js"></script>

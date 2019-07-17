@@ -16,9 +16,10 @@ if(!$_SESSION["name"]){
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
 	<link rel="stylesheet" href="users.css">
+	<link rel="stylesheet" href="hiddenmenu.css">
 </head>
 <body style="background-color: white">
-	<header class="main__header">
+	<header class="main__header" id="main__header">
 		<article class="main_main">
 			<a href="main.php" class="title fas fa-home"></a>
 		</article>
@@ -69,5 +70,6 @@ if(!$_SESSION["name"]){
 </section>
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
