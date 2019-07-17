@@ -36,12 +36,7 @@
  
 		</article>
 	</header>
-<script>
 
-	// if(mainHeader[0].style.top){
-	// 	console.log("es mayor")
-	// }
-</script>
  <main class="main">
  	<div class="search__user">
  		<form action="usersearch.php" method="post">
@@ -55,7 +50,8 @@
  			<form action="" method="post">
 
 	 		<textarea name="state" id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
-	 		<div class="containerstylestate">
+
+<!-- 	 		<div class="containerstylestate">
 
 			 	<select name="" id="" class="select_font">
 	 				<option value="font">Font</option>
@@ -70,7 +66,7 @@
 	 				<option value="font">Orange</option>
 	 				<option value="font">Yellow</option>
 	 			</select>			
-	 		</div>
+	 		</div> -->
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
 	 		</div>
@@ -79,7 +75,25 @@
  	</div>
 
 </main>
+<script>
+	class createViewState{
 
+		createView(){
+			let viewContainer = document.createElement("div");
+				viewContainer.setAttribute("class", "viewContainer")
+				viewContainer.setAttribute("id", "viewContainer")
+		}
+
+
+	}
+	
+	let areaText = document.getElementById("textpublish");
+		areaText.addEventListener("click", (e)=>{
+
+
+		}, false);
+
+</script>
 
 	<article class="title_states" style="text-align: center;color:red;">
 			<h1 class="state_publish fas fa-stream"></h1>
