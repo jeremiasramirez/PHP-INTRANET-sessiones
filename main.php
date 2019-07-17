@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="showstate.css">
-	<!-- <link rel="stylesheet" href="hiddenmenu.css"> -->
+	<link rel="stylesheet" href="viewstate.css">
 </head>
 <body>
 	<header class="main__header" id="main__header">
@@ -47,123 +47,18 @@
 
 
  	<div class="publish">
- 			<form action="main.php" method="post">
+ 			<form action="" method="">
 
-	 		<textarea name="state"  id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
-
-	 		<div class="button_publish">
-	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
-	 		</div>
+	 		<textarea  id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?" style="color:#eee" ></textarea>
 	 	</form>
 
  	</div>
 
 </main>
 <style>
-	.viewContainer{
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		z-index: 1000;
-		background-color: black;
-	}
-	.containerForm{
-		background-color: blue;
-		height: 90%;
-	}
-	.area{
-		width: 100%;
-		text-align: center;
-		padding-top: 2em;
-		font-size:25px;
-		background-color: black;
-		border: none;
-		resize: none;
-		color: white;
-	}
-	.button{
-		width: 100%;
-		padding: 1em;
-		border: 0;
-		background-color: green;
-		color: #ddd;
-		font-weight: 600;
-		font-family: arial;
-		font-size: 18px;
-		position: sticky;
-		bottom:0;
-		border-radius: 10px;
-		transition: .5s;
-	}
-	.button:hover{
-		transform: scale(.9);
-		transition: .5s;
-	}
-	.closeview{
-		color: white;
-		position: absolute;
-		top: 0;
-		margin: 1em .5em 1em 0;
-		right: 0;
-		font-family:sans-serif;
-		font-size: 20px;
-	}
+
 </style>
-<script>
-	class createViewState{
-
-		createView(){
-			let viewContainer = document.createElement("div");
-				viewContainer.setAttribute("class", "viewContainer")
-				viewContainer.setAttribute("id", "viewContainer")
-				document.body.insertAdjacentElement("beforebegin", viewContainer) 
-
-			 	let containerForm = document.createElement("div")
-			 		containerForm.setAttribute("id", "containerForm")
-			 		containerForm.setAttribute("class", "containerForm")
-			 		viewContainer.appendChild(containerForm);
-
-			  let closeView = document.createElement("p");
-			 	 closeView.textContent = "X";
-			 	 closeView.setAttribute("class", "closeview")
-			 	 closeView.setAttribute("id", "closeview")
-			 	 containerForm.insertAdjacentElement("beforebegin", closeView)
-
-			 	let form = document.createElement("form");
-			 		form.setAttribute("class", "formView");
-			 		form.setAttribute("id", "formView");
-			 		form.setAttribute("action", "main.php");
-			 		form.setAttribute("method", "post");
-			 		containerForm.appendChild(form);
-
-			 	let area = document.createElement("textarea");
-			 		area.setAttribute("class", "area");
-			 		area.setAttribute("id", "area");
-			 		area.setAttribute("name", "state");
-			 		area.setAttribute("cols", "20");
-			 		area.setAttribute("rows", "10");
-			 		area.setAttribute("placeholder", "Mi estado");
-			 		form.appendChild(area);
-
-			 	let button = document.createElement("button");
-			 		button.setAttribute("class", "button");
-			 		button.setAttribute("id", "button");
-			 		button.textContent= "Enviar estado"
-			 		form.appendChild(button);
-
-		}
-
-
-	}
-	
-	let areaText = document.getElementById("textpublish");
-		areaText.addEventListener("click", (e)=>{
-			let instance = new createViewState();
-				instance.createView();
-
-		}, false);
-
-</script>
+ 
 
 	<article class="title_states" style="text-align: center;color:red;">
 			<h1 class="state_publish fas fa-stream"></h1>
@@ -203,5 +98,6 @@
 <script src="main.js"></script>
  <script src="usersearch.js"></script>
  <script src="showstate.js"></script>
+ <script src="viewstate.js"></script>
 </body>
 </html>
