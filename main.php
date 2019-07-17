@@ -90,12 +90,23 @@
 		font-weight: 600;
 		font-family: arial;
 		font-size: 18px;
+		position: sticky;
+		bottom:0;
 		border-radius: 10px;
 		transition: .5s;
 	}
 	.button:hover{
 		transform: scale(.9);
 		transition: .5s;
+	}
+	.closeview{
+		color: white;
+		position: absolute;
+		top: 0;
+		margin: 1em .5em 1em 0;
+		right: 0;
+		font-family:sans-serif;
+		font-size: 20px;
 	}
 </style>
 <script>
@@ -106,11 +117,17 @@
 				viewContainer.setAttribute("class", "viewContainer")
 				viewContainer.setAttribute("id", "viewContainer")
 				document.body.insertAdjacentElement("beforebegin", viewContainer) 
-			 	
+
 			 	let containerForm = document.createElement("div")
 			 		containerForm.setAttribute("id", "containerForm")
 			 		containerForm.setAttribute("class", "containerForm")
 			 		viewContainer.appendChild(containerForm);
+
+			  let closeView = document.createElement("p");
+			 	 closeView.textContent = "X";
+			 	 closeView.setAttribute("class", "closeview")
+			 	 closeView.setAttribute("id", "closeview")
+			 	 containerForm.insertAdjacentElement("beforebegin", closeView)
 
 			 	let form = document.createElement("form");
 			 		form.setAttribute("class", "formView");
