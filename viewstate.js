@@ -43,7 +43,7 @@
 			 		area.setAttribute("id", "area textpublish");
 			 		area.setAttribute("name", "state");
 			 		area.setAttribute("cols", "20");
-			 		area.setAttribute("rows", "10");
+			 		area.setAttribute("rows", "12");
 			 		area.setAttribute("placeholder", "Mi estado");
 			 		form.appendChild(area);
 
