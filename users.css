@@ -19,7 +19,7 @@
 }
 .photo__perfil{
 	width: 200px;
-	height: 200px;
+	height: 300px;
 }
 @media screen  and (min-width: 350px){
 	.photo__perfil{

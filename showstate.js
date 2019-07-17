@@ -18,41 +18,41 @@
 
 						contentSt.appendChild(contentEl)
 
-					let timingContainer = document.createElement("div");
-						timingContainer.setAttribute("class", "timingContainer")
-						contentSt.insertAdjacentElement("afterbegin",timingContainer)
-						 
-					let timing = document.createElement("p");
-						timing.textContent = 5
-						timing.setAttribute("class", "timing")
-
-						timingContainer.insertAdjacentElement("afterbegin",timing)
-
 					let timingClose = document.createElement("span");
 						timingClose.textContent = "X"
 						timingClose.setAttribute("class", "timingClose");
 
 						contentSt.appendChild(timingClose)
+					let barr = 100;
 
-					let counterTiming = 5;
+					let barraTiming = document.createElement("span");
+						barraTiming.style.height="8px"
+						barraTiming.style.position="absolute"
+						barraTiming.style.top="0"
+						barraTiming.style.zindex="800"
+						barraTiming.style.width= barr + "%"
+						barraTiming.style.backgroundColor="orange"
+						barraTiming.setAttribute("class", "");
+
+						contentSt.insertAdjacentElement("afterbegin",barraTiming)
+
 
 					let intervalTiming = setInterval(()=>{
 
-							counterTiming -= 1;
-							timing.textContent = counterTiming;
-
-							if(counterTiming < 1){
-						
+							barr -= 1;
+		 
+							barraTiming.style.width= barr + "%"
+						 
+							if(barr < 1){
 								contentSt.classList.add("goState");
-
-							setTimeout(()=>{
-								contentSt.remove()
-							},2000)
+									setTimeout(()=>{
+										contentSt.remove()
+									},2000)
 								clearInterval(intervalTiming);
 							 
 							}
 
-					}, 1500)
+					}, 150)
 						timingClose.addEventListener("click", (e)=>{
 							contentSt.classList.add("goState");
 							setTimeout(()=>{
@@ -61,8 +61,15 @@
 						})
 						contentSt.addEventListener("click", (e)=>{
 							// contentSt.remove()
-							counterTiming=6
-						})
+							barr = 100
+							barraTiming.style.width= barr + "%"
+						})	
+						// contentSt.addEventListener("mouseover", (e)=>{
+						// 	contentSt.classList.add("goState");
+						// 	setTimeout(()=>{
+						// 		contentSt.remove()
+						// 	},2000)
+						// })
 
 			}, false);
 		}

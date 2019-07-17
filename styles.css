@@ -127,14 +127,13 @@
 	background-color: #333;
 	border-radius: 5px;
 	font-family: arial;
-	transform: translateY(0);
 	animation: moves .7s linear;
 	transition: .8s;
  	 
 }
 @keyframes moves{
 	to{
-		transform: translateY(-100px);
+		/*transform: translateY(-100px);*/
 		transition: .8s;
 	}
 }
