@@ -65,7 +65,6 @@
 	 			</select>	
 
 	 			<select name="fondo" id="" class="select_color" value="fondo">
-	 				<option value="font">Fondo</option>
 	 				<option value="font">Red</option>
 	 				<option value="font">Blue</option>
 	 				<option value="font">Orange</option>
