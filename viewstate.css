@@ -14,9 +14,12 @@
 		width: 100%;
 		text-align: center;
 		padding-top: 2em;
-		font-size:25px;
+		font-size:30px;
+		font-family: serif;
 		background-color: black;
 		border: none;
+		letter-spacing:1px;
+		word-spacing: 1px;
 		height: 100vh;
 		resize: none;
 		color: white;
@@ -44,14 +47,18 @@
 		color: white;
 		position: absolute;
 		top: 0;
-		margin: 1em .5em 1em 0;
+		margin: .5em .5em 1em 0;
 		right: 0;
-		font-family:sans-serif;
+		font-family: verdana;
 		transition: .5s;
 		font-size: 25px;
+		/*background-color: red;*/
+		padding:.1em .3em;
+		font-weight: 600;
+		border-radius: 3px;
 	}
 	.closeview:hover{
-		transform: scale(.9);
+		transform: rotate(40deg);
 		cursor: pointer;
 		transition: .5s;
 	}

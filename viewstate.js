@@ -25,7 +25,6 @@
 			 	 		containerClose.classList.add("goState")
 			 	 		setTimeout(()=>{
 			 	 			containerClose.remove()
-
 			 	 		}, 500)
 
 			 	 	}
