@@ -24,7 +24,7 @@
 			font-weight: 1000;
 			font-family: arial;
 			font-size: 18px;
-			background-color: rgba(90%, 10%, 10%, 80%);
+			background-color: red;
 			padding: .5em 1em;
 			transition: .5s;
 			border-radius: 4px;
@@ -38,12 +38,12 @@
 			text-align: center;
 			width: 100%;
 			height: auto;
-			padding: .5em;
+			padding:.5em;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background-color: #222;
-
+			background-color: red;
+			font-weight: 700;
 		}
 		.timing{
 			color:white;
@@ -57,6 +57,7 @@
 		.tops{
 			margin-top: -7em;
 		}
+
 		.goState{
 			transform: translateY(700px);
 			transition: 1.5s;

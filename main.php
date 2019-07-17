@@ -53,10 +53,27 @@
 
  	<div class="publish">
  			<form action="" method="post">
+
 	 		<textarea name="state" id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?"></textarea>
+	 		<div class="containerstylestate">
+
+			 	<select name="" id="" class="select_font">
+	 				<option value="font">Font</option>
+	 				<option value="font" style="font-family: sans-serif;">Sans serif</option>
+	 				<option value="font" style="font-family: verdana;">Verdana</option>
+	 				<option value="font" style="font-family: arial;">Arial</option>
+	 			</select>	
+
+	 			<select name="fondo" id="" class="select_color" value="fondo">
+	 				<option value="font">Fondo</option>
+	 				<option value="font">Red</option>
+	 				<option value="font">Blue</option>
+	 				<option value="font">Orange</option>
+	 				<option value="font">Yellow</option>
+	 			</select>			
+	 		</div>
 	 		<div class="button_publish">
 	 			<button id="buttonsend_publish" class="buttonsend_publish">Publicar</button>
-	 		 
 	 		</div>
 	 	</form>
 

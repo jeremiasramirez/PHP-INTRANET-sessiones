@@ -52,8 +52,8 @@ if(!$_SESSION["name"]){
 				  	$searchs = addslashes($searchs);
 				  	
 				  	$searchs = strip_tags($searchs);
-					
-					$statementsearch = "SELECT user_id,nameuser from usuario where nameuser='$searchs'";
+					$emauserpersonal = $_SESSION["emauser"];
+					$statementsearch = "SELECT user_id,nameuser, emails from usuario where nameuser='$searchs' and emails != '$emauserpersonal'";
 					
 					$result = mysqli_query($conection, $statementsearch);
 
@@ -70,7 +70,6 @@ if(!$_SESSION["name"]){
 						</div>
 						");
 			  	}
-
  	
 	 
 

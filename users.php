@@ -55,9 +55,7 @@ if(!$_SESSION["name"]){
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
- 	
- 	$statementusers = "SELECT nameuser, sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id'";
-
+ 	$statementusers = "SELECT nameuser, sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
   	
   	$execusers = mysqli_query($conection, $statementusers);
   	while($row= mysqli_fetch_array($execusers)){

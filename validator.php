@@ -14,6 +14,7 @@ $boollogin = null;
 $namespage = '';
 $sex = '';
 $nameuserofficial = null;
+$emauser = null;
 if(isset($_POST["user"]) && isset($_POST["password"])){
  
 	$user = $_POST["user"];
@@ -27,12 +28,12 @@ if(isset($_POST["user"]) && isset($_POST["password"])){
 			$boollogin = true;
 			$namespage = $row["nameuser"];
 			$sex = $row["sexo"];
-			 
+			$emauser = $row["emails"];
 		 
 	} 
 }
 if($boollogin == true){
-
+	$_SESSION["emauser"] = $emauser;
 	$_SESSION["name"]=$namespage;
 	$_SESSION["sexo"]=$sex;
 

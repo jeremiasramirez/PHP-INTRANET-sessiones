@@ -13,7 +13,8 @@
 					
 					let contentEl = document.createElement("p");
 						contentEl.textContent = targ
-						contentEl.setAttribute("class", "data_state tops")
+						contentEl.setAttribute("class", "data_state tops stateel")
+						contentEl.setAttribute("id", "elState")
 
 						contentSt.appendChild(contentEl)
 
