@@ -55,20 +55,35 @@ if(!$_SESSION["name"]){
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
- 	$statementusers = "SELECT nameuser, sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
+ 	$emailD = null;
+ 	$statementusers = "SELECT nameuser, emails,sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
   	$state = null;
   	$execusers = mysqli_query($conection, $statementusers);
   	while($row= mysqli_fetch_array($execusers)){
   		$state = $row["statepersonal"];
+  		$emailD = $row["emails"];
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
 
  ?>
- <p class="statepersonal">(<?= $state;?>)</p>
+ <?php
+  if($state != ""){
+  	print("<p class=statepersonal>$state</p>");
+  }
+  else{
+  		if($_SESSION["emauser"] == $emailD){
+  			print("<form method='post' action='alias.php?id=$id'>
+  				<input type=text name='alias' placeholder='agregar un alias'>
+  				<button>Agregar</button>
+  				</form>");
+
+  		}
+  }
+  ?>
  </article>
-<article>
-	<h1>Informacion basica</h1>
+<article class="containerTitleInfoBasic">
+	<h1 class="titleInfoBasic">Informacion basica</h1>
 </article>
 </section>
  <article class="info__basic">

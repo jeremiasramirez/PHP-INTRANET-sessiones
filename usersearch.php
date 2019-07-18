@@ -53,7 +53,7 @@ if(!$_SESSION["name"]){
 				  	
 				  	$searchs = strip_tags($searchs);
 					$emauserpersonal = $_SESSION["emauser"];
-					$statementsearch = "SELECT user_id,nameuser, emails from usuario where nameuser='$searchs' and emails != '$emauserpersonal'";
+					$statementsearch = "SELECT user_id,nameuser, emails from usuario where nameuser='$searchs'";
 					
 					$result = mysqli_query($conection, $statementsearch);
 
