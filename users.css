@@ -1,6 +1,6 @@
 .perfil__container{
 	background-color: #333;
-	min-height: 100vh;
+	height: 100vh;
 	padding: 0 .5em;
 	margin: 0 2em;
 	display: grid;
@@ -14,7 +14,7 @@
 .title__user__perfil{
 	color: white;
 	font-size: 20px;
-	margin-top: -7em;
+	margin-top: -6em;
 	font-family: sans-serif;
 }
 .photo__perfil{
@@ -31,4 +31,23 @@
 .img__perfil__fake{
 	width: 100%;
 	border-radius: 3px;
+}
+.statepersonal{
+	color: white;
+	font-family: sans-serif;
+	font-size: 12px;
+}
+.info__basic{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info1{
+	background-color: red;
+	width: 50%
+}
+.info2{
+	background-color: blue;
+	width: 50%
 }

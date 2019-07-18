@@ -56,16 +56,25 @@ if(!$_SESSION["name"]){
  		$id = $_GET['users'];
  	}
  	$statementusers = "SELECT nameuser, sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
-  	
+  	$state = null;
   	$execusers = mysqli_query($conection, $statementusers);
   	while($row= mysqli_fetch_array($execusers)){
+  		$state = $row["statepersonal"];
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
 
  ?>
+ <p class="statepersonal">(<?= $state;?>)</p>
  </article>
+<article>
+	<h1>Informacion basica</h1>
+</article>
 </section>
+ <article class="info__basic">
+ 	<div class="info1">1</div>
+ 	<div class="info2">2</div>
+ </article>
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
 <script src="main.js"></script>
