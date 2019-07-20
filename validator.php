@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-$conection = new mysqli("localhost", "root","","intranetuser");
+$conection = new mysqli("localhost", "jere", "0847", "jeremias");
 $user = $_POST["user"];
 $user = addslashes($user);
 $user = strip_tags($user);

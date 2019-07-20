@@ -44,8 +44,7 @@ if(!$_SESSION["name"]){
 
 	<?php 
 			  	if(isset($_POST["search"]) && !ctype_space($_POST["search"]) == 1){
-					$conection = new mysqli("localhost", "root","","intranetuser");
-
+					$conection = new mysqli("localhost", "jere", "0847", "jeremias");
 			    	$counterfinded = 0;
 			  		$counterfinded = $conection->affected_rows;
 				  	

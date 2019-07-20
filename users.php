@@ -50,8 +50,7 @@ if(!$_SESSION["name"]){
  	<article class="title__name__container">
  		
  <?php
-
- 	$conection = new mysqli("localhost", "root", "", "intranetuser");
+$conection = new mysqli("localhost", "jere", "0847", "jeremias");
  	$id = null;
  	$country = null;
  	if(isset($_GET['users'])){

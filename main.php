@@ -1,5 +1,5 @@
 <?php
- 	$conection = new mysqli("localhost", "root", "", "intranetuser");
+ 	$conection = new mysqli("localhost", "jere", "0847", "jeremias");
 	session_start();
 	// if(isset($_SESSION["name"]) && ctype_space($_SESSION["name"])==1)
 	// {
