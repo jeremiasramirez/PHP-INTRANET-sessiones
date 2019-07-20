@@ -4,6 +4,7 @@ define('LOGIN', 'login.php');
 unset($_SESSION["name"]);
 unset($_SESSION["sexo"]);
 unset($_SESSION["emauser"]);
+unset($_SESSION);
 
  
  

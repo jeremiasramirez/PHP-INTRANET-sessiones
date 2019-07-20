@@ -1,8 +1,8 @@
 <?php
 session_start();
-
+define('LOGIN', 'out.php');
 if(!$_SESSION["name"]){			 
-	header("Location: out.php");
+	header("Location: ".LOGIN);
 }
 ?>
 
@@ -10,13 +10,13 @@ if(!$_SESSION["name"]){
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Seach</title>
+	<title>Search</title>
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
 	<link rel="stylesheet" href="users.css">
-	<link rel="stylesheet" href="hiddenmenu.css">
+	<!-- <link rel="stylesheet" href="hiddenmenu.css"> -->
 </head>
 <body style="background-color: white">
 	<header class="main__header" id="main__header">
@@ -49,46 +49,76 @@ if(!$_SESSION["name"]){
  	</article>
  	<article class="title__name__container">
  		
- <?php 
+ <?php
+
  	$conection = new mysqli("localhost", "root", "", "intranetuser");
  	$id = null;
+ 	$country = null;
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
  	$emailD = null;
- 	$statementusers = "SELECT nameuser, emails,sexo, statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
+
+ 	$statementusers = "SELECT nameuser, 
+ 						emails,sexo,pais,
+ 				 statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
+
   	$state = null;
+  	$sexo = null;
+
   	$execusers = mysqli_query($conection, $statementusers);
+
   	while($row= mysqli_fetch_array($execusers)){
+
   		$state = $row["statepersonal"];
   		$emailD = $row["emails"];
+  		$sexo = $row["sexo"];
+  		$country = $row["pais"];
+
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
 
  ?>
+
+
  <?php
+
   if($state != ""){
   	print("<p class=statepersonal>$state</p>");
   }
   else{
   		if($_SESSION["emauser"] == $emailD){
+
   			print("<form method='post' action='alias.php?id=$id'>
   				<input type=text name='alias' placeholder='agregar un alias'>
   				<button>Agregar</button>
   				</form>");
-
   		}
   }
   ?>
+
+
  </article>
 <article class="containerTitleInfoBasic">
-	<h1 class="titleInfoBasic">Informacion basica</h1>
+	<h1 class="titleInfoBasic">Información básica</h1>
 </article>
 </section>
  <article class="info__basic">
- 	<div class="info1">1</div>
- 	<div class="info2">2</div>
+ 	<div class="info1">
+ 		<?php
+ 		if($sexo != "" && $country != ""){
+ 			print("<p class=info__info>Sexo: <strong>$sexo</strong></p>");
+ 			print("<p class=info__info>Pais: <strong>$country)</strong></p>");
+ 		}
+
+ 		 
+ 			if($_SESSION["emauser"] == $emailD){
+ 				print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
+ 			}
+ 		?>
+ 	</div>
+ 	<!-- <div class="info2">2</div> -->
  </article>
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
