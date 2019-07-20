@@ -15,7 +15,7 @@
 .title__user__perfil{
 	color: #444;
 	font-size: 20px;
-	margin-top: -7.5rem;
+	margin-top: -10rem;
 	font-family: sans-serif;
 }
 .photo__perfil{
@@ -42,11 +42,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1em 4em 1em 4em;
+	
 }
  
 .info1{
-	padding:.5em;
+	padding:-2em;
+	margin-top: -9em;
 }
  
 .info__info{
@@ -54,19 +55,26 @@
 	font-weight: 700;
 	background-color: #eee;
 	width: 100%;
+	margin: .3em;
+	padding: 1em .5em;
+	border-radius: 3px;
+	/*text-align: center;*/
+
 }
 .info__info strong{
 	font-family: arial;
 	font-weight: 600;
 	color: #333;
+	text-align: center;
 }
 .containerTitleInfoBasic{
-	background-color: #eee;
-	margin-bottom: .1em;
-	padding-bottom: .1em;
+	margin-bottom: 1em;
+	padding-bottom: 3em;
+	margin-top: -5em
 }
 .titleInfoBasic{
 	font-family: arial;
-	color: #666; 
+	color: #555; 
+	height: 0;
 }
  
