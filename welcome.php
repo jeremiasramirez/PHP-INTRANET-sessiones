@@ -2,8 +2,8 @@
 	session_start();
 
 
-	function welcomeuser(){
-		if($_SESSION["sexo"]=="masculino"){
+	function welcomeuser($sexo){
+		if($sexo=="masculino"){
 			print("<h1 class=user__name>
 						<p class=emoji>😃</p>
 						¡Bienvenido ".$_SESSION["name"].

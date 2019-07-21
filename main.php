@@ -49,7 +49,7 @@
  	<div class="publish">
  			<form action="" method="">
 
-	 		<textarea  id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?" style="color:#eee" ></textarea>
+	 		<textarea  id="textpublish" class="text_publish" cols="20" rows="4" placeholder="¿Como se siente?" style="color:#444" ></textarea>
 	 	</form>
 
  	</div>

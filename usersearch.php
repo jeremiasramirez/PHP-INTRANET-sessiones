@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("model.php");
+
 if(!$_SESSION["name"]){			 
 	header("Location: out.php");
 }

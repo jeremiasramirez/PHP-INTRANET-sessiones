@@ -44,7 +44,7 @@ session_start();
 			 
 			<?php
 			include "welcome.php";
-			welcomeuser();
+			welcomeuser($_SESSION["sexo"]);
 			?>
 		</div>
 	</main>
