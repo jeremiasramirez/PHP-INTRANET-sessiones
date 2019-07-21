@@ -23,7 +23,7 @@ session_start();
 	?>
 
 		<p id="error_login" class="error_login"></p>
-		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
+		<input type="email" name="user" placeholder="User" id="user" autocomplete="off">
 		<input type="password" name="password" placeholder="Password" id="password" autocomplete="off">
 
 		<button id="sendData">Ingresar</button>
