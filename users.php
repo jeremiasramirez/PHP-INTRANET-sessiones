@@ -110,7 +110,20 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  			# code...
  	
  		if($sexo == ""){
- 			print("<p>Agregar tu Sexo</p>");
+ 			 if($emailD == $_SESSION["emauser"] ){
+ 			  	print("<form class=alias method='post' action='add/addsexo.php?id=$id'>
+ 			  	
+  					Masculino <input type=radio name='sexo' value=masculino>
+ 					<br>
+ 			    
+  					Femenino <input type=radio name='sexo' value=femenino>
+ 			  		<br>
+ 			  		<br>
+
+  				<button>Agregar sexo</button>
+  				</form>");
+  				
+ 			}
  		}
  		else{
  			print("<p class=info__info>Sexo: <strong>$sexo</strong></p>");
@@ -119,13 +132,14 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  			if($emailD == $_SESSION["emauser"] ){
 
  			  	print("<form class=alias method='post' action='add/addpais.php?id=$id'>
-  				<input type=text name='pais' placeholder='agregar tu pais'>
+  				<input type=text name='pais' placeholder='agrega tu pais'>
   				<button>Agregar pais</button>
   				</form>");
+
  			}
  		}
  		else{
- 			print("<p class=info__info>Pais: <strong>$country)</strong></p>");
+ 			print("<p class=info__info>Pais: <strong>$country</strong></p>");
  		}
  		if($_SESSION["emauser"] === $emailD){
  			print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
