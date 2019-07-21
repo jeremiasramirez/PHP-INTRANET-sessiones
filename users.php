@@ -106,15 +106,31 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  <article class="info__basic">
  	<div class="info1">
  		<?php
- 		if($sexo != "" && $country != ""){
+ 	
+ 			# code...
+ 	
+ 		if($sexo == ""){
+ 			print("<p>Agregar tu Sexo</p>");
+ 		}
+ 		else{
  			print("<p class=info__info>Sexo: <strong>$sexo</strong></p>");
+ 		}
+ 		if($country == ""){
+ 			if($emailD == $_SESSION["emauser"] ){
+
+ 			  	print("<form class=alias method='post' action='add/addpais.php?id=$id'>
+  				<input type=text name='pais' placeholder='agregar tu pais'>
+  				<button>Agregar pais</button>
+  				</form>");
+ 			}
+ 		}
+ 		else{
  			print("<p class=info__info>Pais: <strong>$country)</strong></p>");
  		}
-
- 		 
- 			if($_SESSION["emauser"] == $emailD){
- 				print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
- 			}
+ 		if($_SESSION["emauser"] === $emailD){
+ 			print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
+ 		}
+ 			
  		?>
  	</div>
  	<!-- <div class="info2">2</div> -->
