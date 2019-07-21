@@ -84,12 +84,12 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  <?php
 
   if($state != ""){
-  	print("<p class=statepersonal>$state</p>");
+  	print("<p class=statepersonal>($state)</p>");
   }
   else{
   		if($_SESSION["emauser"] == $emailD){
 
-  			print("<form method='post' action='alias.php?id=$id'>
+  			print("<form class=alias method='post' action='alias.php?id=$id'>
   				<input type=text name='alias' placeholder='agregar un alias'>
   				<button>Agregar</button>
   				</form>");

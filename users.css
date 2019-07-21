@@ -34,7 +34,8 @@
 	border-radius: 3px;
 }
 .statepersonal{
-	color: white;
+	color: #666;
+	font-weight: 600;
 	font-family: sans-serif;
 	font-size: 12px;
 }
@@ -77,4 +78,6 @@
 	color: #555; 
 	height: 0;
 }
- 
+.alias{
+	 
+}

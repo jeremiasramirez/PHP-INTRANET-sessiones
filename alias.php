@@ -1,5 +1,5 @@
    <?php 
-   $conection = new mysqli("localhost", "root", "", "intranetuser");
+   $conection = new mysqli("localhost", "jere", "0847", "jeremias");
    if (isset($_POST["alias"]) && $_GET["id"] && !ctype_space($_POST["alias"])){
 
 	   if($_POST["alias"]!=""){
