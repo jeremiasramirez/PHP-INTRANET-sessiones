@@ -43,12 +43,21 @@ session_start();
 		<div class="container__user__name">
 			 
 			<?php
-			if($_SESSION["sexo"]=="masculino"){
-				print("<h1 class=user__name> <p class=emoji>😃</p>¡Bienvenido ".$_SESSION["name"]."!</h1>");
+			function welcomeuser(){
+				if($_SESSION["sexo"]=="masculino"){
+					print("<h1 class=user__name>
+								<p class=emoji>😃</p>
+								¡Bienvenido ".$_SESSION["name"].
+							"!</h1>");
+				}
+				else{
+					print("<h1 class=user__name>
+								<p class=emoji>😃</p>
+								¡Bienvenida ".$_SESSION["name"].
+							"!</h1>");
+				}
 			}
-			else{
-				print("<h1 class=user__name> <p class=emoji>😃</p>¡Bienvenida ".$_SESSION["name"]."!</h1>");
-			}
+			welcomeuser();
 			?>
 		</div>
 	</main>

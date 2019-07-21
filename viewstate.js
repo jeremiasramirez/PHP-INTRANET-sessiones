@@ -52,6 +52,14 @@
 			 		button.textContent= "Enviar estado"
 			 		form.appendChild(button);
 
+			 		if(document.getElementById("button")){
+			 			button.addEventListener("click", (e)=>{
+			 				if(!area.textContent != ""){
+			 					e.preventDefault();
+			 				}
+			 			}, false)
+			 		}
+
 		}
 
 
