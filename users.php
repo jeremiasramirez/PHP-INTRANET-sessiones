@@ -49,6 +49,9 @@ if(!$_SESSION["name"]){
  	<article class="photo__perfil">
  		<?php
  			$ids=$_SESSION["iduser"];
+ 			 	if(isset($_GET['users'])){
+ 					$ids = $_GET['users'];
+ 			}
  			$statementfoto = "SELECT photo FROM usuario WHERE user_id='$ids'";
  			$queryfoto = mysqli_query($conection, $statementfoto); 
 
