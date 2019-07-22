@@ -46,6 +46,11 @@ if(!$_SESSION["name"]){
  <section class="perfil__container">
  	<article class="photo__perfil">
  		<img src="imgs/user.png" alt="" class="img__perfil__fake">
+		 <div class="change">
+		 	<a href="a.php" id=changePerfilLink>
+			 	Actualizar perfil
+			 </a>
+		 </div>
  	</article>
  	<article class="title__name__container">
  		
