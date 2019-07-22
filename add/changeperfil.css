@@ -1,0 +1,115 @@
+ 
+.container__change{
+    text-align:center;
+}
+
+.viewContainer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+.containerForm{
+    height: 100%;
+}
+.area{
+    width: 100%;
+    text-align: center;
+    padding-top: 2em;
+    font-size:30px;
+    font-family: serif;
+    background-color: black;
+    border: none;
+    letter-spacing:1px;
+    word-spacing: 1px;
+    height: 100vh;
+    resize: none;
+    color: white;
+}
+.button{
+    width: 100%;
+    padding: 1em;
+    border: 0;
+    background-color: green;
+    color: #ddd;
+    font-weight: 600;
+    font-family: arial;
+    font-size: 20px;
+    position: sticky;
+    bottom:0;
+    z-index: 1200;
+    border-radius: 10px;
+    transition: .5s;
+}
+.button:hover{
+    transform: scale(.9);
+    transition: .5s;
+    cursor: pointer;
+}
+.closeview{
+    color: white;
+    position: absolute;
+    top: 0;
+    margin: .5em .5em 1em 0;
+    right: 0;
+    font-family: arial;
+    transition: .5s;
+    font-size: 25px;
+    /*background-color: red;*/
+    padding:.1em .3em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+.closeview:hover{
+    transform: rotate(40deg);
+    cursor: pointer;
+    transition: .5s;
+}
+.goState{
+    transform: translateY(700px);
+    transition: 1.5s;
+    opacity: 0;
+    /*background-color: black;*/
+}
+.form__changes{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+   
+}
+.imguserfake{
+    display: block;
+    margin:.2em;
+    border-radius:10px;
+    transform: scale(.6);
+}
+.containerForm{
+    padding-top: 1em;
+}
+.photoinput{
+    width:115px;
+}
+.buttonchange{
+    margin-top: 1em;
+    width: 100%;
+    padding: 1em;
+    border: 0;
+    background-color: green;
+    color: #ddd;
+    font-weight: 600;
+    font-family: arial;
+    font-size: 20px;
+    position: sticky;
+    bottom:0;
+    z-index: 1200;
+    border-radius: 10px;
+    transition: .5s;
+}
+.buttonchange:hover{
+		transform: scale(.9);
+		transition: .5s;
+		cursor: pointer;
+}

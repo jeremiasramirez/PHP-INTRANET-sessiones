@@ -16,6 +16,7 @@ if(!$_SESSION["name"]){
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
 	<link rel="stylesheet" href="users.css">
+	<link rel="stylesheet" href="add/changeperfil.css">
 	<!-- <link rel="stylesheet" href="hiddenmenu.css"> -->
 </head>
 <body style="background-color: white">
@@ -45,12 +46,7 @@ if(!$_SESSION["name"]){
  
  <section class="perfil__container">
  	<article class="photo__perfil">
- 		<img src="imgs/user.png" alt="" class="img__perfil__fake">
-		 <div class="change">
-		 	<a href="a.php" id=changePerfilLink>
-			 	Actualizar perfil
-			 </a>
-		 </div>
+ 		<img src="imgs/1.jpg" alt="" class="img__perfil__fake">
  	</article>
  	<article class="title__name__container">
  		
@@ -91,15 +87,21 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
   if($state != ""){
   	print("<p class=statepersonal>($state)</p>");
   }
+  
   else{
   		if($_SESSION["emauser"] == $emailD){
-
   			print("<form class=alias method='post' action='alias.php?id=$id'>
   				<input type=text name='alias' placeholder='agregar un alias'>
   				<button>Agregar</button>
   				</form>");
   		}
   }
+  if($id == $_SESSION["iduser"]){
+	print("<div class=container__change id=container__change>
+			<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
+		</div>");
+  }
+
   ?>
 
 
@@ -157,5 +159,7 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
 <script src="main.js"></script>
+<!-- <script src="showstate.css"></script> -->
+<script src="add/changeperfil.js"></script>
 </body>
 </html>
