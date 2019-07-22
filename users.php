@@ -1,4 +1,5 @@
 <?php
+require_once 'model/model.php';
 session_start();
 define('LOGIN', 'out.php');
 if(!$_SESSION["name"]){			 
@@ -51,7 +52,7 @@ if(!$_SESSION["name"]){
  	<article class="title__name__container">
  		
  <?php
-$conection = new mysqli("localhost", "jere", "0847", "jeremias");
+
  	$id = null;
 	 $country = null;
 	 $telephone = null;

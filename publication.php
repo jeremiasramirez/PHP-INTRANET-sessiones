@@ -1,6 +1,6 @@
 <?php
+require_once 'model/model.php';
 
-$conection = new mysqli("localhost", "jere", "0847", "jeremias");
 	session_start();
 
 	if(!$_SESSION["name"]){

@@ -1,4 +1,5 @@
 <?php
+require_once 'model/model.php';
 session_start();
 	if(!$_SESSION["name"])
 	{
@@ -57,7 +58,7 @@ session_start();
 	<div class="containerpersonalstat">
 		<?php
 
-		$conection = new mysqli("localhost", "root", "", "intranetuser");
+		 
 
 		?>	
 	</div>
