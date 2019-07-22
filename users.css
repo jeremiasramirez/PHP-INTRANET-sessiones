@@ -83,9 +83,10 @@
 	text-align: center;
 }
 .containerTitleInfoBasic{
-	margin-bottom: 1em;
+	margin-bottom: .5em;
 	padding-bottom: 3em;
-	margin-top: -5em
+	text-align:center;
+	margin-top: -7em;
 }
 .titleInfoBasic{
 	font-family: arial;
@@ -93,5 +94,36 @@
 	height: 0;
 }
 .alias{
-	 
+	padding-bottom:2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column
+}
+.alias input{
+	padding:.5em;
+	text-align:center;
+	font-family:arial;
+	background-color: #ddd;
+	border-radius: 3px;
+	border: none;
+	font-size: 16px;
+	margin-bottom: .2em;
+}
+.alias button{
+	padding:.7em 2em;
+	font-weight: 600;
+	font-size: 16px;
+	text-align:center;
+	font-family:arial;
+	background-color:#eee;
+	border:none;
+	border-radius:5px;
+	transition: .4s;
+}
+.alias button:hover{
+	background-color:#ccc;
+}
+.form__incomplete:hover{
+	opacity:.8;
 }

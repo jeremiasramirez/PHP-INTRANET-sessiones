@@ -1,4 +1,5 @@
 <?php
+include_once "model/model.php";
 session_start();
 
 if(!$_SESSION["name"]){			 
@@ -27,7 +28,7 @@ if(!$_SESSION["name"]){
 		<article class="main_out">	
 			<a href="main.php" class="title fas fa-home"></a>
 			<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
-			<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
+			<a href="users.php" class="user_perfil fas fa-user" title="User"></a> 
 			<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
 
@@ -44,7 +45,7 @@ if(!$_SESSION["name"]){
 
 	<?php 
 			  	if(isset($_POST["search"]) && !ctype_space($_POST["search"]) == 1){
-					$conection = new mysqli("localhost", "jere", "0847", "jeremias");
+				 
 			    	$counterfinded = 0;
 			  		$counterfinded = $conection->affected_rows;
 				  	
@@ -53,7 +54,7 @@ if(!$_SESSION["name"]){
 				  	
 				  	$searchs = strip_tags($searchs);
 					$emauserpersonal = $_SESSION["emauser"];
-					$statementsearch = "SELECT user_id,nameuser, emails from usuario where nameuser='$searchs'";
+					$statementsearch = "SELECT user_id,nameuser,username emails from usuario where username='$searchs'";
 					
 					$result = mysqli_query($conection, $statementsearch);
 

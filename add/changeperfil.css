@@ -62,9 +62,9 @@
 }
 .buttonchange{
     margin-top: 1em;
-    width: 100%;
+    width: 90%;
     padding: 1em;
-    border: 0;
+    border: none;
     background-color: green;
     color: #ddd;
     font-weight: 600;
@@ -75,9 +75,11 @@
     z-index: 1200;
     border-radius: 10px;
     transition: .5s;
+     
 }
 .buttonchange:hover{
 		transform: scale(.9);
-		transition: .5s;
+        transition: .5s;
+        border-radius:0;
 		cursor: pointer;
 }

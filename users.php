@@ -16,9 +16,9 @@ if(!$_SESSION["name"]){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
-	<link rel="stylesheet" href="users.css">
 	<link rel="stylesheet" href="add/changeperfil.css">
-	<!-- <link rel="stylesheet" href="hiddenmenu.css"> -->
+	<link rel="stylesheet" href="users.css">
+
 </head>
 <body style="background-color: white">
 	<header class="main__header" id="main__header">
@@ -29,7 +29,7 @@ if(!$_SESSION["name"]){
 		<article class="main_out">	
 			<a href="main.php" class="title fas fa-home"></a>
 			<a href="publication.php" class="user_perfil far fa-bell" title="Notification"></a>
-			<a href="user.php" class="user_perfil fas fa-user" title="User"></a> 
+			<a href="users.php" class="user_perfil fas fa-user" title="User"></a> 
 			<a href="out.php" class="perfil_out fas fa-sign-out-alt" title="Close"></a>
 		</article>
 
@@ -47,21 +47,21 @@ if(!$_SESSION["name"]){
  
  <section class="perfil__container">
  	<article class="photo__perfil">
- 		<img src="imgs/jere.jpg" alt="photo perfil" class="img__perfil__fake">
+ 		<img src="imgs/23.jpg" alt="photo perfil" class="img__perfil__fake">
  	</article>
  	<article class="title__name__container">
  		
  <?php
 
- 	$id = null;
-	 $country = null;
+ 	$id = $_SESSION["iduser"];
+	$country = null;
 	 $telephone = null;
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
  	$emailD = null;
 
- 	$statementusers = "SELECT nameuser, 
+ 	$statementusers = "SELECT nameuser,
  						emails,sexo,pais,telephone,username,
  				 statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
 
@@ -74,7 +74,8 @@ if(!$_SESSION["name"]){
 
 		$state = $row["statepersonal"];
 		$telephone = $row["telephone"];
-  		$emailD = $row["emails"];
+		$emailD = $row["emails"];
+
   		$sexo = $row["sexo"];
   		$country = $row["pais"];
 		$userlogB = $row["username"];
@@ -91,14 +92,7 @@ if(!$_SESSION["name"]){
   	print("<p class=statepersonal>($state)</p>");
   }
  
-  else{
-  		if($_SESSION["emauser"] == $emailD){
-  			print("<form class=alias method='post' action='alias.php?id=$id'>
-  				<input type=text name='alias' placeholder='agregar un alias'>
-  				<button>Agregar</button>
-  				</form>");
-  		}
-  }
+
   if($id == $_SESSION["iduser"]){
 	print("<div class=container__change id=container__change>
 			<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
@@ -121,7 +115,7 @@ if(!$_SESSION["name"]){
  	
  		if($sexo == ""){
  			 if($emailD == $_SESSION["emauser"] ){
- 			  	print("<form class=alias method='post' action='add/addsexo.php?id=$id'>
+ 			  	print("<form class='alias form__incomplete' method='post' action='add/addsexo.php?id=$id'>
  			  	
   					Masculino <input type=radio name='sexo' value=masculino>
  					<br>
@@ -136,14 +130,26 @@ if(!$_SESSION["name"]){
  			}
  		}
  		else{
-			 if($sexo == "masculino"){
-				print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
-			 }
-			 else{
-				print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
-			 }
+				if($sexo == "masculino"){
+					print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
+				}
+				else{
+					print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
+				}
  			
- 		}
+		 }
+		 if($state == ""){
+			if($emailD == $_SESSION["emauser"] ){
+					print("<form class=alias method='post' action='add/alias.php?id=$id'>
+					<input type=text name='alias' placeholder='Tu alias ej. the Wolf'>
+					<button>Agregar alias</button>
+				 </form>");
+
+			}
+	}
+	else{
+		print("<p class=info__info><i class='fas fa-phone'></i> Alia: <strong>" .$state."</strong></p>");	
+	}
  		if($country == ""){
  			if($emailD == $_SESSION["emauser"] ){
 
@@ -159,20 +165,31 @@ if(!$_SESSION["name"]){
 		 }
 		  
 		 if($_SESSION["emauser"] === $emailD){
-			
-			print("<article class=info-perso>
-					<h1 class=title-perso>Información personal</h1>
-				</article>");
-		
- 		if($_SESSION["emauser"] === $emailD){
- 			print("<p class=info__info><i class='far fa-envelope-open'></i> Mi correo: <strong>" .$emailD."</strong></p>");	
-		 }
-		 if($_SESSION["userlogin"] == $userlogB){
-			print("<p class=info__info><i class='far fa-user-circle'></i> Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
-		}
-		
-			print("<p class=info__info><i class='fas fa-phone'></i> Mi telefono: <strong><a href=''>" .$telephone."</a></strong></p>");	
-		
+					
+				print("<article class=info-perso>
+						<h1 class=title-perso>Información personal</h1>
+					</article>");
+				
+				if($_SESSION["emauser"] === $emailD){
+					print("<p class=info__info><i class='far fa-envelope-open'></i> Mi correo: <strong>" .$emailD."</strong></p>");	
+				}
+				if($_SESSION["userlogin"] == $userlogB){
+					print("<p class=info__info><i class='far fa-user-circle'></i> Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
+				}
+
+				 if($telephone == ""){
+					if($emailD == $_SESSION["emauser"] ){
+							print("<form class=alias method='post' action='add/addtelephone.php?id=$id'>
+							<input type=text name='tel' placeholder='agrega tu telefono'>
+							<button>Agregar telefono</button>
+						 </form>");
+	   
+					}
+			}
+			else{
+				print("<p class=info__info><i class='fas fa-phone'></i> Mi telefono: <strong><a href=''>" .$telephone."</a></strong></p>");	
+			}
+	
 	}
 		?>	
  			
