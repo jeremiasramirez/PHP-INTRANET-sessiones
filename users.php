@@ -47,7 +47,17 @@ if(!$_SESSION["name"]){
  
  <section class="perfil__container">
  	<article class="photo__perfil">
- 		<img src="imgs/23.jpg" alt="photo perfil" class="img__perfil__fake">
+ 		<?php
+ 			$ids=$_SESSION["iduser"];
+ 			$statementfoto = "SELECT photo FROM usuario WHERE user_id='$ids'";
+ 			$queryfoto = mysqli_query($conection, $statementfoto); 
+ 			while($foto = mysqli_fetch_array($queryfoto)){
+ 				$foto = $foto['photo'];
+ 				print("<img src='uploads/perfil/$foto' class=img__perfil__fake>");
+ 			}
+ 		?>
+ 		 
+ 			
  	</article>
  	<article class="title__name__container">
  		
