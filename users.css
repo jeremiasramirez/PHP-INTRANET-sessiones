@@ -21,6 +21,14 @@
 .photo__perfil{
 	width: 200px;
 	height: 300px;
+	padding:.2em;
+	margin-bottom: .5em;
+	 
+	
+}
+.photo__perfil img{
+	max-width: 240px;
+	max-height: 250px;
 }
 @media screen  and (min-width: 350px){
 	.photo__perfil{
@@ -30,14 +38,14 @@
  
 }
 .img__perfil__fake{
-	width: 100%;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 .statepersonal{
 	color: #666;
 	font-weight: 600;
 	font-family: sans-serif;
 	font-size: 12px;
+	margin-top: -.8em;
 }
 .info__basic{
 	display: flex;
@@ -45,7 +53,13 @@
 	justify-content: center;
 	
 }
- 
+ .info-perso{
+	font-family: arial;
+	font-weight: 600;
+	color: #444;
+	text-align: center;
+	margin-top: 3em;
+ }
 .info1{
 	padding:-2em;
 	margin-top: -9em;
@@ -54,7 +68,7 @@
 .info__info{
 	font-family: sans-serif;
 	font-weight: 700;
-	background-color: #eee;
+	background-color:  #eee;
 	width: 100%;
 	margin: .3em;
 	padding: 1em .5em;

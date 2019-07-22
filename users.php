@@ -46,7 +46,7 @@ if(!$_SESSION["name"]){
  
  <section class="perfil__container">
  	<article class="photo__perfil">
- 		<img src="imgs/1.jpg" alt="" class="img__perfil__fake">
+ 		<img src="imgs/jere.jpg" alt="photo perfil" class="img__perfil__fake">
  	</article>
  	<article class="title__name__container">
  		
@@ -60,12 +60,12 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  	$emailD = null;
 
  	$statementusers = "SELECT nameuser, 
- 						emails,sexo,pais,
+ 						emails,sexo,pais,username,
  				 statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
 
   	$state = null;
   	$sexo = null;
-
+	 $userlogB = null;
   	$execusers = mysqli_query($conection, $statementusers);
 
   	while($row= mysqli_fetch_array($execusers)){
@@ -74,7 +74,7 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
   		$emailD = $row["emails"];
   		$sexo = $row["sexo"];
   		$country = $row["pais"];
-
+		$userlogB = $row["username"];
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
@@ -87,7 +87,7 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
   if($state != ""){
   	print("<p class=statepersonal>($state)</p>");
   }
-  
+ 
   else{
   		if($_SESSION["emauser"] == $emailD){
   			print("<form class=alias method='post' action='alias.php?id=$id'>
@@ -147,12 +147,24 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  		}
  		else{
  			print("<p class=info__info>Pais: <strong>$country</strong></p>");
- 		}
+		 }
+		  
+		 if($_SESSION["emauser"] === $emailD){
+			
+			print("<article class=info-perso>
+					<h1 class=title-perso>Información personal</h1>
+				</article>");
+		
  		if($_SESSION["emauser"] === $emailD){
  			print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
- 		}
+		 }
+		 if($_SESSION["userlogin"] == $userlogB){
+			print("<p class=info__info>Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
+		}
+	}
+		?>	
  			
- 		?>
+ 		
  	</div>
  	<!-- <div class="info2">2</div> -->
  </article>

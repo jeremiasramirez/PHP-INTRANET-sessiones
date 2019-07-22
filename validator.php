@@ -15,12 +15,14 @@ $sex = '';
 $nameuserofficial = null;
 $emauser = null;
 $iduser = null;
+$userlogin = null;
 if(isset($_POST["user"]) && isset($_POST["password"])){
  
 	$user = $_POST["user"];
 	$pass = $_POST["password"];
 
-	$statementSelect = "SELECT * FROM usuario WHERE emails='$user' and userpass='$pass'";
+
+	$statementSelect = "SELECT * FROM usuario WHERE username='$user' and userpass='$pass'";
 
 	$querySelect = mysqli_query($conection, $statementSelect);
 	while($row = mysqli_fetch_array($querySelect)){
@@ -30,10 +32,11 @@ if(isset($_POST["user"]) && isset($_POST["password"])){
 			$sex = $row["sexo"];
 			$emauser = $row["emails"];
 			$iduser = $row["user_id"];
-		 
+		 	$userlogin = $row["username"];
 	} 
 }
 if($boollogin == true){
+	$_SESSION["userlogin"] = $userlogin;
 	$_SESSION["emauser"] = $emauser;
 	$_SESSION["iduser"] = $iduser;
 	$_SESSION["name"]=$namespage;

@@ -13,42 +13,9 @@
 .containerForm{
     height: 100%;
 }
-.area{
-    width: 100%;
-    text-align: center;
-    padding-top: 2em;
-    font-size:30px;
-    font-family: serif;
-    background-color: black;
-    border: none;
-    letter-spacing:1px;
-    word-spacing: 1px;
-    height: 100vh;
-    resize: none;
-    color: white;
-}
-.button{
-    width: 100%;
-    padding: 1em;
-    border: 0;
-    background-color: green;
-    color: #ddd;
-    font-weight: 600;
-    font-family: arial;
-    font-size: 20px;
-    position: sticky;
-    bottom:0;
-    z-index: 1200;
-    border-radius: 10px;
-    transition: .5s;
-}
-.button:hover{
-    transform: scale(.9);
-    transition: .5s;
-    cursor: pointer;
-}
+ 
 .closeview{
-    color: white;
+    color: #444;
     position: absolute;
     top: 0;
     margin: .5em .5em 1em 0;
@@ -56,7 +23,7 @@
     font-family: arial;
     transition: .5s;
     font-size: 25px;
-    /*background-color: red;*/
+    background-color: #eee;
     padding:.1em .3em;
     font-weight: 600;
     border-radius: 3px;
@@ -91,6 +58,7 @@
 }
 .photoinput{
     width:115px;
+ 
 }
 .buttonchange{
     margin-top: 1em;
