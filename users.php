@@ -53,14 +53,15 @@ if(!$_SESSION["name"]){
  <?php
 $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  	$id = null;
- 	$country = null;
+	 $country = null;
+	 $telephone = null;
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
  	$emailD = null;
 
  	$statementusers = "SELECT nameuser, 
- 						emails,sexo,pais,username,
+ 						emails,sexo,pais,telephone,username,
  				 statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
 
   	$state = null;
@@ -70,7 +71,8 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
 
   	while($row= mysqli_fetch_array($execusers)){
 
-  		$state = $row["statepersonal"];
+		$state = $row["statepersonal"];
+		$telephone = $row["telephone"];
   		$emailD = $row["emails"];
   		$sexo = $row["sexo"];
   		$country = $row["pais"];
@@ -133,7 +135,13 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  			}
  		}
  		else{
- 			print("<p class=info__info>Sexo: <strong>$sexo</strong></p>");
+			 if($sexo == "masculino"){
+				print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
+			 }
+			 else{
+				print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
+			 }
+ 			
  		}
  		if($country == ""){
  			if($emailD == $_SESSION["emauser"] ){
@@ -146,7 +154,7 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
  			}
  		}
  		else{
- 			print("<p class=info__info>Pais: <strong>$country</strong></p>");
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Pais: <strong>$country</strong></p>");
 		 }
 		  
 		 if($_SESSION["emauser"] === $emailD){
@@ -156,11 +164,14 @@ $conection = new mysqli("localhost", "jere", "0847", "jeremias");
 				</article>");
 		
  		if($_SESSION["emauser"] === $emailD){
- 			print("<p class=info__info>Mi correo: <strong>" .$emailD."</strong></p>");	
+ 			print("<p class=info__info><i class='far fa-envelope-open'></i> Mi correo: <strong>" .$emailD."</strong></p>");	
 		 }
 		 if($_SESSION["userlogin"] == $userlogB){
-			print("<p class=info__info>Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
+			print("<p class=info__info><i class='far fa-user-circle'></i> Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
 		}
+		
+			print("<p class=info__info><i class='fas fa-phone'></i> Mi telefono: <strong><a href=''>" .$telephone."</a></strong></p>");	
+		
 	}
 		?>	
  			
