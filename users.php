@@ -51,6 +51,7 @@ if(!$_SESSION["name"]){
  			$ids=$_SESSION["iduser"];
  			$statementfoto = "SELECT photo FROM usuario WHERE user_id='$ids'";
  			$queryfoto = mysqli_query($conection, $statementfoto); 
+
  			$foto = null;
  			while($foto = mysqli_fetch_array($queryfoto)){
  				$foto = $foto['photo'];
@@ -61,7 +62,7 @@ if(!$_SESSION["name"]){
  			if(!$foto == ""){
  				print("<img src='imgs/user.png' class=img__perfil__fake>");
  			}
- 		 
+ 
  		?>
  		 
  			
