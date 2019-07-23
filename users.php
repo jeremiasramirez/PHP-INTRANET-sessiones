@@ -170,7 +170,7 @@ if(!$_SESSION["name"]){
 			}
 	}
 	else{
-		print("<p class=info__info><i class='fas fa-phone'></i> Alia: <strong>" .$state."</strong></p>");	
+		print("<p class=info__info><i class='fas fa-signature'></i> Alia: <strong>" .$state."</strong></p>");	
 	}
  		if($country == ""){
  			if($emailD == $_SESSION["emauser"] ){
