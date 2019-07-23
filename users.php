@@ -16,9 +16,10 @@ if(!$_SESSION["name"]){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="usersearch.css">
+	<link rel="stylesheet" href="public/css/showPerfil.css">
 	<link rel="stylesheet" href="add/changeperfil.css">
 	<link rel="stylesheet" href="users.css">
-
+	<link rel="stylesheet" href="public/css/showPerfil.css">
 </head>
 <body style="background-color: white">
 	<header class="main__header" id="main__header">
@@ -59,7 +60,7 @@ if(!$_SESSION["name"]){
  			while($foto = mysqli_fetch_array($queryfoto)){
  				$foto = $foto['photo'];
  				if($foto!=""){
- 					print("<img src='uploads/perfil/$foto' class=img__perfil__fake>");
+ 					print("<img src='uploads/perfil/$foto' class=img__perfil__fake id=perfilimg>");
  				}
  			}
  			if(!$foto == ""){
@@ -221,7 +222,7 @@ if(!$_SESSION["name"]){
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
 <script src="main.js"></script>
-<!-- <script src="showstate.css"></script> -->
+<script src="public/js/showPerfiClick.js"></script>
 <script src="add/changeperfil.js"></script>
 </body>
 </html>
