@@ -8,6 +8,7 @@ session_start();
 	<title>Login</title>
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="register.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 </head>
 <body style="background-color: #333">
@@ -27,10 +28,12 @@ session_start();
 		<input type="password" name="password" placeholder="Password" id="password" autocomplete="off">
 
 		<button id="sendData">Ingresar</button>
+		<a href='register.php' class=registerLink>Registrarse</a>
 	</form>
 	<p class="select__user fas fa-user" ><a href="selectuser.html" class="" style="" > Ingresar como admin</a></p>
 
 	<script src="login.js"></script>
+
 </div>
 
 

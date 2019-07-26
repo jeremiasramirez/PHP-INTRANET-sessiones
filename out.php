@@ -7,6 +7,7 @@ unset($_SESSION["emauser"]);
 unset($_SESSION["iduser"]);
 unset($_SESSION["userlogin"]);
 unset($_SESSION);
+session_destroy();
 
  
  
