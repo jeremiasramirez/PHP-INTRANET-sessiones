@@ -12,9 +12,10 @@ let counters = document.getElementById("counter");
 
 if (sendata) {
 	sendata.addEventListener("click", (e)=>{
-		if(( nameuser.value == "") || ( emailuser.value == "")(newpassword.value == "")){
+		if((nameuser.value == "") || ( emailuser.value == "") || (newpassword.value == "")){
 				e.target.style.backgroundColor="#bbb"
-		
+		if(errorlogin){
+			
 			errorlogin.textContent = "Error login";
 			errorlogin.classList.add("errormsj", "scalade")
 			e.preventDefault();
@@ -22,6 +23,7 @@ if (sendata) {
 			setTimeout(()=>{
 				errorlogin.classList.remove("scalade")
 			}, 300)
+		}
 
 		}
 	}, false);
