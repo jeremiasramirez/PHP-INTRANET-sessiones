@@ -1,6 +1,12 @@
 let sendata = document.getElementById("sendData");
 let user = document.getElementById("user");
 let password = document.getElementById("password");
+
+let nameuser = document.getElementById("newname");
+let emailuser = document.getElementById("newemail");
+let newuser = document.getElementById("newuser");
+let newpassword = document.getElementById("newpassword");
+
 let errorlogin = document.getElementById("error_login");
 let counters = document.getElementById("counter");
 
@@ -8,11 +14,8 @@ let counters = document.getElementById("counter");
 
 if (sendata) {
 	sendata.addEventListener("click", (e)=>{
-		if((user.value == "") || ( password.value == "")){
+		if((user.value == "") || ( password.value == "") || ( nameuser.value == "") || ( emailuser.value == "")(newpassword.value == "")){
 				e.target.style.backgroundColor="#bbb"
-				user.value = "";
-				password.value = "";
-			 
 		
 			errorlogin.textContent = "Error login";
 			errorlogin.classList.add("errormsj", "scalade")

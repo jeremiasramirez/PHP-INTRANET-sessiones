@@ -18,31 +18,52 @@ session_start();
 
 	<form action="" method="POST" class="login ">
 		<h3 class="title title2" style="color:#444">Registro</h3>
-	<?php
-		if(isset($_GET["thank"]) and $_GET["thank"] =="thankyou"){
-			print("<p class=visitweb id=messageText>Muchas gracias por visitarnos!</p>");
-		}
-	?>
 
 		<p id="error_login" class="error_login"></p>
-
-		<input type="text" name="newname" placeholder="Nombre completo" id="user" autocomplete="off">
-		<input type="text" name="newuser" placeholder="Usuario" id="user" autocomplete="off">
-		<input type="email" name="newemail" placeholder="Email" id="user" autocomplete="off">
-		<input type="password" name="newpassword" placeholder="Password" id="password" autocomplete="off">
+		<input type="text" name="newname" placeholder="Nombre completo" id="newname" autocomplete="off">
+		<input type="text" name="newuser" placeholder="Ej. dolphi21" id="newuser" autocomplete="off">
+		<input type="email" name="newemail" placeholder="Email" id="newemail" autocomplete="off">
+		<input type="password" name="newpassword" placeholder="Password" id="newpassword" autocomplete="off">
 
 		<button id="sendData">Registrarse</button>
 	
 	</form>
 
 
-	<script src="login.js"></script>
+	
 
 </div>
 
 
 
 
+<?php
+include "model/model.php";
+
+
+if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newemail"]) && isset($_POST["newpassword"])){
+
+	if(!empty($_POST["newname"]) &&  !empty($_POST["newuser"]) && !empty($_POST["newemail"]) && !empty($_POST["newpassword"])){
+
+		if(!ctype_space($_POST["newname"]) == 1 &&  !ctype_space($_POST["newuser"]) == 1 &&  !ctype_space($_POST["newemail"]) == 1&& !ctype_space($_POST["newpassword"]) == 1){
+
+
+	 
+		 
+	}
+
+	 
+		$statementregister = "INSERT INTO usuario (nameuser, emails, userpass, username) VALUES ('')";
+	}
+
+}
+
+
+	$name= $_POST["newname"];
+	$user= $_POST["newuser"];
+	$email= $_POST["newemail"];
+	$pass= $_POST["newpassword"];
+?>
 
 
 
@@ -53,9 +74,8 @@ session_start();
 
 
 
-
-
-<script src="validator.js"></script>
+<!-- <script src="login.js"></script> -->
+<script src="register.js"></script>
 </body>
 </html>
 

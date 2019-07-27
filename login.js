@@ -1,6 +1,7 @@
  
 let msjText = document.getElementById("messageText");
 
+if(msjText !== null){
 let intervalText = setInterval(()=>{
 
 	msjText.style.transition="1s"
@@ -23,7 +24,8 @@ let intervalText = setInterval(()=>{
 
 		setTimeout(()=>{
 			e.target.remove();
+
 		}, 1000)
 
 	}, false)
- 
+ }
