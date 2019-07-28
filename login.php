@@ -21,6 +21,10 @@ session_start();
 		if(isset($_GET["thank"]) and $_GET["thank"] =="thankyou"){
 			print("<p class=visitweb id=messageText>Muchas gracias por visitarnos!</p>");
 		}
+		if(isset($_GET["registered"]) and $_GET["registered"] =="true"){
+			print("<p class=visitweb>Se ha registrado correctamente!</p>");
+		}	
+
 	?>
 
 		<p id="error_login" class="error_login"></p>

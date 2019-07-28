@@ -53,10 +53,13 @@ class showPerfil{
 
 }
 let perfilimg = document.getElementById("perfilimg");
-perfilimg.addEventListener("click", (e)=>{
-        let imguser = e.target;
-        let instance = new showPerfil();
-            instance.createView(imguser);
+if(perfilimg){
+    
+  perfilimg.addEventListener("click", (e)=>{
+          let imguser = e.target;
+          let instance = new showPerfil();
+              instance.createView(imguser);
 
-    }, false);
+      }, false);
 
+}

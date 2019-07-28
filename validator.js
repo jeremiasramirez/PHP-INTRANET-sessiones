@@ -14,7 +14,7 @@ let counters = document.getElementById("counter");
 
 if (sendata) {
 	sendata.addEventListener("click", (e)=>{
-		if((user.value == "") || ( password.value == "") || ( nameuser.value == "") || ( emailuser.value == "")(newpassword.value == "")){
+		if((user.value == "") || ( password.value == "")){
 				e.target.style.backgroundColor="#bbb"
 		
 			errorlogin.textContent = "Error login";
