@@ -60,7 +60,7 @@ if(!$_SESSION["name"]){
  			while($foto = mysqli_fetch_array($queryfoto)){
  				$foto = $foto['photo'];
  				if($foto!=""){
- 					print("<img src='uploads/perfil/$foto' class=img__perfil__fake id=perfilimg>");
+ 					print("<img src='uploads/perfil/$foto' style=cursor:pointer class=img__perfil__fake id=perfilimg>");
  				}
  			}
  			if(!$foto == ""){
@@ -85,19 +85,21 @@ if(!$_SESSION["name"]){
 
  	$statementusers = "SELECT nameuser,
  						emails,sexo,pais,telephone,username,
- 				 statepersonal, sexo,countryuser,religion, fecha_nac FROM usuario WHERE user_id = '$id' ";
+ 				 statepersonal, sexo,countryuser,religion, casado,fecha_nac FROM usuario WHERE user_id = '$id' ";
 
   	$state = null;
   	$sexo = null;
   	$countryuser = null;
   	$religion = null;
 	$userlogB = null;
+	$casado = null;
 	$fecha_nac = null;
 
   	$execusers = mysqli_query($conection, $statementusers);
 
   	while($row= mysqli_fetch_array($execusers)){
 
+		$casado = $row["casado"];
 		$state = $row["statepersonal"];
 		$telephone = $row["telephone"];
 		$emailD = $row["emails"];
@@ -232,13 +234,42 @@ if(!$_SESSION["name"]){
  			}
  		}
  		else{
- 			// $timess = getdate();
- 			// $year = timess['year'] - $fecha_nac;
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Edad: <strong>$fecha_nac</strong></p>");
+ 			//devolviendo edad basado en la fecha de nac
+
+ 			$timess = getdate();
+ 			$year = $timess["year"] - intval($fecha_nac);
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Edad: <strong>$year</strong></p>");
+ 		 
 		 }
 		  
  
 
+ 		if($casado == ""){
+ 			 if($_SESSION["emauser"] == $emailD ){
+ 			 	print("<h1 class=title-perso style=text-align:center>Casado</h1>");
+ 			  	print("<form class='alias form__incomplete' method='post' action='add/addcasado.php?id=$id'>
+ 			  	
+  					Si <input type=radio name='casado' value=Si>
+ 					<br>
+ 			    
+  					No <input type=radio name='casado' value=No>
+ 			  		<br>
+ 			  		<br>
+
+  				<button>Agregar</button>
+  				</form>");
+  				
+ 		}
+ 		 }
+ 		else{
+		 
+
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Casado/a: <strong>$casado</strong></p>");
+ 			
+			 	 
+		 }
+
+	
 
 
 
