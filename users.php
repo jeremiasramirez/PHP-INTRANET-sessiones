@@ -85,11 +85,15 @@ if(!$_SESSION["name"]){
 
  	$statementusers = "SELECT nameuser,
  						emails,sexo,pais,telephone,username,
- 				 statepersonal, sexo FROM usuario WHERE user_id = '$id' ";
+ 				 statepersonal, sexo,countryuser,religion, fecha_nac FROM usuario WHERE user_id = '$id' ";
 
   	$state = null;
   	$sexo = null;
-	 $userlogB = null;
+  	$countryuser = null;
+  	$religion = null;
+	$userlogB = null;
+	$fecha_nac = null;
+
   	$execusers = mysqli_query($conection, $statementusers);
 
   	while($row= mysqli_fetch_array($execusers)){
@@ -97,10 +101,12 @@ if(!$_SESSION["name"]){
 		$state = $row["statepersonal"];
 		$telephone = $row["telephone"];
 		$emailD = $row["emails"];
-
+		$countryuser = $row["countryuser"];
   		$sexo = $row["sexo"];
   		$country = $row["pais"];
+  		$fecha_nac = $row["fecha_nac"];
 		$userlogB = $row["username"];
+		$religion = $row["religion"];
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
   	}
 
@@ -185,7 +191,61 @@ if(!$_SESSION["name"]){
  		else{
  			print("<p class=info__info><i class='fas fa-globe-asia'></i> Pais: <strong>$country</strong></p>");
 		 }
+		  if($countryuser == ""){
+ 			if($emailD == $_SESSION["emauser"] ){
+
+ 			  	print("<form class=alias method='post' action='add/addcountry.php?id=$id'>
+  				<input type=text name='countryuser' placeholder='agrega tu ciudad'>
+  				<button>Agregar ciudad</button>
+  				</form>");
+
+ 			}
+ 		}
+ 		else{
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Ciudad: <strong>$countryuser</strong></p>");
+		 }
 		  
+
+		  if($religion == ""){
+ 			if($emailD == $_SESSION["emauser"] ){
+
+ 			  	print("<form class=alias method='post' action='add/addreligion.php?id=$id'>
+  				<input type=text name='religion' placeholder='Tu religion(opcional)'>
+  				<button>Agregar religion</button>
+  				</form>");
+
+ 			}
+ 		}
+ 		else{
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Religion: <strong>$religion</strong></p>");
+		 }
+		  
+
+		 if($fecha_nac == ""){
+ 			if($emailD == $_SESSION["emauser"] ){
+
+ 			  	print("<form class=alias method='post' action='add/addyear.php?id=$id'>
+  				<input type=number name='year' placeholder='Ej. 1994'>
+  				<button>Agregar año de nacimiento</button>
+  				</form>");
+
+ 			}
+ 		}
+ 		else{
+ 			// $timess = getdate();
+ 			// $year = timess['year'] - $fecha_nac;
+ 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Edad: <strong>$fecha_nac</strong></p>");
+		 }
+		  
+ 
+
+
+
+
+
+
+
+//informacion privada ,solo la ve el usuario admin de su cuenta
 		 if($_SESSION["emauser"] === $emailD){
 					
 				print("<article class=info-perso>
