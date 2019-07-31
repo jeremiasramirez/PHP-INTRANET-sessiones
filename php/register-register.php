@@ -35,8 +35,8 @@ if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newem
 			$queryusers = mysqli_query($conection, $statementshowusers);
 
 			while($users=mysqli_fetch_array($queryusers)){
-
 				if( $users["emails"] === $email ||  $user === $users["username"]){
+					global $conectoruser;
 					$conectoruser=true;
 				}
 
