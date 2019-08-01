@@ -30,13 +30,13 @@ if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newem
 
 
 
-			$statementshowusers = "SELECT nameuser,emails,userpass username FROM usuario";
 			$conectoruser= false;
+			$statementshowusers = "SELECT emails, username FROM usuario";
 			$queryusers = mysqli_query($conection, $statementshowusers);
 
 			while($users=mysqli_fetch_array($queryusers)){
-				if( $users["emails"] === $email ||  $user === $users["username"]){
-					global $conectoruser;
+				global $conectoruser;
+				if($users["username"] === $user || $users["emails"] === $email){
 					$conectoruser=true;
 				}
 

@@ -4,7 +4,7 @@
 		global $conection;
 
 		try{
-			$conection =mysqli_connect("localhos", "jere", "0847", "jeremias");
+			$conection =mysqli_connect("localhost", "jere", "0847", "jeremias");
 			if(mysqli_connect_errno($conection)){
 				throw new Exception("101");
 			}
