@@ -1,10 +1,14 @@
 <?php
 require_once 'model/model.php';
-session_start();
-define('LOGIN', 'out.php');
-if(!$_SESSION["name"]){			 
-	header("Location: ".LOGIN);
-}
+require_once "php/views/users-view.php";
+
+
+	session_start();
+	define('LOGIN', 'out.php');
+	if(!$_SESSION["name"]){			 
+		header("Location: ".LOGIN);
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -118,156 +122,59 @@ if(!$_SESSION["name"]){
 
  <?php
 
-  if($state != ""){
-  	print("<p class=statepersonal>($state)</p>");
-  }
- 
+//vista de alias de usuario en caso de que exista
+ $getstate = new users_view();
+ $getstate->getState($state);
 
-  if($id == $_SESSION["iduser"]){
-	print("<div class=container__change id=container__change>
-			<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
-		</div>");
-  }
+
+//vista de icono de cambiar foto
+ $changePhoto_ = new users_view();
+ $changePhoto_->changePhoto($id, $_SESSION["iduser"]);
+
+
 
   ?>
 
 
- </article>
-<article class="containerTitleInfoBasic">
-	<h1 class="titleInfoBasic">Información básica</h1>
-</article>
+	</article>
+	<article class="containerTitleInfoBasic">
+		<h1 class="titleInfoBasic">Información básica</h1>
+	</article>
 </section>
  <article class="info__basic">
  	<div class="info1">
- 		<?php
- 	
- 			# code...
- 	
- 		if($sexo == ""){
- 			 if($emailD == $_SESSION["emauser"] ){
- 			  	print("<form class='alias form__incomplete' method='post' action='add/addsexo.php?id=$id'>
- 			  	
-  					Masculino <input type=radio name='sexo' value=masculino>
- 					<br>
- 			    
-  					Femenino <input type=radio name='sexo' value=femenino>
- 			  		<br>
- 			  		<br>
+ 	<?php
 
-  				<button>Agregar sexo</button>
-  				</form>");
-  				
- 			}
- 		}
- 		else{
-				if($sexo == "masculino"){
-					print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
-				}
-				else{
-					print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
-				}
- 			
-		 }
-		 if($state == ""){
-			if($emailD == $_SESSION["emauser"] ){
-					print("<form class=alias method='post' action='add/alias.php?id=$id'>
-					<input type=text name='alias' placeholder='Tu alias ej. the Wolf'>
-					<button>Agregar alias</button>
-				 </form>");
+ 	//mostrado sexo de usuario y agregado en caso que no exista
+		 $getsex = new users_view();
+		 $getsex->getSex($sexo,  $emailD, $_SESSION["emauser"], $id);
 
-			}
-	}
-	else{
-		print("<p class=info__info><i class='fas fa-signature'></i> Alia: <strong>" .$state."</strong></p>");	
-	}
- 		if($country == ""){
- 			if($emailD == $_SESSION["emauser"] ){
+ 	// agregado de alias de usuario en caso de que no exista
+		 $getalias = new users_view();
+		 $getalias->getAliasToPerfil($state,  $emailD, $_SESSION["emauser"], $id);
+	 
 
- 			  	print("<form class=alias method='post' action='add/addpais.php?id=$id'>
-  				<input type=text name='pais' placeholder='agrega tu pais'>
-  				<button>Agregar pais</button>
-  				</form>");
-
- 			}
- 		}
- 		else{
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Pais: <strong>$country</strong></p>");
-		 }
-		  if($countryuser == ""){
- 			if($emailD == $_SESSION["emauser"] ){
-
- 			  	print("<form class=alias method='post' action='add/addcountry.php?id=$id'>
-  				<input type=text name='countryuser' placeholder='agrega tu ciudad'>
-  				<button>Agregar ciudad</button>
-  				</form>");
-
- 			}
- 		}
- 		else{
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Ciudad: <strong>$countryuser</strong></p>");
-		 }
-		  
-
-		  if($religion == ""){
- 			if($emailD == $_SESSION["emauser"] ){
-
- 			  	print("<form class=alias method='post' action='add/addreligion.php?id=$id'>
-  				<input type=text name='religion' placeholder='Tu religion(opcional)'>
-  				<button>Agregar religion</button>
-  				</form>");
-
- 			}
- 		}
- 		else{
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Religion: <strong>$religion</strong></p>");
-		 }
-		  
-
-		 if($fecha_nac == ""){
- 			if($emailD == $_SESSION["emauser"] ){
-
- 			  	print("<form class=alias method='post' action='add/addyear.php?id=$id'>
-  				<input type=number name='year' placeholder='Ej. 1994'>
-  				<button>Agregar año de nacimiento</button>
-  				</form>");
-
- 			}
- 		}
- 		else{
- 			//devolviendo edad basado en la fecha de nac
-
- 			$timess = getdate();
- 			$year = $timess["year"] - intval($fecha_nac);
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Edad: <strong>$year</strong></p>");
- 		 
-		 }
-		  
- 
-
- 		if($casado == ""){
- 			 if($_SESSION["emauser"] == $emailD ){
- 			 	print("<h1 class=title-perso style=text-align:center>Casado</h1>");
- 			  	print("<form class='alias form__incomplete' method='post' action='add/addcasado.php?id=$id'>
- 			  	
-  					Si <input type=radio name='casado' value=Si>
- 					<br>
- 			    
-  					No <input type=radio name='casado' value=No>
- 			  		<br>
- 			  		<br>
-
-  				<button>Agregar</button>
-  				</form>");
-  				
- 		}
- 		 }
- 		else{
+ 	//mostrado y agregado de pais en caso de que no exista
+		 $getpais = new users_view();
+		 $getpais->getPais($country,  $emailD, $_SESSION["emauser"], $id);
 		 
 
- 			print("<p class=info__info><i class='fas fa-globe-asia'></i> Casado/a: <strong>$casado</strong></p>");
- 			
-			 	 
-		 }
+ 	//mostrado y agregado de ciudad en caso de que no exista
+		 $getcity = new users_view();
+		 $getcity->getCity($countryuser,  $emailD, $_SESSION["emauser"], $id);
+
+ 	//mostrado y agregado de religion en caso de que no exista
+		 $getreligion = new users_view();
+		 $getreligion->getReligion($religion,  $emailD, $_SESSION["emauser"], $id);
+
+ 	//mostrado y agregado de edad en caso de que no exista
+		 $getage = new users_view();
+		 $getage->getAge($fecha_nac,  $emailD, $_SESSION["emauser"], $id);
+
+		 $getcasado = new users_view();
+		 $getcasado->getCasado($casado,  $_SESSION["emauser"], $emailD, $id);
+ 
+ 
 
 	
 
@@ -277,38 +184,14 @@ if(!$_SESSION["name"]){
 
 
 //informacion privada ,solo la ve el usuario admin de su cuenta
-		 if($_SESSION["emauser"] === $emailD){
-					
-				print("<article class=info-perso>
-						<h1 class=title-perso>Información personal</h1>
-					</article>");
-				
-				if($_SESSION["emauser"] === $emailD){
-					print("<p class=info__info><i class='far fa-envelope-open'></i> Mi correo: <strong>" .$emailD."</strong></p>");	
-				}
-				if($_SESSION["userlogin"] == $userlogB){
-					print("<p class=info__info><i class='far fa-user-circle'></i> Mi usuario: <strong>" .$_SESSION["userlogin"]."</strong></p>");	
-				}
-
-				 if($telephone == ""){
-					if($emailD == $_SESSION["emauser"] ){
-							print("<form class=alias method='post' action='add/addtelephone.php?id=$id'>
-							<input type=text name='tel' placeholder='agrega tu telefono'>
-							<button>Agregar telefono</button>
-						 </form>");
-	   
-					}
-			}
-			else{
-				print("<p class=info__info><i class='fas fa-phone'></i> Mi telefono: <strong><a href=''>" .$telephone."</a></strong></p>");	
-			}
-	
-	}
+		 $validateuser = new adminInformationPrivate();
+		 $validateuser->validateUser($_SESSION["emauser"], $emailD, $_SESSION["userlogin"], $userlogB, $telephone, $id);
+		 
 		?>	
  			
  		
  	</div>
- 	<!-- <div class="info2">2</div> -->
+
  </article>
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
