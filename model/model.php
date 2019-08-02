@@ -1,21 +1,23 @@
 <?php
-	$conection = null;
-	function conected(){
-		global $conection;
+	class conectionDB{
 
-		try{
-			$conection =mysqli_connect("localhost", "jere", "0847", "jeremias");
-			if(mysqli_connect_errno($conection)){
-				throw new Exception("101");
+		function conected(){
+			global $conection;
+			try{
+				$conection =mysqli_connect("localhost", "jere", "0847", "jeremias");
+				if(mysqli_connect_errno($conection)){
+					throw new Exception("101");
+				}
+
+			}catch(Exception $e){
+				echo "<p class=error_101>Error " . $e->getMessage() ."</p>" . PHP_EOL;
 			}
-
-		}catch(Exception $e){
-			echo "<p class=error_101>Error " . $e->getMessage() ."</p>" . PHP_EOL;
-		}
 
 
 	}
-	conected();
+}
+
+ 
 
 
 ?>
