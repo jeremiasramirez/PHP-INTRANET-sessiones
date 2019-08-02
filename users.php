@@ -1,8 +1,9 @@
 <?php
 require_once 'model/model.php';
-require_once "php/views/users-view.php";
+require_once "views/users-view.php";
 
-
+$conected = new conectionDB();
+$conected->conected();
 	session_start();
 	define('LOGIN', 'out.php');
 	if(!$_SESSION["name"]){			 
