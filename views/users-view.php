@@ -145,7 +145,7 @@ class users_view{
  			$timess = getdate();
  			$year = ($timess["year"] - intval($fecha_nac));
 
- 			print("<p class=info__info><i class='fas fa-minus'></i> Edad: <strong>$year</strong></p>");
+ 			print("<p class=info__info><i class='fas fa-minus'></i> Edad: <strong>$year años</strong></p>");
  		 
 		 }
 	}

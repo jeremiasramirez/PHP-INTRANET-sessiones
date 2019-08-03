@@ -1,6 +1,6 @@
 <?php
+ 
 	class conectionDB{
-
 		function conected(){
 			global $conection;
 			try{
@@ -12,9 +12,9 @@
 			}catch(Exception $e){
 				echo "<p class=error_101>Error " . $e->getMessage() ."</p>" . PHP_EOL;
 			}
-
-
 	}
+	
+
 }
 
  

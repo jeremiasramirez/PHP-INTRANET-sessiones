@@ -1,5 +1,5 @@
 <?php
-include_once "model/model.php";
+include "model/model.php";
 session_start();
 
 if(!$_SESSION["name"]){			 
@@ -44,16 +44,21 @@ if(!$_SESSION["name"]){
 	<div class="users__find" id="users__find">
 
 	<?php 
-			  	if(isset($_POST["search"]) && !ctype_space($_POST["search"]) == 1){
+		function get_users($searchs, $sessions){
+
+				$con = new conectionDB();
+				$con->conected();
+				global $conection;
+			  	if(isset($searchs) && !ctype_space($searchs) == 1){
 				 
 			    	$counterfinded = 0;
 			  		$counterfinded = $conection->affected_rows;
 				  	
-				  	$searchs = $_POST["search"];
+				  	$searchs = $searchs;
 				  	$searchs = addslashes($searchs);
 				  	
 				  	$searchs = strip_tags($searchs);
-					$emauserpersonal = $_SESSION["emauser"];
+					$emauserpersonal = $sessions;
 					$statementsearch = "SELECT user_id,nameuser,username emails from usuario where username='$searchs'";
 					
 					$result = mysqli_query($conection, $statementsearch);
@@ -71,10 +76,61 @@ if(!$_SESSION["name"]){
 						</div>
 						");
 			  	}
- 	
-	 
 
-	?>
+
+
+		}
+ 		get_users($_POST["search"], $_SESSION["emauser"]);
+	 	// class search_user extends conectionDB{
+			// function __construct($name, $session_user){
+			// 	$this->name = $name;
+			// 	$this->session_user = $session_user;
+			// }
+			// function getUser(){
+
+			// 	 parent::conected();
+			// 	global $conection;
+	  // 			if(isset($this->name) && !ctype_space($this->name) == 1 && 
+	  // 				!empty($this->name)&& !empty($this->session_user) && 
+	  // 				isset($this->session_users)){
+
+				// $con = new conectionDB();
+				// $con->conected();
+
+			  //   	$counterfinded = 0;
+			  // 		$counterfinded = $conection->affected_rows;
+				  	
+				 //  	$searchs = $this->name;
+				 //  	$searchs = addslashes($searchs);
+				 //  	$searchs = strip_tags($searchs);
+
+					// $emauserpersonal = $this->session_user;
+					// $statementsearch = "SELECT user_id,nameuser,username emails from usuario where username='$searchs'";
+					
+					// $result = mysqli_query($conection, $statementsearch);
+
+					// while($row= mysqli_fetch_array($result)){
+					
+					// 	print("<a href='users.php?users=".$row["user_id"]."' class=itemsearch>".$row["nameuser"]."</a>");
+					// 	$counterfinded = $conection->affected_rows;
+
+					// }	
+					//  print("
+					//  	<div class=alltitle>
+					// 		<h1 class=titleusers>Usuarios encontrado <strong>".$counterfinded."</strong></h1>
+					// 	</div>
+		// 				");
+		// 	  	}
+		// 	}
+
+		// }
+		
+ 	
+	 // $searching = new search_user($_POST["search"], $_SESSION["emauser"]);
+	 // $searching->getUser();
+	?>	
+
+	
 </div>
  
 

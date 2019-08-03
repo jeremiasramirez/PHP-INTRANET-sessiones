@@ -4,11 +4,14 @@ require_once "views/users-view.php";
 
 $conected = new conectionDB();
 $conected->conected();
+
 	session_start();
 	define('LOGIN', 'out.php');
+
 	if(!$_SESSION["name"]){			 
 		header("Location: ".LOGIN);
 	}
+
 
 ?>
 
@@ -54,9 +57,10 @@ $conected->conected();
  <section class="perfil__container">
  	<article class="photo__perfil">
  		<?php
- 			$ids=$_SESSION["iduser"];
- 			 	if(isset($_GET['users'])){
- 					$ids = $_GET['users'];
+ 			$ids = $_SESSION["iduser"];
+
+ 			if(isset($_GET['users'])){
+ 				$ids = $_GET['users'];
  			}
  			$statementfoto = "SELECT photo FROM usuario WHERE user_id='$ids'";
  			$queryfoto = mysqli_query($conection, $statementfoto); 
@@ -82,15 +86,22 @@ $conected->conected();
 
  	$id = $_SESSION["iduser"];
 	$country = null;
-	 $telephone = null;
+	$telephone = null;
+	/*verificando si el usuario no es el admin, si es el admin se muestra informacion privada
+	y podemos editar los datos
+	*/
  	if(isset($_GET['users'])){
  		$id = $_GET['users'];
  	}
  	$emailD = null;
 
  	$statementusers = "SELECT nameuser,
- 						emails,sexo,pais,telephone,username,
- 				 statepersonal, sexo,countryuser,religion, casado,fecha_nac FROM usuario WHERE user_id = '$id' ";
+ 							emails, sexo,
+ 							pais, telephone,
+ 							username, statepersonal, 
+ 							sexo, countryuser, 
+ 							religion, casado,
+ 							fecha_nac FROM usuario WHERE user_id = '$id' ";
 
   	$state = null;
   	$sexo = null;
@@ -115,12 +126,14 @@ $conected->conected();
 		$userlogB = $row["username"];
 		$religion = $row["religion"];
   		echo "<h1 class=title__user__perfil>".$row["nameuser"]."</h1>";
+
   	}
 
 
  ?>
 
 
+<!-- All information -->
  <?php
 
 //vista de alias de usuario en caso de que exista
@@ -186,7 +199,8 @@ $conected->conected();
 
 //informacion privada ,solo la ve el usuario admin de su cuenta
 		 $validateuser = new adminInformationPrivate();
-		 $validateuser->validateUser($_SESSION["emauser"], $emailD, $_SESSION["userlogin"], $userlogB, $telephone, $id);
+		 $validateuser->validateUser($_SESSION["emauser"], $emailD, 
+		 $_SESSION["userlogin"], $userlogB, $telephone, $id);
 		 
 		?>	
  			

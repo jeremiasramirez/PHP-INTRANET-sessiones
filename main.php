@@ -1,5 +1,7 @@
 <?php
-require_once 'model/model.php';
+ 
+require 'views/main-views.php';
+
 	session_start();
 	// if(isset($_SESSION["name"]) && ctype_space($_SESSION["name"])==1)
 	// {
@@ -55,46 +57,18 @@ require_once 'model/model.php';
  	</div>
 
 </main>
-<style>
-
-</style>
- 
 
 	<article class="title_states" style="text-align: center;color:red;">
 			<h1 class="state_publish fas fa-stream"></h1>
 		</article>
 	
 	<section class="states" id="statesitem">
-	
-
 		<?php 
-	
-		
-			if(isset($_POST["state"]) && $_POST["state"] != ""){
-
-				if(!ctype_space($_POST["state"])) {
-					$data = $_POST["state"];
-					$data = addslashes($data);
-					$data = strip_tags($data);
-					$statement_insert = "INSERT INTO allstates (stat) VALUES ('$data')";
-					$query_insert = mysqli_query($conection, $statement_insert);
-					unset($_POST["state"]);		 
-			}
-			
-		}
-			$statement_show = "SELECT stat FROM allstates";
-
-			$query_show = mysqli_query($conection, $statement_show);
-
- 			while($row = mysqli_fetch_array($query_show)){
-			 	print("<p class=data_state id=data_state--js>".$row["stat"]."</p>");
-			 }
-
+			$showmain= new main_views($_POST["state"]);
+			$showmain->mainGetStates();
 		 ?>
-		 
 	</section>
 	
- 
 <script src="main.js"></script>
  <script src="usersearch.js"></script>
  <script src="showstate.js"></script>
