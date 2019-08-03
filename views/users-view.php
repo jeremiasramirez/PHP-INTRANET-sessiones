@@ -7,12 +7,11 @@ class users_view{
   			print("<p class=statepersonal>($state)</p>");
   		}
  	}
-
  	public function changePhoto($id, $sessions){
 
  		if($id == $sessions){
 			print("<div class=container__change id=container__change>
-					<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
+				<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
 				</div>");
   		}
  	}
@@ -32,39 +31,35 @@ class users_view{
  	public function getSex($sexo, $emailD, $sessions, $id){
  			if($sexo == ""){
 	 			if($emailD == $sessions){
-	 			 	$this->setSex($id);
+	 			 $this->setSex($id);
 	 		}
  		}
  		else{
-				if($sexo == "masculino"){
-					print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
-				}
-				else{
-					print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
-				}
- 			
+			if( ($sexo == "masculino") ){
+				print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
+			}
+			else{
+				print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
+			}
 		 }
  	}
  	 public function setAliasToPerfil($id){
  	
 		print("<form class=alias method='post' action='add/alias.php?id=$id'>
-					<input type=text name='alias' placeholder='Tu alias ej. the Wolf'>
-					<button>Agregar alias</button>
-				 </form>"); 
+			<input type=text name='alias' placeholder='Tu alias ej. the Wolf'>
+			<button>Agregar alias</button>
+			</form>"); 
 	 
-
 	}
- 	
  	public function getAliasToPerfil($state,  $emailD, $sessions ,$id){
- 		 if($state == ""){
-			if($emailD == $sessions){
+ 		 if( ($state == "") ) {
+			if( ($emailD == $sessions) ){
 			 	$this->setAliasToPerfil($id);
 			}
 		}
  		else{
-			 print("<p class=info__info><i class='fas fa-signature'></i> Alia: <strong>" .$state."</strong></p>");
-			}
-
+			print("<p class=info__info><i class='fas fa-signature'></i> Alia: <strong>" .$state."</strong></p>");
+		}
  	}
 
  	public function getPais($country,  $emailD, $sessions, $id){
@@ -77,19 +72,17 @@ class users_view{
  		else{
  			print("<p class=info__info><i class='fas fa-globe-asia'></i> Pais: <strong>$country</strong></p>");
  		}
-
 	}
-
  	public function setPais($id){
 
  		print("<form class=alias method='post' action='add/addpais.php?id=$id'>
-  				<input type=text name='pais' placeholder='agrega tu pais'>
-  				<button>Agregar pais</button>
-  				</form>");
+  			<input type=text name='pais' placeholder='agrega tu pais'>
+  			<button>Agregar pais</button>
+  			</form>");
 
  	}
- 
 	public function setCity($id){
+		
 		print("<form class=alias method='post' action='add/addcountry.php?id=$id'>
   				<input type=text name='countryuser' placeholder='agrega tu ciudad'>
   				<button>Agregar ciudad</button>
@@ -117,9 +110,7 @@ class users_view{
 
 		if($religion == ""){
  			if($emailD == $sessions){
-
  				$this->setReligion($id);
-
  			}
  		}
  		else{
@@ -129,9 +120,9 @@ class users_view{
 
 	public function setAge($id){
 		 print("<form class=alias method='post' action='add/addyear.php?id=$id'>
-  				<input type=number name='year' placeholder='Ej. 1994'>
-  				<button>Agregar año de nacimiento</button>
-  				</form>");
+  			<input type=number name='year' placeholder='Ej. 1994'>
+  			<button>Agregar año de nacimiento</button>
+  			</form>");
 	}
 	public function getAge($fecha_nac,  $emailD, $sessions, $id){
 
@@ -149,8 +140,6 @@ class users_view{
  		 
 		 }
 	}
-
-
 	public function setCasado($id){
 
 		print("<h1 class=title-perso style=text-align:center>Casado</h1>");
@@ -167,7 +156,6 @@ class users_view{
   				</form>");
   				
 	}
-
 	public function getCasado($casado, $sessions, $emailD, $id){
 
  		if($casado == ""){
@@ -183,9 +171,10 @@ class users_view{
 }
 
 class adminInformationPrivate extends users_view{
+	
 	public function personalInformation(){
 			print("<article class=info-perso>
-					<h1 class=title-perso>Información personal</h1>
+				<h1 class=title-perso>Información personal</h1>
 				</article>");
 	}
 	function showEmail($emailD){
@@ -196,9 +185,9 @@ class adminInformationPrivate extends users_view{
 	}
 	function setTelephone($id){
 			print("<form class=alias method='post' action='add/addtelephone.php?id=$id'>
-							<input type=text name='tel' placeholder='agrega tu telefono'>
-							<button>Agregar telefono</button>
-						 </form>");
+				<input type=text name='tel' placeholder='agrega tu telefono'>
+				<button>Agregar telefono</button>
+				</form>");
 	}
 	function getTelephone($telephone){
 
@@ -214,7 +203,6 @@ class adminInformationPrivate extends users_view{
 				if($sesslogin == $userlogB){
 					$this->myUser($sesslogin);
 				}
-
 				if($telephone == ""){
 					if($emailD == $sessions){
 						$this->setTelephone($id);
