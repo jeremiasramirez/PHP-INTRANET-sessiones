@@ -1,4 +1,6 @@
 <?php
+// start php code
+
 require_once 'model/model.php';
 require_once "views/users-view.php";
 
@@ -8,11 +10,11 @@ $conected->conected();
 	session_start();
 	define('LOGIN', 'out.php');
 
-	if(!$_SESSION["name"]){			 
+	if( (!$_SESSION["name"]) ){			 
 		header("Location: ".LOGIN);
 	}
 
-
+// end php code
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +58,8 @@ $conected->conected();
  
  <section class="perfil__container">
  	<article class="photo__perfil">
- 		<?php
+<!-- start php code -->
+ <?php
  			$ids = $_SESSION["iduser"];
 
  			if(isset($_GET['users'])){
@@ -75,15 +78,17 @@ $conected->conected();
  			if(!$foto == ""){
  				print("<img src='imgs/user.png' class=img__perfil__fake>");
  			}
- 
- 		?>
+ //end of php code
+ ?>
  		 
  			
  	</article>
  	<article class="title__name__container">
- 		
+ 
+		
  <?php
-
+//start php code
+		
  	$id = $_SESSION["iduser"];
 	$country = null;
 	$telephone = null;
@@ -129,36 +134,41 @@ $conected->conected();
 
   	}
 
-
+//end of php code
  ?>
 
 
 <!-- All information -->
- <?php
 
+ <?php
+//start php code
+
+		
 //vista de alias de usuario en caso de que exista
  $getstate = new users_view();
  $getstate->getState($state);
 
 
-//vista de icono de cambiar foto
+//vista de icono de cambiar foto en el perfil del usuario
  $changePhoto_ = new users_view();
  $changePhoto_->changePhoto($id, $_SESSION["iduser"]);
 
 
-
-  ?>
-
-
-	</article>
-	<article class="containerTitleInfoBasic">
-		<h1 class="titleInfoBasic">Información básica</h1>
-	</article>
+//end of php code
+ ?>
+</article>
+	 
+<article class="containerTitleInfoBasic">
+	<h1 class="titleInfoBasic">Información básica</h1>
+</article>
 </section>
+	 
  <article class="info__basic">
  	<div class="info1">
- 	<?php
-
+		
+ <?php
+//start php code	
+		
  	//mostrado sexo de usuario y agregado en caso que no exista
 		 $getsex = new users_view();
 		 $getsex->getSex($sexo,  $emailD, $_SESSION["emauser"], $id);
@@ -184,7 +194,9 @@ $conected->conected();
  	//mostrado y agregado de edad en caso de que no exista
 		 $getage = new users_view();
 		 $getage->getAge($fecha_nac,  $emailD, $_SESSION["emauser"], $id);
-
+		
+		
+ 	//mostrado de si es casado o no y agregar en caso de que no exista
 		 $getcasado = new users_view();
 		 $getcasado->getCasado($casado,  $_SESSION["emauser"], $emailD, $id);
  
@@ -201,13 +213,17 @@ $conected->conected();
 		 $validateuser = new adminInformationPrivate();
 		 $validateuser->validateUser($_SESSION["emauser"], $emailD, 
 		 $_SESSION["userlogin"], $userlogB, $telephone, $id);
-		 
-		?>	
+		
+		
+//end of php code
+?>	
  			
  		
  	</div>
-
  </article>
+	 
+	 
+<!-- 	 end of code -->
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
 <script src="main.js"></script>
