@@ -1,20 +1,62 @@
- <?php
-   include("../model/model.php");
-   if (isset($_POST["religion"]) && $_GET["id"] && !ctype_space($_POST["religion"])){
+<?php
+include("../model/model.php");
+   
+class Religion extends conectionDB{
+ 
+  public function __construct($religion, $id_user){
+    $this->religion = $religion;
+    $this->id_user = $id_user;
+  }
 
-	   if($_POST["religion"] != ""){
+  public function addReligion(){
+      if (isset($this->religion) && $this->id_user &&
+           !ctype_space($this->religion) && !empty($this->religion) &&
+           !empty($this->id_user)){
 
-		   	$id = $_GET["id"];
-		   	$religion = $_POST["religion"];
-		   	$religion = strip_tags($_POST["religion"]);
-        $religion = addslashes($_POST["religion"]);
-        $religion = htmlentities(($_POST["religion"]), ENT_QUOTES);
+        if($this->religion != ""){
+       
+          $id = $this->id_user;
+          $religion = $this->religion;
 
-		  	mysqli_query($conection, "UPDATE usuario SET religion='$religion' WHERE user_id = '$id'");
-  			header("Location: ../users.php");
+          //evitando sqlinjection 
+          $id = strip_tags($id);
+          $id = addslashes($id);
+          $id = htmlentities(($id), ENT_QUOTES);
 
-		  }
-          header("Location: ../users.php");
-   }
+          $religion = strip_tags($religion);
+          $religion = addslashes($religion);
+          $religion = htmlentities(($religion), ENT_QUOTES);
 
+          //conection to DB
+          parent::conected();
+          global $conection;
+          //exec statements
+
+          $query =  mysqli_query($conection, "UPDATE usuario SET religion='$religion' WHERE user_id = '$id'");
+
+          if($query){
+            header("Location: ../users.php?updated=updated");
+          }
+          else{
+            header("Location: ../users.php?noupdated=noupdated");
+          }
+
+      }
+    } 
+    else{
+      header("Location: ../users.php?noupdated=noupdated");
+    }
+
+
+}
+
+
+}
+ 
+$religion = new Religion($_POST["religion"], $_GET["id"]);
+$religion->addReligion();
+
+ 
 ?>
+
+
