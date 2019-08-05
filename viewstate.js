@@ -1,6 +1,7 @@
 	class createViewState{
-
+ 
 		createView(){
+
 			let viewContainer = document.createElement("div");
 				viewContainer.setAttribute("class", "viewContainer")
 				viewContainer.setAttribute("id", "viewContainer")
@@ -52,13 +53,6 @@
 			 		button.textContent= "Enviar estado"
 			 		form.appendChild(button);
 
-			 		if(document.getElementById("button")){
-			 			button.addEventListener("click", (e)=>{
-			 				if(!area.textContent != ""){
-			 					e.preventDefault();
-			 				}
-			 			}, false)
-			 		}
 
 		}
 
