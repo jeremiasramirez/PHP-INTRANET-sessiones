@@ -176,6 +176,9 @@ class adminInformationPrivate extends users_view{
 			print("<article class=info-perso>
 				<h1 class=title-perso>Información personal</h1>
 				</article>");
+			print("<article>
+				<h1 class='title-perso' style=font-size:15px;text-align:center;color:#aaa;>Por seguridad esta información solo la puede ver usted <span class='fas fa-lock'></span></h1>
+				</article>");
 	}
 	function showEmail($emailD){
 			print("<p class=info__info><i class='far fa-envelope-open'></i> Mi correo: <strong>" .$emailD."</strong></p>");	
@@ -195,9 +198,9 @@ class adminInformationPrivate extends users_view{
 
 	}
 	function validateUser($sessions, $emailD, $sesslogin, $userlogB, $telephone, $id){
-			$this->personalInformation();
 				
 				if($sessions === $emailD){
+					$this->personalInformation();
 					$this->showEmail($emailD);
 				}
 				if($sesslogin == $userlogB){
@@ -206,12 +209,11 @@ class adminInformationPrivate extends users_view{
 				if($telephone == ""){
 					if($emailD == $sessions){
 						$this->setTelephone($id);
-					}
-			}
-			else{
-				$this->getTelephone($telephone);	
-			}
-
+					}			
+				}
+				if($sessions === $emailD){
+					$this->getTelephone($telephone);
+				}
 	}
 
 }

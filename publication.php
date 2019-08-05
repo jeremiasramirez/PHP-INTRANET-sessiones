@@ -1,5 +1,5 @@
 <?php
-require_once 'model/model.php';
+require 'model/model.php';
 
 	session_start();
 
@@ -46,6 +46,9 @@ require_once 'model/model.php';
 	<section class="states" id="statesitem">
 
 		<?php
+		$con = new conectionDB();
+		$con->conected();
+		global $conection;
 			$statement_show = "SELECT stat FROM allstates";
 
 			$query_show = mysqli_query($conection, $statement_show);
