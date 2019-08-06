@@ -1,6 +1,7 @@
 <?php
 require 'model/model.php';
 
+
 	session_start();
 
 	if(!$_SESSION["name"]){
@@ -46,16 +47,22 @@ require 'model/model.php';
 	<section class="states" id="statesitem">
 
 		<?php
-		$con = new conectionDB();
-		$con->conected();
-		global $conection;
-			$statement_show = "SELECT stat FROM allstates";
+	class ShowState extends conectionDB{
 
-			$query_show = mysqli_query($conection, $statement_show);
+			function getAllStates(){
+				parent::conected();
+				global $conection;
+				$statement_show = "SELECT stat FROM allstates";
 
-			 while($row = mysqli_fetch_array($query_show)){
-			 	print("<p class=data_state id=data_state--js>".$row["stat"]."</p>");
-			 }
+				$query_show = mysqli_query($conection, $statement_show);
+
+				 while($row = mysqli_fetch_array($query_show)){
+				 	print("<p class=data_state id=data_state--js>".$row["stat"]."</p>");
+				 }
+			}
+		}
+			$newshow = new ShowState;
+			$newshow->getAllStates();
 
 		 ?>
 	</section>
