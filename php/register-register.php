@@ -1,11 +1,14 @@
 <?php
 include "../model/model.php";
 
+$conectionDb = new conectionDB();
+		$conectionDb->conected();
+		global $conection;
 
 if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newemail"]) && isset($_POST["newpassword"])){
 
 	if(!empty($_POST["newname"]) &&  !empty($_POST["newuser"]) && !empty($_POST["newemail"]) && !empty($_POST["newpassword"])){
-
+		
 		// if(!ctype_space($_POST["newname"]) &&  !ctype_space($_POST["newuser"])  &&  !ctype_space($_POST["newemail"]) && !ctype_space($_POST["newpassword"])){
 				
 				$name= $_POST["newname"];
