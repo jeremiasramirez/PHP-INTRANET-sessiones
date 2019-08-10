@@ -25,7 +25,7 @@
 	
 	.error_101{ 
 		color: white;
-		background-color:  rgba(100%, 0%, 0%, 95%) ;
+		background-color:  rgba(100%, 0%, 0%, 90%) ;
 		position:fixed;
 		width:100vw;
 		text-align: center;
