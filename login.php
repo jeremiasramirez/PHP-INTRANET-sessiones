@@ -1,5 +1,7 @@
 <?php 
 session_start();
+include "urlmsj/thank.php";
+include "urlmsj/registeredbool.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,17 +18,14 @@ session_start();
 
 <div class="responsivelogin">
 	<p class="title_login fas fa-user"></p>
-
 	<form action="validator.php" method="POST" class="login ">
-	<?php
-		if(isset($_GET["thank"]) and $_GET["thank"] =="thankyou"){
-			print("<p class=visitweb id=messageText>Muchas gracias por visitarnos!</p>");
-		}
-		if(isset($_GET["registered"]) and $_GET["registered"] =="true"){
-			print("<p class=visitweb>Se ha registrado correctamente!</p>");
-		}	
+		<?php
+		//mensaje de gracias por visitarnos al sition
+		    thank($_GET["thank"], "thankyou");
 
-	?>
+		    // mensaje si se registro correctamente
+		    registeredbool($_GET["registered"], "true");
+		?>
 
 
 		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
@@ -40,30 +39,8 @@ session_start();
 	<script src="login.js"></script>
 
 </div>
-
-
-
-
-
-<style type="text/css">
-
-}
-
-</style>
-<script type="text/javascript">
-	
-</script>
-
-
-
-
-
-
-
-
-
-<script src="public/js/login.js"></script>
  
+<script src="public/js/login.js"></script>
 </body>
 </html>
 
