@@ -6,10 +6,11 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
-	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="register.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
+	<link rel="stylesheet" href="public/css/login.css">
 </head>
 <body style="background-color: #333">
 
@@ -27,14 +28,14 @@ session_start();
 
 	?>
 
-		<p id="error_login" class="error_login"></p>
+
 		<input type="text" name="user" placeholder="User" id="user" autocomplete="off">
 		<input type="password" name="password" placeholder="Password" id="password" autocomplete="off">
 
 		<button id="sendData">Ingresar</button>
 		<a href='register.php' class=registerLink>Registrarse</a>
 	</form>
-	<p class="select__user fas fa-user" ><a href="selectuser.html" class="" style="" > Ingresar como admin</a></p>
+	<!-- <p class="select__user fas fa-user" ><a href="selectuser.html" class="" style="" > Ingresar como admin</a></p> -->
 
 	<script src="login.js"></script>
 
@@ -44,6 +45,14 @@ session_start();
 
 
 
+<style type="text/css">
+
+}
+
+</style>
+<script type="text/javascript">
+	
+</script>
 
 
 
@@ -53,9 +62,7 @@ session_start();
 
 
 
-
-
-<script src="validator.js"></script>
+<script src="public/js/login.js"></script>
  
 </body>
 </html>

@@ -331,17 +331,18 @@
 #sendData:hover{
 	opacity: .7;
 	transition: .3s;
+	cursor: pointer;
 	background-color: purple;
 }
 .title_login{
 	font-family: sans-serif;
-	font-size: 30px;
+	font-size: 25px;
 	background-color: #444;
 	width: 100%;
 	color: white;
 	text-align: center;
 	margin:0;
-	padding:.5em 0 .8em 0;
+	padding:.2em 0 .2em 0;
 
 
 }
@@ -361,31 +362,6 @@
 }
 
 
-.errormsj{
-	color: white;
-	width: 100%;
-	text-align: center;
-	padding: .3em 1em;
-	font-family: arial;
-	background-color: red;
-	border-radius: 4px;
-	border:0;
-	font-weight: 600;
-	letter-spacing: .5px;
-	word-spacing: 2px;
-	animation: errormsj .7s linear infinite backwards;
-	
-}
-.scalade{
-
-	transition: .3s;
-	transform: translateX(-100px);
-}
-@keyframes errormsj{
-	to{
-		background-color: orangered;
-	}
-}
 
 .visitweb{
 	color: #666;
