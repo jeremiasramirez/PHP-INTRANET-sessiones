@@ -1,0 +1,33 @@
+
+ 	.user__name{
+ 		color: #333;
+ 		font-size: 18px;
+ 		text-align: center;
+ 		background-color: rgba(40%,0%,0%,10%);
+ 		margin:.3em;
+ 		padding:.3em;
+ 		width: auto;
+ 		border-radius: 3px;
+ 		font-family: arial !important;
+ 		animation: hiddens 2s 2s linear;
+ 		transition: 1s;
+ 	}
+ 	@keyframes hiddens{
+ 		to{
+ 			transition: 1s;
+ 			transform: translateY(-500px);
+ 		}
+ 	}
+ 	.emoji{
+ 		font-size: 20px;
+ 		color: orange;
+ 		width: auto;
+ 		animation: emojianimation 1s linear backwards;
+ 		transition: 1s;
+ 	}
+ 	 	@keyframes emojianimation{
+ 		to{
+ 			transition: 2s;
+ 			transform: scale(1.5) rotate(30deg);
+ 		}
+ 	}
