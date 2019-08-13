@@ -21,13 +21,13 @@ function messageError(){
         let messageError = document.createElement("p");
         if(counter==1){
 
-	        messageError.textContent = "Introduzca su codigo de administrador. "+counter+messageBlocked;
+	        messageError.textContent = "Datos erroneos. "+counter+messageBlocked;
         }
         else{
-        	  messageError.textContent = "Introduzca su codigo de administrador. "+counter+" Intentos";
+        	  messageError.textContent = "Datos erroneos. "+counter+" Intentos";
         }
 	      
-	        messageError.setAttribute("class", "errormsj");
+	        messageError.setAttribute("class", "errormsj fas fa-times");
 	        messageError.setAttribute("id", "error");
 	        document.body.insertAdjacentElement("beforebegin",messageError);
         
