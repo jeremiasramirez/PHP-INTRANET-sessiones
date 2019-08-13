@@ -16,7 +16,7 @@ include "urlmsj/registeredbool.php";
 </head>
 <body style="background-color: #333">
 
-<div class="responsivelogin">
+<div class="responsivelogin" id="responsive">
 	<p class="title_login fas fa-user"></p>
 	<form action="validator.php" method="POST" class="login ">
 		<?php
