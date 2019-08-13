@@ -6,7 +6,7 @@
                             deleteErrorMessage.remove();
                         }
 
-                    }, 3000);
+                    }, 2200);
 
 
 
