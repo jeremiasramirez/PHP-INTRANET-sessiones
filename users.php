@@ -3,6 +3,7 @@
 
 require_once 'model/model.php';
 require_once "views/users-view.php";
+require_once "urlmsj/welcome/welcome.php";
 
 $conected = new conectionDB();
 $conected->conected();
@@ -30,6 +31,7 @@ $conected->conected();
 	<link rel="stylesheet" href="add/changeperfil.css">
 	<link rel="stylesheet" href="users.css">
 	<link rel="stylesheet" href="public/css/showPerfil.css">
+	<link rel="stylesheet" href="urlmsj/welcome/welcome.css">
 </head>
 <body style="background-color: white">
 	<header class="main__header" id="main__header">
@@ -55,10 +57,14 @@ $conected->conected();
 
 	<div class="users__find" id="users__find">
 </div>
- 
+ <?php
+	$sexo = $_SESSION["sexo"];
+ 	welcomeuser($sexo, $_SESSION["name"]);
+ ?>
+
+<!-- start php code -->
  <section class="perfil__container">
  	<article class="photo__perfil">
-<!-- start php code -->
  <?php
  			$ids = $_SESSION["iduser"];
 
@@ -229,5 +235,7 @@ $conected->conected();
 <script src="main.js"></script>
 <script src="public/js/showPerfiClick.js"></script>
 <script src="add/changeperfil.js"></script>
+<script src="urlmsj/welcome/welcome.js"></script>
+
 </body>
 </html>
