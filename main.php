@@ -22,6 +22,7 @@ require 'views/main-views.php';
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 	<link rel="stylesheet" href="showstate.css">
+	<!-- <link rel="stylesheet" href="urlmsj/welcome/welcome.css"> -->
 	<link rel="stylesheet" href="viewstate.css">
 </head>
 <body>
@@ -68,7 +69,8 @@ require 'views/main-views.php';
 			$showmain->mainGetStates();
 		 ?>
 	</section>
-	
+
+<!-- <script src="urlmsj/welcome/welcome.js" type="text/javascript"></script> -->
 <script src="main.js"></script>
  <script src="usersearch.js"></script>
  <script src="showstate.js"></script>

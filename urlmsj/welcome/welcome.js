@@ -21,6 +21,19 @@
 //     },2000)
 // }
 // let counter = 0;
+
+function pushScroll(){
+      let counter = 0;
+
+       let intervaltime= setInterval(()=>{
+          counter+=10;
+          window.scrollBy(0, counter)
+
+          if(counter >= 500){
+            clearInterval(intervaltime);
+          }
+        },100);
+}
 function messageError(){
 	
  	   //validando si no hay otro mensaje de error
@@ -37,7 +50,8 @@ function messageError(){
 	        document.body.insertAdjacentElement("beforebegin",messageError);
 
 	       document.getElementById("error").addEventListener("click", (e)=>{
-	       		window.scrollBy(0,500);
+	       		
+            pushScroll()
 	       })
          let message = setTimeout(()=>{
                       messageError.remove()
@@ -52,6 +66,7 @@ function validationForm(title,btn){
          let timeErrorMessage = setTimeout(()=>{
                       messageError()
                 }, 1000);
+
 
 }
 
