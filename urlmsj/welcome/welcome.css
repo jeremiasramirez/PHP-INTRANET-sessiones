@@ -44,7 +44,7 @@
 
 	font-family: arial;
 	font-weight: 600;
-	animation: hiddenelement 4s .3s linear;
+	animation: hiddenelement 4s .6s linear;
 	transition: .3s; 
 	position: absolute;
 	bottom:0;

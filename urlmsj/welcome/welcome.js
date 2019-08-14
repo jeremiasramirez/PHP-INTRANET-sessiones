@@ -55,7 +55,7 @@ function messageError(){
 	       })
          let message = setTimeout(()=>{
                       messageError.remove()
-                }, 3000);
+                }, 4000);
     }
 
 
