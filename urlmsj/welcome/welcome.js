@@ -43,7 +43,7 @@ function messageError(){
         let messageError = document.createElement("p");
         
 
-	        messageError.textContent = "Termina de completar tu perfil";
+	        messageError.textContent = "Completa tu perfil";
 	      
 	        messageError.setAttribute("class", "error");
 	        messageError.setAttribute("id", "error");
