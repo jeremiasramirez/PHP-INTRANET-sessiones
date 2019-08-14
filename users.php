@@ -233,10 +233,18 @@ $conected->conected();
 ?>	
  			
  	<?php print("<p id='iduser' style=opacity:0>$ids</p>");?>	
+
  	</div>
  </article>
-	 
-	 
+
+<script type="text/javascript">
+	
+
+</script>
+<style type="text/css">
+
+
+ 	</style>
 <!-- 	 end of code -->
 <script src="usersearch.js"></script>
 <script src="users.js"></script>

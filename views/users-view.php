@@ -36,10 +36,10 @@ class users_view{
  		}
  		else{
 			if( ($sexo == "masculino") ){
-				print("<p class=info__info><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
+				print("<p class=info__info id=male><i class='fas fa-male'></i> Sexo: <strong>$sexo</strong></p>");
 			}
 			else{
-				print("<p class=info__info><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
+				print("<p class=info__info id=male><i class='fas fa-female'></i> Sexo: <strong>$sexo</strong></p>");
 			}
 		 }
  	}
@@ -97,7 +97,7 @@ class users_view{
  			}
  		}
  		else{
- 			print("<p class=info__info><i class='fas fa-city'></i> Ciudad: <strong>$countryuser</strong></p>");
+ 			print("<p class=info__info id=city><i class='fas fa-city'></i> Ciudad: <strong>$countryuser</strong></p>");
 		}
 	}
 	public function setReligion($id){
@@ -136,7 +136,7 @@ class users_view{
  			$timess = getdate();
  			$year = ($timess["year"] - intval($fecha_nac));
 
- 			print("<p class=info__info><i class='fas fa-minus'></i> Edad: <strong>$year años</strong></p>");
+ 			print("<p class=info__info id=age><i class='fas fa-minus'></i> Edad: <strong>$year años</strong></p>");
  		 
 		 }
 	}

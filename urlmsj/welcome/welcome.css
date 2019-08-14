@@ -16,7 +16,6 @@
  		to{
  			opacity: 0;
  			transition: 1s;
- 			transform: scale(.7);
  		}
  	}
  	.emoji{
@@ -31,6 +30,30 @@
  		to{
  			transition: 2s;
  			color: blue;
- 			transform: scale(3) rotate(30deg);
+ 			transform: scale(1.1) rotate(30deg);
  		}
  	}
+.error{
+	color: white;
+	text-align: center;
+	margin: .3em;
+	border:none;
+	border-radius: 3px;
+	background-color: red;
+	padding:1em .5em;
+
+	font-family: arial;
+	font-weight: 600;
+	animation: hiddenelement 4s .3s linear;
+	transition: .3s; 
+	position: absolute;
+	bottom:0;
+	left:0;
+}
+@keyframes hiddenelement{
+	to{
+		transform: translateY(-200px);
+		opacity: 0;
+		transition: 1s;
+	}
+}
