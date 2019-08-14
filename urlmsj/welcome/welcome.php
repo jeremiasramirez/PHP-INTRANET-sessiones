@@ -11,13 +11,13 @@
 			print("<h1 class=user__name id=user__name>
 						<p class=emoji>😃</p>¡Bienvenido ".$girlman."!</h1>");
 		}
-		else if($sexo == WOMEN){
+		if($sexo == WOMEN){
 			print("<h1 class=user__name>
 				<p class=emoji>😃</p>¡Bienvenida ".$girlman."!</h1>");
 		}
 		else {
 			print("<h1 class=user__name>
-				<p class=emoji>😃</p>¡Bienvenido! completa tu perfil</h1>");
+				<p class=emoji>😃</p>completa tu perfil</h1>");
 		}
 }
 

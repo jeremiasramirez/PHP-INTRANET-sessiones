@@ -26,7 +26,7 @@ if(isset($_POST["user"]) && isset($_POST["password"]) && $_POST["user"] != "" &&
 	$pass = $_POST["password"];
 
 
-	$statementSelect = "SELECT * FROM usuario WHERE username='$user' and userpass='$pass'";
+	$statementSelect = "SELECT * FROM usuario WHERE username='$user' or emails='$user' and userpass='$pass'";
 
 	$querySelect = mysqli_query($conection, $statementSelect);
 	while($row = mysqli_fetch_array($querySelect)){
