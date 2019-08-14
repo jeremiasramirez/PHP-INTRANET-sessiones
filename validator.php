@@ -1,6 +1,10 @@
 <?php
+include "model/model.php";
 session_start();
-$conection = new mysqli("localhost", "jere", "0847", "jeremias");
+$conectionDb = new conectionDB;
+		$conectionDb->conected();
+		global $conection;
+ 
 $user = $_POST["user"];
 $user = addslashes($user);
 $user = strip_tags($user);
@@ -16,7 +20,7 @@ $nameuserofficial = null;
 $emauser = null;
 $iduser = null;
 $userlogin = null;
-if(isset($_POST["user"]) && isset($_POST["password"])){
+if(isset($_POST["user"]) && isset($_POST["password"]) && $_POST["user"] != "" && $_POST["password"]){
  
 	$user = $_POST["user"];
 	$pass = $_POST["password"];

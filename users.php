@@ -66,25 +66,33 @@ $conected->conected();
  <section class="perfil__container">
  	<article class="photo__perfil">
  <?php
+	 		$conectionDb = new conectionDB;
+			$conectionDb->conected();
+			global $conection;
+
  			$ids = $_SESSION["iduser"];
 
  			if(isset($_GET['users'])){
  				$ids = $_GET['users'];
  			}
- 			$statementfoto = "SELECT photo FROM usuario WHERE user_id='$ids'";
- 			$queryfoto = mysqli_query($conection, $statementfoto); 
+ 			$statementfoto = null;
 
- 			$foto = null;
+ 			$queryfoto = mysqli_query($conection, "SELECT photo FROM usuario WHERE user_id='$ids'");
+ 		
+
+ 			$photo = null;
  			while($foto = mysqli_fetch_array($queryfoto)){
- 				$foto = $foto['photo'];
- 				if($foto!=""){
- 					print("<img src='uploads/perfil/$foto' style=cursor:pointer class=img__perfil__fake id=perfilimg>");
+ 				$photo = $foto['photo'];
+ 				if(empty($photo)){
+ 					print("<img src='imgs/user.png' class=img__perfil__fake>");	
+ 				}
+ 				else{
+ 					print("<img src='uploads/perfil/$photo' style=cursor:pointer class=img__perfil__fake id=perfilimg>");
  				}
  			}
- 			if(!$foto == ""){
- 				print("<img src='imgs/user.png' class=img__perfil__fake>");
- 			}
+ 	
  //end of php code
+ 			 
  ?>
  		 
  			
@@ -224,7 +232,7 @@ $conected->conected();
 //end of php code
 ?>	
  			
- 		
+ 	<?php print("<p id='iduser'>$ids</p>");?>	
  	</div>
  </article>
 	 

@@ -29,11 +29,13 @@ class createViewState{
 
                   }
               }, false);
-
+              let iduser = document.getElementById("iduser");
+                  
+                 
               let formchange = document.createElement("form");
                     formchange.setAttribute("class", "form__changes");
                     formchange.setAttribute("id", "form__changes");
-                    formchange.setAttribute("action", "add/changeperfil.php");
+                    formchange.setAttribute("action", `add/changeperfil.php?id=${iduser.textContent}`);
                     formchange.setAttribute("method", "post");
                     formchange.setAttribute("enctype", "multipart/form-data");
                     containerForm.appendChild(formchange)

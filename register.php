@@ -26,7 +26,7 @@ session_start();
 		?>
 		<p id="error_login" class="error_login"></p>
 		<input type="text" name="newname" placeholder="Nombre completo" id="newname" autocomplete="off">
-		<input type="text" name="newuser" placeholder="Ej. dolphi21" id="newuser" autocomplete="off">
+		<input type="text" name="newuser" placeholder=" usuario Ej. dolphi21" id="newuser" autocomplete="off">
 		<input type="email" name="newemail" placeholder="Email" id="newemail" autocomplete="off">
 		<input type="password" name="newpassword" placeholder="Password" id="newpassword" autocomplete="off">
 

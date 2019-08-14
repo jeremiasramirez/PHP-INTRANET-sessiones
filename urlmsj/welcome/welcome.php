@@ -15,9 +15,9 @@
 			print("<h1 class=user__name>
 				<p class=emoji>😃</p>¡Bienvenida ".$girlman."!</h1>");
 		}
-		else{
+		else {
 			print("<h1 class=user__name>
-				<p class=emoji>😃</p>¡Bienvenido!</h1>");
+				<p class=emoji>😃</p>¡Bienvenido! completa tu perfil</h1>");
 		}
 }
 

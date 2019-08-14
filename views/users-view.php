@@ -11,7 +11,7 @@ class users_view{
 
  		if($id == $sessions){
 			print("<div class=container__change id=container__change>
-				<a href=a.php?id=$id class='fas fa-camera' id=changePerfilLink></a>
+				<a href='a.php?id=$id' class='fas fa-camera' id=changePerfilLink></a>
 				</div>");
   		}
  	}
