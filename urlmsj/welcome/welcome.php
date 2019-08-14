@@ -16,8 +16,9 @@
 				<p class=emoji>😃</p>¡Bienvenida ".$girlman."!</h1>");
 		}
 		else {
-			print("<h1 class=user__name>
-				<p class=emoji>😃</p>completa tu perfil</h1>");
+			print("<h1 style='background-color:red;color:white; width:99%;font-size:18px;
+				text-align:center;font-family:arial;padding:.2em;border-radius:4px;'>
+			Termina de completar tu perfil.</h1>");
 		}
 }
 
