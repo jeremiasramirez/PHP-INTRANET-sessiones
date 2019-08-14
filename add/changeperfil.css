@@ -49,9 +49,9 @@
 }
 .imguserfake{
     display: block;
-    margin:.2em;
+    margin: -20px .2em;
     border-radius:10px;
-    transform: scale(.6);
+    transform: scale(.4);
 }
 .containerForm{
     padding-top: 1em;

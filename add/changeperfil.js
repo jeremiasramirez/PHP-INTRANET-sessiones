@@ -41,7 +41,7 @@ class createViewState{
                     containerForm.appendChild(formchange)
 
                 let imguserfake = document.createElement("img");
-                    imguserfake.setAttribute("src","imgs/user.png");
+                    imguserfake.setAttribute("src","imgs/user2.png");
                     imguserfake.setAttribute("class", "imguserfake");
                     imguserfake.setAttribute("id", "imguserfake");
                     formchange.appendChild(imguserfake);

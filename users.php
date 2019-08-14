@@ -232,7 +232,7 @@ $conected->conected();
 //end of php code
 ?>	
  			
- 	<?php print("<p id='iduser'>$ids</p>");?>	
+ 	<?php print("<p id='iduser' style=opacity:0>$ids</p>");?>	
  	</div>
  </article>
 	 
