@@ -46,6 +46,7 @@
 			 		area.setAttribute("rows", "12");
 			 		area.setAttribute("placeholder", "Mi estado");
 			 		form.appendChild(area);
+			 
 
 			 	let button = document.createElement("button");
 			 		button.setAttribute("class", "button");

@@ -1,5 +1,30 @@
 		let containerStates = document.getElementById("statesitem");
 		let itemStates = containerStates.querySelectorAll("#data_state--js");
+		function optimizeTextState(elState, longestState, barr){
+
+						 
+							 if(longestState > 430){
+								if(window.screen.width < 500){
+									barr -= 2;
+									elState.style.transform="scale(.6)"
+									elState.style.fontSize="20px"
+								}
+							}
+								if(longestState > 600){
+								if(window.screen.width < 500){
+									barr -= 10;
+									elState.style.fontSize="17px"
+									elState.style.transform="scale(.7)"
+								}
+							}
+							if(longestState >= 355){
+								if(window.screen.width <= 500){
+									elState.style.transform="scale(.8)"
+									barr -= 2;
+									
+								}
+							}
+		}
 		if(containerStates && itemStates){
 
 		for(let item=0; item < itemStates.length; item++){
@@ -36,10 +61,29 @@
 
 						contentSt.insertAdjacentElement("afterbegin",barraTiming)
 
+						// get size of text state
+						let elState = document.getElementById("elState")
+							let valueStringState = new String(elState.textContent);
+							let valueState = [valueStringState];
+							let counterValueState = valueState[0][0];
+							let longestState = valueState[0].length;
 
+							console.log(longestState)
+							
+						
+					 
+		
+							 
 					let intervalTiming = setInterval(()=>{
+							 	
+							
+							barr -= 5
+							optimizeTextState(elState, longestState, barr);
+						 
+						 
 
-							barr -= 1;
+						
+							 
 		 
 							barraTiming.style.width= barr + "%"
 						 
@@ -47,12 +91,12 @@
 								contentSt.classList.add("goState");
 									setTimeout(()=>{
 										contentSt.remove()
-									},100)
+									},2000)
 								clearInterval(intervalTiming);
 							 
 							}
 
-					}, 150)
+					}, 1000)
 						timingClose.addEventListener("click", (e)=>{
 							contentSt.classList.add("goState");
 							setTimeout(()=>{

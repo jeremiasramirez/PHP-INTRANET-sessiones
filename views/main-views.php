@@ -1,5 +1,5 @@
 <?php
-include "model/model.php";
+require "model/model.php";
 	 
 	class main_views extends conectionDB{
 
