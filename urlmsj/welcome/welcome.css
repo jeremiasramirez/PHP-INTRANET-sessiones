@@ -44,7 +44,7 @@
 
 	font-family: arial;
 	font-weight: 600;
-	animation: hiddenelement 4s .6s linear;
+	animation: hiddenelement 5s 1s linear;
 	transition: .3s; 
 	position: absolute;
 	bottom:0;
@@ -52,8 +52,8 @@
 }
 @keyframes hiddenelement{
 	to{
-		transform: translateY(-200px);
-		opacity: 0;
+		transform: translateY(-300px);
+		/*opacity: .7;*/
 		transition: 1s;
 	}
 }

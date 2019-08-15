@@ -47,7 +47,7 @@
 								contentSt.classList.add("goState");
 									setTimeout(()=>{
 										contentSt.remove()
-									},2000)
+									},100)
 								clearInterval(intervalTiming);
 							 
 							}

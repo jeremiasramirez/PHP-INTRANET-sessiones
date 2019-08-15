@@ -58,8 +58,8 @@ $conected->conected();
 	<div class="users__find" id="users__find">
 </div>
  <?php
-	$sexo = $_SESSION["sexo"];
- 	welcomeuser($sexo, $_SESSION["name"]);
+	 
+ 	welcomeuser($_SESSION["sexo"], $_SESSION["name"]);
  ?>
 
 <!-- start php code -->
