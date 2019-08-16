@@ -237,21 +237,27 @@ $conected->conected();
  	</div>
  </article>
 
-<script type="text/javascript">
-	
-
-</script>
-<style type="text/css">
-
-
- 	</style>
+ 
 <!-- 	 end of code -->
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
 <script src="main.js"></script>
 <script src="public/js/showPerfiClick.js"></script>
 <script src="add/changeperfil.js"></script>
-<script src="urlmsj/welcome/welcome.js"></script>
 
+<?php
+	/* VERIFICANDO SI EL USUARIO ES EL ADMIN PARA MOSTRAR MSJ DE COMPLETA TU PERFIL EN CASO DE QUE LO TENGA INCOMPLETO.*/
+	 if($_SESSION["emauser"] == $emailD){
+	 	print("<script src='urlmsj/welcome/welcome.js'></script>");
+	 } 
+ ?>
+
+
+<style type="text/css">
+	body{
+		/*transform: translateX(10px);*/
+		overflow-x: hidden;
+	}
+</style>
 </body>
 </html>

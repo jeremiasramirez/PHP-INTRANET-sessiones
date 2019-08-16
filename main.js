@@ -11,8 +11,8 @@ if(sendpublish){
 	}, false);
 }
 		let mainHeader =document.getElementById("main__header");
-
-			 if(window.screen.width <= 330){
+			let sizeScreen = window.screen.width; 
+			 if( sizeScreen <= 330){
 				document.addEventListener("scroll", (e)=>{
 					if(window.scrollY > 0){
 						mainHeader.style.transform="transformY(500px)";

@@ -53,7 +53,7 @@
 @keyframes hiddenelement{
 	to{
 		transform: translateY(-300px);
-		/*opacity: .7;*/
+		opacity: .4;
 		transition: 1s;
 	}
 }
