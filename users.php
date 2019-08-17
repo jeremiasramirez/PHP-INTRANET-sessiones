@@ -239,6 +239,22 @@ $conected->conected();
  </article>
 
  
+<script type="text/javascript">
+	function backpage(){
+		
+			history.back();
+		 
+	}
+	let backs = document.getElementById("back");
+	if(backs){
+		backs.addEventListener("click", (e)=>{
+			 
+			backpage();
+			 
+		}, false);
+	}
+
+</script>
 <!-- 	 end of code -->
 <script src="usersearch.js"></script>
 <script src="users.js"></script>
