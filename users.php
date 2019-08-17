@@ -4,6 +4,7 @@
 require_once 'model/model.php';
 require_once "views/users-view.php";
 require_once "urlmsj/welcome/welcome.php";
+require_once "urlmsj/updatedperfilphoto.php";
 
 $conected = new conectionDB();
 $conected->conected();
@@ -58,13 +59,8 @@ $conected->conected();
 	<div class="users__find" id="users__find">
 </div>
  <?php
-	 
- 	welcomeuser($_SESSION["sexo"], $_SESSION["name"]);
- 	if(isset($_GET["updatephoto"]) && $_GET["updatephoto"]== 1){
-		print("<h1 class=user__name id=user__name>
-				<p class=emoji>😃</p>Foto de perfil actualizada!</h1>");
-
- 	}
+ 	messageupdateperfilphoto($_GET["updatephoto"], 1);
+ 	// welcomeuser($_SESSION["sexo"], $_SESSION["name"]);
  ?>
 
 <!-- start php code -->
