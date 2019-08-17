@@ -20,7 +20,7 @@ session_start();
   			$id = $_GET["id"];
 			mysqli_query($conection, "UPDATE usuario SET photo='$nameimg' WHERE user_id = '$id'");
 	 
-		  	header("Location: ../users.php?update=updated");
+		  	header("Location: ../users.php?updatephoto=1");
 
 		}
 		// else{

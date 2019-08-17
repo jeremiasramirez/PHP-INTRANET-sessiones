@@ -60,6 +60,11 @@ $conected->conected();
  <?php
 	 
  	welcomeuser($_SESSION["sexo"], $_SESSION["name"]);
+ 	if(isset($_GET["updatephoto"]) && $_GET["updatephoto"]== 1){
+		print("<h1 class=user__name id=user__name>
+				<p class=emoji>😃</p>Foto de perfil actualizada!</h1>");
+
+ 	}
  ?>
 
 <!-- start php code -->
