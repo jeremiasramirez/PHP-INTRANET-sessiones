@@ -45,6 +45,7 @@
     flex-direction: column;
     align-items: center;
     text-align:center;
+
    
 }
 .imguserfake{
@@ -57,8 +58,8 @@
     padding-top: 1em;
 }
 .photoinput{
-    width:115px;
- 
+    width:130px;
+   
 }
 .buttonchange{
     margin-top: 1em;
@@ -70,7 +71,9 @@
     font-weight: 600;
     font-family: arial;
     font-size: 20px;
-    position: sticky;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: hidden;
     bottom:0;
     z-index: 1200;
     border-radius: 10px;
@@ -82,4 +85,22 @@
         transition: .5s;
         border-radius:0;
 		cursor: pointer;
+}
+
+
+
+
+.containerfloatingbutton{
+    width: 100%;
+    position: absolute;
+    z-index: 1000000000;
+    background-color: red;
+    color: white;
+    font-family: arial;
+    height: 200px;
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 100px;
+    text-align: center;
+    box-shadow: 1px 1px 20px black;
 }

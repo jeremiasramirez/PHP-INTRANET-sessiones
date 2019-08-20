@@ -318,13 +318,13 @@
 }
 #sendData{
 	margin-top: 1em;
-	padding: .8em 6em;
+	padding: .5em 4em;
 	background-color: blue;
 	color: white;
 	font-family: arial;
 	border: 0;
 	border-radius: 5px;
-	font-size: 16px;
+	font-size: 15px;
 	transition: .3s;
 	font-weight: 600;
 }

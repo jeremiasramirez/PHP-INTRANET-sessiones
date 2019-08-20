@@ -1,5 +1,8 @@
 class createViewState{
 
+    selectPhoto(){
+
+    }
     createView(){
         let viewContainer = document.createElement("div");
             viewContainer.setAttribute("class", "viewContainer")
@@ -28,6 +31,7 @@ class createViewState{
                       }, 500)
 
                   }
+
               }, false);
               let iduser = document.getElementById("iduser");
                   
@@ -46,20 +50,39 @@ class createViewState{
                     imguserfake.setAttribute("id", "imguserfake");
                     formchange.appendChild(imguserfake);
                 
+                  if(document.getElementById("imguserfake")){
 
+                    document.getElementById("imguserfake").addEventListener("click", ()=>{
 
-                let filechange = document.createElement("input");
-                    filechange.setAttribute("type","file");
-                    filechange.setAttribute("name", "photoperfil");
-                    filechange.setAttribute("class", "photoinput");
-                    filechange.setAttribute("id", "photoinput");
-                    formchange.appendChild(filechange);
+                    
+
+                      let containerFloatingButton = document.createElement("div");
+                          containerFloatingButton.setAttribute("class", "containerfloatingbutton");
+                          containerFloatingButton.setAttribute("id", "containerfloatingbutton");
+                          containerFloatingButton.textContent="Abrir fotos ";
+                          formchange.appendChild(containerFloatingButton);
+
+                      let filechange = document.createElement("input");
+                        filechange.setAttribute("type","file");
+                        filechange.setAttribute("name", "photoperfil");
+                        filechange.setAttribute("class", "photoinput");
+                        filechange.setAttribute("id", "photoinput");
+                        containerfloatingbutton.appendChild(filechange);
+
+                        document.getElementById("photoinput").addEventListener("click",()=>{
+                          document.getElementById("containerfloatingbutton").style.opacity="0"
+                        })
+
+                    })
+                  }
+
 
                 let buttonchange = document.createElement("button");
                     buttonchange.setAttribute("class", "buttonchange");
                     buttonchange.setAttribute("id", "buttonchange");
                     buttonchange.textContent="Actualizar foto";
                    formchange.appendChild(buttonchange);
+
     }
 
 

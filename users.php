@@ -85,10 +85,10 @@ $conected->conected();
  			while($foto = mysqli_fetch_array($queryfoto)){
  				$photo = $foto['photo'];
  				if(empty($photo)){
- 					print("<img src='imgs/user.png' class=img__perfil__fake>");	
+ 					print("<div class=containerimgperfil><img src='imgs/user.png' class=img__perfil__fake></div>");	
  				}
  				else{
- 					print("<img src='uploads/perfil/$photo' style=cursor:pointer class=img__perfil__fake id=perfilimg>");
+ 					print("<div class=containerimgperfil><img src='uploads/perfil/$photo' style=cursor:pointer class=img__perfil__fake id=perfilimg></div>");
  				}
  			}
  	
@@ -171,9 +171,11 @@ $conected->conected();
 
 //end of php code
  ?>
+
 </article>
-	 
+	
 <article class="containerTitleInfoBasic">
+ 
 	<h1 class="titleInfoBasic">Información básica</h1>
 </article>
 </section>

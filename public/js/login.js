@@ -42,7 +42,7 @@ function messageError(){
 
         btn.addEventListener("click", (e)=>{
             
-            if( (user.value) == "" || (password.value=="")){
+            if( (user.value == "" )|| (password.value=="")){
                 e.preventDefault();
                 messageError();
                 // document.body.classList.add("bodyError");

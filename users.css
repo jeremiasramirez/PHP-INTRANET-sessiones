@@ -1,3 +1,4 @@
+
 .perfil__container{
 	/*background-color: #333;*/
 	height: 100vh;
@@ -15,17 +16,27 @@
 .title__user__perfil{
 	color: #444;
 	font-size: 20px;
-	margin-top: -10rem;
+	margin-top: -7em;
 	font-family: sans-serif;
 }
+@media screen and (min-width: 330px) {
+	.title__user__perfil{
+		margin-top: -4em;
+	}
+	body{
+		background-color: red;
+	}
+}
+
 .photo__perfil{
 	width: 200px;
 	height: 300px;
-	padding:.2em;
-	margin-bottom: .5em;
+	/*padding:.2em;*/
+	margin-bottom: .7em;
 	 
 	
 }
+ 
 .photo__perfil img{
 	max-width: 240px;
 	max-height: 250px;
@@ -34,10 +45,12 @@
 	.photo__perfil{
 		width: auto;
 		max-height: 400px; 
+		/*margin-bottom: 3em;*/
 	}
  
 }
 .img__perfil__fake{
+
 	border-radius: 5px;
 }
 .statepersonal{
@@ -126,4 +139,9 @@
 }
 .form__incomplete:hover{
 	opacity:.8;
+}
+
+
+.containerimgperfil{
+	margin-bottom: 2em
 }

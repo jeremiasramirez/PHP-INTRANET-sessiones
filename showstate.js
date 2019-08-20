@@ -68,8 +68,7 @@
 							let counterValueState = valueState[0][0];
 							let longestState = valueState[0].length;
 
-							console.log(longestState)
-							
+						 
 						
 					 
 		

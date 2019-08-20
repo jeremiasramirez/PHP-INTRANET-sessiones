@@ -31,13 +31,33 @@ session_start();
 		<input type="password" name="newpassword" placeholder="Password" id="newpassword" autocomplete="off">
 
 		<button id="sendData">Registrarse</button>
-	
+		<p class='home'><a href="login.php">Login <span class='fas fa-sign-in-alt'></span></a></p>
 	</form>
 
 
 	
 
 </div>
+<style type="text/css">
+	
+
+.home a{
+	margin-top: 1em;
+	border-radius: 5px;
+	background-color: red;
+	padding:.7em 6em;
+	color:#ddd;
+	font-family:arial;
+	text-decoration: none;
+	font-family: arial;
+	transition:.3s;
+}
+.home a:hover{
+	opacity: .7;
+	transition:.3s;
+	background-color: black; 
+}
+</style>
 
 
 
@@ -49,8 +69,7 @@ session_start();
 
 
 
-
-<script src="login.js"></script>
+<!-- <script src="login.js"></script> -->
 <script src="register.js"></script>
 </body>
 </html>
