@@ -10,7 +10,7 @@
 									elState.style.fontSize="20px"
 								}
 							}
-								if(longestState > 600){
+							if(longestState > 600){
 								if(window.screen.width < 500){
 									barr -= 10;
 									elState.style.fontSize="17px"
@@ -68,8 +68,9 @@
 							let counterValueState = valueState[0][0];
 							let longestState = valueState[0].length;
 
+							console.log(longestState)
 						 
-						
+							
 					 
 		
 							 
