@@ -9,6 +9,7 @@ session_start();
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="register.css">
+	<link rel="stylesheet" type="text/css" href="public/css/stylesbuttonsregister.css">
 	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
 </head>
 <body style="background-color: #333">
@@ -30,45 +31,12 @@ session_start();
 		<input type="email" name="newemail" placeholder="Email" id="newemail" autocomplete="off">
 		<input type="password" name="newpassword" placeholder="Password" id="newpassword" autocomplete="off">
 
-		<button id="sendData">Registrarse</button>
+		<button id="sendData">Registrarme</button>
 		<p class='home'><a href="login.php">Login <span class='fas fa-sign-in-alt'></span></a></p>
 	</form>
-
-
-	
-
+ 
 </div>
-<style type="text/css">
-	
-
-.home a{
-	margin-top: 1em;
-	border-radius: 5px;
-	background-color: red;
-	padding:.7em 6em;
-	color:#ddd;
-	font-family:arial;
-	text-decoration: none;
-	font-family: arial;
-	transition:.3s;
-}
-.home a:hover{
-	opacity: .7;
-	transition:.3s;
-	background-color: black; 
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
+ 
 <!-- <script src="login.js"></script> -->
 <script src="register.js"></script>
 </body>

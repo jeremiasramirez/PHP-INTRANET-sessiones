@@ -1,25 +1,38 @@
 		let containerStates = document.getElementById("statesitem");
 		let itemStates = containerStates.querySelectorAll("#data_state--js");
 		function optimizeTextState(elState, longestState, barr){
-
+							if(longestState < 100){
+								if(window.screen.width < 500){
+									barr -= 30;
+							
+								}
+							}
 						 
 							 if(longestState > 430){
 								if(window.screen.width < 500){
 									barr -= 2;
 									elState.style.transform="scale(.6)"
+									elState.style.fontSize="16px"
+								}
+							}
+							if(longestState > 100){
+								if(window.screen.width < 500){
+									barr -= 2;
+									elState.style.transform="scale(.9)"
 									elState.style.fontSize="20px"
 								}
 							}
 							if(longestState > 600){
 								if(window.screen.width < 500){
-									barr -= 10;
-									elState.style.fontSize="17px"
-									elState.style.transform="scale(.7)"
+									barr -= 3;
+									elState.style.fontSize="12px"
+									elState.style.transform="scale(.4)"
+									 
 								}
 							}
 							if(longestState >= 355){
 								if(window.screen.width <= 500){
-									elState.style.transform="scale(.8)"
+									elState.style.transform="scale(.9)"
 									barr -= 2;
 									
 								}

@@ -19,18 +19,19 @@ if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newem
 				$user= $_POST["newuser"];
 				$user =strip_tags($_POST["newuser"]);
 				$user =addslashes($_POST["newuser"]);
+				$user = strtolower($user);
 				// $user =htmlentities(($_POST["newuser"]), ENC_QUOTES);
 
 				$email= $_POST["newemail"];
 				$email = strip_tags($_POST["newemail"]);
 				$email = addslashes($_POST["newemail"]);
+				$email = strtolower($email);
 				// $email = htmlentities(addslashes($_POST["newemail"]), ENC_QUOTES);
 
 				$pass= $_POST["newpassword"];
 				$pass = strip_tags($_POST["newpassword"]);
 				$pass = addslashes($_POST["newpassword"]);
 				// $pass = htmlentities(addslashes($_POST["newpassword"]), ENC_QUOTES);
-
 
 
 			$conectoruser= false;

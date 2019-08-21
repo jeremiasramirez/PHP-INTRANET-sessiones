@@ -33,7 +33,7 @@
 		font-weight: 600;
 		font-family: arial;
 		font-size: 20px;
-		position: sticky;
+		position: fixed;
 		bottom:0;
 		z-index: 1400;
 		border-radius: 10px;
@@ -43,6 +43,7 @@
 		transform: scale(.9);
 		transition: .5s;
 		cursor: pointer;
+		opacity: .8;
 	}
 	.closeview{
 		color: white;

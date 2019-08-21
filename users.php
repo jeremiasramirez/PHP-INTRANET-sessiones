@@ -168,7 +168,11 @@ $conected->conected();
  $changePhoto_ = new users_view();
  $changePhoto_->changePhoto($id, $_SESSION["iduser"]);
 
-
+print("<br>");
+print("<br>");
+print("<br>");
+print("<br>");
+ 
 //end of php code
  ?>
 

@@ -337,9 +337,10 @@
 .title_login{
 	font-family: sans-serif;
 	font-size: 25px;
-	background-color: #444;
+	background-color: #eee;
+	box-shadow: 1px 1px 10px #888;
 	width: 100%;
-	color: white;
+	color: #333;
 	text-align: center;
 	margin:0;
 	padding:.2em 0 .2em 0;
