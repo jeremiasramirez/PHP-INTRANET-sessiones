@@ -68,9 +68,10 @@ class createViewState{
                         filechange.setAttribute("class", "photoinput");
                         filechange.setAttribute("id", "photoinput");
                         containerfloatingbutton.appendChild(filechange);
+ 
 
                         document.getElementById("photoinput").addEventListener("click",()=>{
-                          document.getElementById("containerfloatingbutton").style.opacity="0"
+                          document.getElementById("containerfloatingbutton").style.opacity=".4"
                         })
 
                     })
