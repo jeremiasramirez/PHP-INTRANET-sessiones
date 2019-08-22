@@ -49,10 +49,14 @@ class createViewState{
                     imguserfake.setAttribute("class", "imguserfake");
                     imguserfake.setAttribute("id", "imguserfake");
                     formchange.appendChild(imguserfake);
-                
-                  if(document.getElementById("imguserfake")){
 
-                    document.getElementById("imguserfake").addEventListener("click", ()=>{
+                let fakeimg = document.getElementById("imguserfake");
+                 fakeimg.addEventListener("mouseover", ()=>{
+                    fakeimg.classList.add("bords");
+                 })
+                  if(fakeimg){
+
+                   fakeimg.addEventListener("click", ()=>{
 
                     
 

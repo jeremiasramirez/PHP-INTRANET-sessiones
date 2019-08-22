@@ -85,7 +85,7 @@ $conected->conected();
  			while($foto = mysqli_fetch_array($queryfoto)){
  				$photo = $foto['photo'];
  				if(empty($photo)){
- 					print("<div class=containerimgperfil><img src='imgs/user.png' class=img__perfil__fake></div>");	
+ 					print("<div class=containerimgperfil><img src='imgs/user.png' class='img__perfil__fake'></div>");	
  				}
  				else{
  					print("<div class=containerimgperfil><img src='uploads/perfil/$photo' style=cursor:pointer class=img__perfil__fake id=perfilimg></div>");
@@ -95,7 +95,7 @@ $conected->conected();
  //end of php code
  			 
  ?>
- 		 
+ 		
  			
  	</article>
  	<article class="title__name__container">
