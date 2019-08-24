@@ -51,7 +51,7 @@ class createViewState{
                     formchange.appendChild(imguserfake);
 
                 let fakeimg = document.getElementById("imguserfake");
-                 fakeimg.addEventListener("mouseover", ()=>{
+                 fakeimg.addEventListener("click", ()=>{
                     fakeimg.classList.add("bords");
                  })
                   if(fakeimg){
@@ -75,7 +75,7 @@ class createViewState{
  
 
                         document.getElementById("photoinput").addEventListener("click",()=>{
-                          document.getElementById("containerfloatingbutton").style.opacity=".4"
+                          document.getElementById("containerfloatingbutton").style.opacity="0"
                         })
 
                     })

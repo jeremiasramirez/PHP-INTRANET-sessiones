@@ -77,7 +77,10 @@
         border-color: #444;    
     }
 }
-
+.imguserfake:hover{
+    transition: .3s;
+    border-radius: 50%;
+}
 .bords{
     transition: .3s;
     border-radius: 50%;
