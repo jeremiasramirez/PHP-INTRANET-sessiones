@@ -63,16 +63,41 @@
 			 		emojisContainer.setAttribute("class", "emojiscontainer");
 			 		emojisContainer.setAttribute("id", "emojiscontainer");
 			 		form.appendChild(emojisContainer);
+
+			 	let containerAllEmojis = document.createElement("div");
+			 		containerAllEmojis.setAttribute("class", "containerAllEmojis");
+			 		containerAllEmojis.setAttribute("id", "containerAllEmojis");
+			 		// emojisContainer.appendChild(containerAllEmojis);
 			 	
 			 	for(let viewemoji=0; viewemoji<viewEmojis.length; viewemoji++){
 
-			 			let emojisView = document.createElement("span");
-			 				emojisView.setAttribute("class", "emojisView");
-			 				emojisView.setAttribute("id", "emojisView");
-			 				emojisView.textContent = viewEmojis[viewemoji];
-			 				emojisContainer.appendChild(emojisView);
+			 		let emojisView = document.createElement("span");
+			 			emojisView.setAttribute("class", "emojisView");
+			 			emojisView.setAttribute("id", `emojisView`);
+			 			emojisView.textContent = viewEmojis[viewemoji];
+			 			emojisContainer.appendChild(emojisView);
 
 			 	}
+
+			 	let emojisAll = document.getElementById("emojiscontainer");
+			 	let allEmojis = emojisAll.querySelectorAll('span');
+			 	let counterClick = 0;
+
+			 	for(let click=0; click<allEmojis.length; click++){
+			 		allEmojis[click].addEventListener("click", (e)=>{
+			 			 counterClick+=1
+				 		if(counterClick<=1){
+					 		let containerAllEmojis = document.createElement("div");
+						 		containerAllEmojis.setAttribute("class", "containerAllEmojis");
+						 		containerAllEmojis.setAttribute("id", "containerAllEmojis");
+						 		emojisContainer.appendChild(containerAllEmojis);
+						}
+				 	})
+			 	}
+			 	
+			  
+
+
 
 			 
 
