@@ -63,7 +63,7 @@ $conected->conected();
  	// welcomeuser($_SESSION["sexo"], $_SESSION["name"]);
  ?>
 
-<!-- start php code -->
+ 
  <section class="perfil__container">
  	<article class="photo__perfil">
  <?php
@@ -91,8 +91,6 @@ $conected->conected();
  					print("<div class=containerimgperfil><img src='uploads/perfil/$photo' style=cursor:pointer class=img__perfil__fake id=perfilimg></div>");
  				}
  			}
- 	
- //end of php code
  			 
  ?>
  		
@@ -102,7 +100,7 @@ $conected->conected();
  
 		
  <?php
-//start php code
+ 
 		
  	$id = $_SESSION["iduser"];
 	$country = null;
@@ -149,17 +147,10 @@ $conected->conected();
 
   	}
 
-//end of php code
  ?>
-
-
-<!-- All information -->
-
+ 
  <?php
-//start php code
-
-		
-//vista de alias de usuario en caso de que exista
+ 
  $getstate = new users_view();
  $getstate->getState($state);
 
@@ -173,7 +164,7 @@ print("<br>");
 print("<br>");
 print("<br>");
  
-//end of php code
+ 
  ?>
 
 </article>
@@ -228,48 +219,31 @@ print("<br>");
 
 
 
-
-
-//informacion privada ,solo la ve el usuario admin de su cuenta
+ 
 		 $validateuser = new adminInformationPrivate();
 		 $validateuser->validateUser($_SESSION["emauser"], $emailD, 
 		 $_SESSION["userlogin"], $userlogB, $telephone, $id);
 		
 		
-//end of php code
+ 
 ?>	
  			
- 	<?php print("<p id='iduser' style=opacity:0>$ids</p>");?>	
+ 	<?php print("<p id='iduser' style='visibility:hidden;'>$ids</p>");?>	
 
  	</div>
  </article>
 
  
-<script type="text/javascript">
-	function backpage(){
-		
-			history.back();
-		 
-	}
-	let backs = document.getElementById("back");
-	if(backs){
-		backs.addEventListener("click", (e)=>{
-			 
-			backpage();
-			 
-		}, false);
-	}
-
-</script>
 <!-- 	 end of code -->
 <script src="usersearch.js"></script>
-<script src="users.js"></script>
+<!-- <script src="users.js"></script> -->
 <script src="main.js"></script>
 <script src="public/js/showPerfiClick.js"></script>
+<script src="public/js/backPage.js"></script>
 <script src="add/changeperfil.js"></script>
 
 <?php
-	/* VERIFICANDO SI EL USUARIO ES EL ADMIN PARA MOSTRAR MSJ DE COMPLETA TU PERFIL EN CASO DE QUE LO TENGA INCOMPLETO.*/
+	 
 	 if($_SESSION["emauser"] == $emailD){
 	 	print("<script src='urlmsj/welcome/welcome.js'></script>");
 	 } 

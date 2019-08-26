@@ -2,19 +2,16 @@
 require "model/model.php";
 	 
 	class main_views extends conectionDB{
-
-			function __construct($itemstate){
-				$this->itemstate = $itemstate;
-			}
-			function mainGetStates(){
+ 
+			function mainSetStates($itemstate){
 
 			//getting conection to DB 
 			parent::conected();
 			global $conection;
-			if(isset($this->itemstate) && $this->itemstate != ""){
+			if(isset($itemstate) && $itemstate != ""){
 
-				if(!ctype_space($this->itemstate)) {
-					$data = $this->itemstate;
+				if(!ctype_space($itemstate)) {
+					$data = $itemstate;
 					$data = addslashes($data);
 					$data = strip_tags($data);
 					$statement_insert = "INSERT INTO allstates (stat) VALUES ('$data')";
@@ -23,6 +20,11 @@ require "model/model.php";
 				}
 				
 			}
+ 
+		}
+		function getState(){
+			parent::conected();
+			global $conection;
 			$statement_show = "SELECT stat FROM allstates";
 
 			$query_show = mysqli_query($conection, $statement_show);
@@ -30,7 +32,13 @@ require "model/model.php";
  			while($row = mysqli_fetch_array($query_show)){
 			 	print("<p class=data_state id=data_state--js>".$row["stat"]."</p>");
 			}
-
 		}
+		 
 	}
- ?>
+
+	if($_POST['state']){
+		$showmain= new main_views();
+		$showmain->mainSetStates($_POST["state"]);
+		
+	}
+

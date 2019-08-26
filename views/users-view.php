@@ -11,8 +11,8 @@ class users_view{
 
  		if($id == $sessions){
 			print("<div class=container__change id=container__change>
-				<a href='a.php?id=$id' class='fas fa-camera' id=changePerfilLink></a>
-				</div>");
+						<a href='a.php?id=$id' class='fas fa-camera' id=changePerfilLink></a>
+					</div>");
   		}
  	}
  	public function setSex($id){
@@ -25,7 +25,7 @@ class users_view{
  			  		<br>
  			  		<br>
 
-  				<button>Agregar sexo</button>
+  					<button>Agregar sexo</button>
   				</form>");
  	}
  	public function getSex($sexo, $emailD, $sessions, $id){
@@ -176,6 +176,7 @@ class adminInformationPrivate extends users_view{
 			print("<article class=info-perso>
 				<h1 class=title-perso>Información personal</h1>
 				</article>");
+
 			print("<article>
 				<h1 class='title-perso' style=font-size:15px;text-align:center;color:#aaa;>Por seguridad esta información solo la puede ver usted <span class='fas fa-lock'></span></h1>
 				</article>");
@@ -207,11 +208,11 @@ class adminInformationPrivate extends users_view{
 					$this->myUser($sesslogin);
 				}
 				if($telephone == ""){
-					if($emailD == $sessions){
+					if($sessions == $emailD){
 						$this->setTelephone($id);
 					}			
 				}
-				if($sessions === $emailD){
+				if($sessions == $emailD){
 					$this->getTelephone($telephone);
 				}
 	}

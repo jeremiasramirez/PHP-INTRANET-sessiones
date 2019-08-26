@@ -1,5 +1,21 @@
 	class createViewState{
- 
+ 	
+ 		 removeEmojis(){
+			 	
+			  let baseClick =document.getElementsByClassName("area");
+			 if(baseClick){
+			  	baseClick[0].addEventListener("click", (e)=>{
+			  		if(document.getElementById("containerAllEmojis")){
+			  			document.getElementById("containerAllEmojis").remove()
+
+			  		}
+			  	})
+			}
+
+
+		}
+
+
 		createView(){
 
 			let viewContainer = document.createElement("div");
@@ -46,7 +62,16 @@
 			 		area.setAttribute("rows", "12");
 			 		area.setAttribute("placeholder", "Mi estado");
 			 		form.appendChild(area);
-			 		/*let inutilsEmojis ['👅👄💋💘❤💓💔💕💖💗💙💚💛🧡💜🖤💝💞💟❣💌💤💢💣💥💦💨💫💬🗨🗯💭🤴👸👳‍♂👳‍♀👲🧕🧔👱‍♂👱‍♀🤵👰🤰🤱👼🙍‍♂🙍‍♀🙎‍♂🙎‍♀🙅‍♂🙆‍♂🙆‍♀💁‍♀🙋‍♂🙋‍♀🙇‍♂🙇‍♀🤦‍♂🤦‍♀🤷‍♂🤷‍♀💆‍♂💆‍♀💇‍♂💇‍♀🚶‍♂🚶‍♀🏃‍♂🏃‍♀💃🕺🛀🛌🕴🗣👤👥👫👬👭👩‍❤‍💋‍👨👨‍❤‍💋‍👨👩‍❤‍💋‍👩👩‍❤‍👨👨‍❤‍👨👩‍❤‍👩'];*/
+
+
+
+
+
+
+			 	// let inutilsEmojis = ["💌💤💢💣💥💦💨💫💬🗨🗯💭🤴👸👳‍♂👳‍♀👲🧕🧔👱‍♂👱‍♀🤵👰🤰🤱👼🙍‍♂🙍‍♀🙎‍♂🙎‍♀🙅‍♂🙆‍♂🙆‍♀💁‍♀🙋‍♂🙋‍♀🙇‍♂🙇‍♀🤦‍♂🤦‍♀🤷‍♂🤷‍♀💆‍♂💆‍♀💇‍♂💇‍♀🚶‍♂🚶‍♀🏃‍♂🏃‍♀💃🕺🛀🛌🕴🗣👤👥👫👬👭👩‍❤‍💋‍👨👨‍❤‍💋‍👨👩‍❤‍💋‍👩👩‍❤‍👨👨‍❤‍👨👩‍❤‍👩"]
+			 	
+			 	 
+
 			 	let emojisHumans = ['😀','😁','😂','🤣','😃','😄','😅','😆','😉','😊','😋','😎',
 			 						'😍','😘','😗','😙','😚','☺','🙂','🤗','🤩','🤔','🤨','😐',
 			 						'😑','😶','🙄','😏','😣','😥','😮','🤐','😯','😪','😫','😴','😌','😛',
@@ -55,9 +80,15 @@
 			 						'🤬','😷','🤒','🤕','🤢','🤮','🤧','😇','🤠','🤡', '🤥','🤫','🤭','🧐','🤓','😈',
 			 						'👿','👹','👺','💀','☠','👻','👽','👾','🤖','💩','😺','😸','😹','😻','😼','😽','🙀',
 			 						'😿','😾','🙈','🙉','🙊','👶','🧒','👦','👧','🧑','👨','👩','🧓','👴','👵','🤳','💪','👈','👉','☝','👆','🖕','👇','✌','🤞','🖖','🤘','🤙','🖐','✋','👌','👍','👎','✊','👊','🤛','🤜','🤚','👋','🤟','✍',
-			 						'👏','👐','🙌','🤲','🙏','🤝','💅','👂','👃','👣','👀','👁','👁‍🗨','🧠'];
+			 						'👏','👐','🙌','🤲','🙏','🤝','💅','👂','👃','👣','👀','👁','👁‍🗨','🧠',
+									'👅','👄','💋','💘','❤','💓','💔','💕','💖','💗','💙',
+			 						'💚','💛','🧡','💜','🖤','💝','💞','💟','❣',
+			 						];
 
-			 	let viewEmojis = ['😅', '💘', '🙉', '🍎', '🎲', '🚕', '🇩🇴'];
+			 
+
+
+			 	let viewEmojis = ['🙉'];
 
 			 	let emojisContainer = document.createElement("div");
 			 		emojisContainer.setAttribute("class", "emojiscontainer");
@@ -83,23 +114,67 @@
 			 	let allEmojis = emojisAll.querySelectorAll('span');
 			 	let counterClick = 0;
 
-			 	for(let click=0; click<allEmojis.length; click++){
-			 		allEmojis[click].addEventListener("click", (e)=>{
-			 			 counterClick+=1
-				 		if(counterClick<=1){
-					 		let containerAllEmojis = document.createElement("div");
-						 		containerAllEmojis.setAttribute("class", "containerAllEmojis");
-						 		containerAllEmojis.setAttribute("id", "containerAllEmojis");
-						 		emojisContainer.appendChild(containerAllEmojis);
-						}
-				 	})
-			 	}
+ 
+
+
+			 	allEmojis[0].addEventListener("click", ()=>{
+
+			 		// counterClick += 1;
+			 		if(!(document.getElementById("containerAllEmojis"))){
+
+			 			let containerAllEmojis = document.createElement("div");
+						 	containerAllEmojis.setAttribute("class", "containerAllEmojis");
+						 	containerAllEmojis.setAttribute("id", "containerAllEmojis");
+						 	emojisContainer.appendChild(containerAllEmojis);	
+			 		}
+
+			 		let containerAllsEmojis = document.getElementById("containerAllEmojis");
+
+			 		 
+				 		for(let emojis=0; emojis<emojisHumans.length; emojis++){
+
+					 		let emojisElements = document.createElement("span");
+						 		emojisElements.setAttribute("class", "emojisElements");
+						 		emojisElements.setAttribute("id", "emojisElements");
+						 		emojisElements.textContent = emojisHumans[emojis];
+						 		containerAllsEmojis.appendChild(emojisElements);
+
+				 		}
+
+
+
+			let writeWithEmojis = document.getElementById("containerAllEmojis")
+			let allWriteEmojisElement = writeWithEmojis.querySelectorAll("#emojisElements");
+	 
+
+ 		 		for(let write=0; write<allWriteEmojisElement.length; write++){
+			 			allWriteEmojisElement[write].addEventListener("click", ()=>{
+			 				document.getElementsByClassName("area")[0].textContent += allWriteEmojisElement[write].textContent; 
+			 			 	console.log(String(document.getElementsByClassName("area")[0].textContent))
+			 				 
+			 			},false)
+
+			 		}
+
+			 	}, false);
 			 	
-			  
+ 
+
+
+
+
+			this.removeEmojis()
 
 
 
 			 
+
+
+
+
+
+
+
 
 
 

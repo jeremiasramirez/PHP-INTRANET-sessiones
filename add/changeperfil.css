@@ -80,6 +80,7 @@
 .imguserfake:hover{
     transition: .3s;
     border-radius: 50%;
+    cursor: pointer;
 }
 .bords{
     transition: .3s;

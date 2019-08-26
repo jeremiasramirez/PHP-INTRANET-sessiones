@@ -16,7 +16,7 @@
 		padding-top: 2em;
 		font-size:30px;
 		font-family: serif;
-		background-color: black;
+		background-color: #999;
 		border: none;
 		letter-spacing:1px;
 		word-spacing: 1px;
@@ -35,13 +35,12 @@
 	 	width: 100%;
 	 	text-align: center;
 		border: 0;
-		background-color: red;
+		background-color: blue;
 		font-weight: 600;
 		font-family: arial;
 		font-size: 25px; 
 		position: fixed;
 		bottom:2em;
-
 		z-index: 1500;
 		border-radius: 3px;
 		cursor: pointer;
@@ -58,23 +57,33 @@
 
 
  .emojiscontainer span:hover{
- 	transform: scale(1.1);
- 	/*background-color: white;*/
- 	opacity: .4;
- 
-  
+ 	transform: rotate(20deg);
  	transition: .4s;
  	border-radius: 50%;
- 	padding: .1em;
+  
  }
-
 
 .containerAllEmojis{
 	background-color: blue;
-	height: 100px;
+	height: 300px;
 	width: 100%;
+	border-top: 1px solid #ddd;
+	overflow-y: scroll;
+	display: inline-block;
 }
 
+.emojisElements{
+	display: inline-block;
+	font-size: 25px;
+	margin:3px 10px;
+}
+
+
+
+.emojisElements:hover{
+	transition: .3s;
+	transform: scale(1.2) rotate(-10deg);
+}
 
 
 

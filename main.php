@@ -65,10 +65,30 @@ require 'views/main-views.php';
 	
 	<section class="states" id="statesitem">
 		<?php 
-			$showmain= new main_views($_POST["state"]);
-			$showmain->mainGetStates();
+			$getst= new main_views;
+			$getst->getState();
 		 ?>
 	</section>
+	<script>
+	let data = document.getElementById("button");
+	let values = document.getElementById("area");
+ 	 if(data && values){
+
+		data.addEventListener("click", (e)=>{
+			 alert("hello")
+			var http = new XMLHttpRequest();
+				http.open("POST", "views/main-views.php", 1);
+
+				http.addEventListener("load", (e)=>{
+					 console.log(e.target.responseText)
+				})
+				http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				http.send(`state=${values.value}`); 
+
+		})
+ 	 }
+</script>
+
 
 <!-- <script src="urlmsj/welcome/welcome.js" type="text/javascript"></script> -->
 <script src="main.js"></script>
