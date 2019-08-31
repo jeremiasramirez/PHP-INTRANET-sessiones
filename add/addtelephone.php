@@ -2,10 +2,6 @@
 include("../model/model.php");
    
 class Telephone extends conectionDB{
-  /*
-  $tel = $_POST["tel"]
-  $id_user = $_GET["ID"]
-  */
   public function __construct($telephone, $id_user){
     $this->telephone = $telephone;
     $this->id_user = $id_user;

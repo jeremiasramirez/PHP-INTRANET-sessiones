@@ -1,4 +1,4 @@
 /*
 	mensajes de errores
 */
-101 => conexion no existente al servidor o db
+101 => nombre de conexion a db erroneo

@@ -1,5 +1,6 @@
 <?php
 include "model/model.php";
+include "views/finduser-view.php";
 session_start();
 
 if(!$_SESSION["name"]){			 
@@ -44,6 +45,9 @@ if(!$_SESSION["name"]){
 	<div class="users__find" id="users__find">
 
 	<?php 
+
+ 		get_users($_POST["search"], $_SESSION["emauser"]);
+
 		function get_users($searchs, $sessions){
 
 				$con = new conectionDB();
@@ -80,7 +84,13 @@ if(!$_SESSION["name"]){
 
 
 		}
- 		get_users($_POST["search"], $_SESSION["emauser"]);
+
+
+
+
+
+
+ 		
 	 	// class search_user extends conectionDB{
 			// function __construct($name, $session_user){
 			// 	$this->name = $name;

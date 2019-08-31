@@ -45,7 +45,8 @@ if(isset($_POST["newname"]) &&  isset($_POST["newuser"]) &&  isset($_POST["newem
 				}
 
 			}
-
+			 $randomId=rand()*200;
+		 
 			if($conectoruser==false){
 				$statementregister = "INSERT INTO usuario (nameuser, emails, userpass, username) VALUES ('$name','$email','$pass','$user')";
 					$queryexec = mysqli_query($conection, $statementregister);

@@ -4,7 +4,12 @@
 		function conected(){
 			global $conection;
 			try{
-				$conection =mysqli_connect("localhost", "jere", "0847", "jeremias");
+				 $host = "localhost";
+				 $user = "jere";
+				 $pass = "0847";
+				 $db = "jeremias";
+				 
+				$conection =mysqli_connect($host, $user, $pass, $db);
 				if(mysqli_connect_errno($conection)){
 					throw new Exception("101");
 				}

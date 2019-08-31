@@ -212,20 +212,10 @@ print("<br>");
 		 $getcasado = new users_view();
 		 $getcasado->getCasado($casado,  $_SESSION["emauser"], $emailD, $id);
  
- 
-
-	
-
-
-
-
- 
 		 $validateuser = new adminInformationPrivate();
 		 $validateuser->validateUser($_SESSION["emauser"], $emailD, 
 		 $_SESSION["userlogin"], $userlogB, $telephone, $id);
-		
-		
- 
+		 
 ?>	
  			
  	<?php print("<p id='iduser' style='visibility:hidden;'>$ids</p>");?>	
@@ -234,7 +224,6 @@ print("<br>");
  </article>
 
  
-<!-- 	 end of code -->
 <script src="usersearch.js"></script>
 <!-- <script src="users.js"></script> -->
 <script src="main.js"></script>
@@ -246,7 +235,9 @@ print("<br>");
 	 
 	 if($_SESSION["emauser"] == $emailD){
 	 	print("<script src='urlmsj/welcome/welcome.js'></script>");
-	 } 
+	 }
+	 
+	
  ?>
 
 
