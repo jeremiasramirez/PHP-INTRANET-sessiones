@@ -22,8 +22,10 @@ include "urlmsj/registeredbool.php";
 	<form action="validator.php" method="POST" class="login ">
 		<?php
 		//mensaje de gracias por visitarnos al sition
-		    thank($_GET["thank"], "thankyou");
-
+		    // thank($_GET["thank"], "thankyou");
+		    if(isset($_GET["remove"]) && $_GET["remove"]==="removed"){
+		    	echo "<p style='color: white;background-color:red; border-radius:5px; border:0; text-align:center; padding: .2em .5em;width:100%; font-family:arial; font-weight:600;'>cuenta eliminada</p>";
+		    }
 		    // mensaje si se registro correctamente
 		    registeredbool($_GET["registered"], "true");
 		?>

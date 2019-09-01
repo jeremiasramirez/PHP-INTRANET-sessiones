@@ -215,6 +215,10 @@ print("<br>");
 		 $validateuser = new adminInformationPrivate();
 		 $validateuser->validateUser($_SESSION["emauser"], $emailD, 
 		 $_SESSION["userlogin"], $userlogB, $telephone, $id);
+
+		 $removeacc = new users_view();
+		 $removeacc->removeAccount($emailD, $_SESSION["emauser"], $id);
+		 
 		 
 ?>	
  			
