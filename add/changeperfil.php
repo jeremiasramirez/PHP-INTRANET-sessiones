@@ -23,9 +23,9 @@ session_start();
 		  	header("Location: ../users.php?updatephoto=1");
 
 		}
-		// else{
-		//   	header("Location: ../users.php?errorplatform=errorplatform");
-		// }
+		else{
+		  	header("Location: ../users.php?errorplatform=errorplatforms");
+		}
 
  
 }else{
