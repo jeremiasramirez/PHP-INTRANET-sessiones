@@ -51,13 +51,13 @@
  }
  .emojiscontainer span{
  	margin: 5px 7px;
-	transition: .5s;
+	/* transition: .5s; */
  	display: inline-block;
  }
 
 
  .emojiscontainer span:hover{
- 	transform: rotate(20deg);
+ 	transform:  scale(1.2) translateY(-2px);
  	transition: .4s;
  	border-radius: 50%;
   
