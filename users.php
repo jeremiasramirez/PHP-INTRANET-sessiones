@@ -33,6 +33,7 @@ $conected->conected();
 	<link rel="stylesheet" href="users.css">
 	<link rel="stylesheet" href="public/css/showPerfil.css">
 	<link rel="stylesheet" href="urlmsj/welcome/welcome.css">
+	<link rel="stylesheet" href="/intranet/jeremias-lib/jeremias-lib.css">
 </head>
 <body style="background-color: white">
 	<header class="main__header" id="main__header">

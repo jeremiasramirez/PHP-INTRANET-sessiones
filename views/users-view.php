@@ -142,7 +142,7 @@ class users_view{
 	}
 	function removeAccount($emailD, $sessions, $id){
 		 if($emailD == $sessions){
- 				echo "<p style='color: white;background-color:red; border-radius:5px; border:0; text-align:center; padding: .2em .5em;width:100%; '><a href='add/removeaccount.php?id=$id' style='font-family:arial; font-weight:600; text-decoration:none;color:#ccc'>Eliminar mi cuenta</a></p>";
+ 				echo "<p class='btn--rm large'><a href='add/removeaccount.php?id=$id' style='font-family:arial; font-weight:600; text-decoration:none;color:#ccc'>Eliminar mi cuenta</a></p>";
  			}
 	}
 	public function setCasado($id){
